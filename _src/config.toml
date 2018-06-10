@@ -10,14 +10,14 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 #pygmentsUseClassic = true
 #pygmentOptions = "linenos=inline"
-disqusShortname = "antjowie-github-io"
+disqusShortname = "angelos-portfolio"
 #googleAnalytics = "XXX"
 
 publishDir = "../"
 
 [Params]
-  homeTitle = "Angelo's Portfolio" # Set a different text for the header on the home page
-  subtitle = "A portal to all that I have created"
+  homeTitle = "Welcome to my portfolio" # Set a different text for the header on the home page
+  subtitle = "A place that contains all I have created"
   logo = "img/icons/site-icon.png"
   favicon = "img/icons/favicon.ico"
   dateFormat = "January 2, 2006"
