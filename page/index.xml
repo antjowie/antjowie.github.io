@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Angelo&#39;s Portfolio</title>
+    <link>https://antjowie.github.io/page/</link>
+    <description>Recent content in Pages on Angelo&#39;s Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>angelo05rettob@gmail.com (Angelo Anthony Rettob)</managingEditor>
+    <webMaster>angelo05rettob@gmail.com (Angelo Anthony Rettob)</webMaster>
+    
+	<atom:link href="https://antjowie.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>https://antjowie.github.io/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/about/</guid>
+      <description>Glad to know that you are interested in me as a person! A little thing before you start reading though.
+Down here is a short description of who I am and what I can do. Further down is a small story of how I became who I am at the moment of writing this. If you want to contact me, just send me a mail at angelo05rettob@gmail.com. If you want to tell me to make a form to send emails, feel free to do so.</description>
+    </item>
+    
+  </channel>
+</rss>

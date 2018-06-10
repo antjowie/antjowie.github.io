@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Development on Angelo&#39;s Portfolio</title>
+    <link>https://antjowie.github.io/tags/web-development/</link>
+    <description>Recent content in Web Development on Angelo&#39;s Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>angelo05rettob@gmail.com (Angelo Anthony Rettob)</managingEditor>
+    <webMaster>angelo05rettob@gmail.com (Angelo Anthony Rettob)</webMaster>
+    <lastBuildDate>Sat, 09 Jun 2018 21:12:36 +0200</lastBuildDate>
+    
+	<atom:link href="https://antjowie.github.io/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Switch to Hugo</title>
+      <link>https://antjowie.github.io/post/the-switch-to-hugo/</link>
+      <pubDate>Sat, 09 Jun 2018 21:12:36 +0200</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/post/the-switch-to-hugo/</guid>
+      <description>I still have to write this article</description>
+    </item>
+    
+  </channel>
+</rss>
