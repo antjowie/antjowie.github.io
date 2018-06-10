@@ -10,7 +10,7 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 #pygmentsUseClassic = true
 #pygmentOptions = "linenos=inline"
-disqusShortname = "antjowie"
+disqusShortname = "antjowie-github-io"
 #googleAnalytics = "XXX"
 
 publishDir = "../"
