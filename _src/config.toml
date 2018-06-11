@@ -1,4 +1,4 @@
-baseurl = "https://antjowie.github.io"
+baseurl = "https://antjowie.github.io/"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
 title = "Angelo's Portfolio"
@@ -43,7 +43,7 @@ publishDir = "../"
 
 [Author]
   name = "Angelo Anthony Rettob"
-  website = "https://antjowie.github.io"
+  website = "https://antjowie.github.io/"
   email = "angelo05rettob@gmail.com"
 #   facebook = "username"
 #   googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
@@ -83,5 +83,5 @@ publishDir = "../"
 
 [[menu.main]]
     name = "Tags"
-    url = "tags"
+    url = "tags/"
     weight = 4
