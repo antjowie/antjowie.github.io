@@ -17,9 +17,9 @@ The Axios framework makes use of [SFML](https://www.sfml-dev.org/). The Axios fr
 ## What does it do
 The framework serves a role in the following subjects `(you can click the links to see the progress)`:
 
-- [ ] [`Game loop`](../../page/axios-framework/game-loop)
-    - [ ] Update Input handler
-    - [ ] Render
+- [X] [`Game loop`](../../page/axios-framework/game-loop)
+    - [X] [Update Input handler](../../page/axios-framework/game-loop#the-loop-itself)
+    - [X] [Render](../../page/axios-framework/game-loop#the-loop-itself)
 - [ ] `Scene manager`  
     _Scenes are containers that contain objects and sometimes static level data. A section can be the main menu, level, options menu, loading screen etc_  
     - [ ] One frame stack
