@@ -11,9 +11,10 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentsUseClassic = true
 #pygmentOptions = "linenos=inline"
 disqusShortname = "angelos-portfolio"
-#googleAnalytics = "XXX"
+# googleAnalytics = "UA-120723585-1"
 
 publishDir = "../"
+taskLists = "true"
 
 [Params]
   homeTitle = "Welcome to my portfolio" # Set a different text for the header on the home page
@@ -27,7 +28,7 @@ publishDir = "../"
   readingTime = true
   useHLJS = true
   socialShare = true
-#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+ gcse = "001716844541583678590:jrms-ixh6ca" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 # [[Params.bigimg]]
 #  src = "img/triangle.jpg"

@@ -7,9 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>angelo05rettob@gmail.com (Angelo Anthony Rettob)</managingEditor>
     <webMaster>angelo05rettob@gmail.com (Angelo Anthony Rettob)</webMaster>
+    <lastBuildDate>Sat, 16 Jun 2018 13:56:00 +0200</lastBuildDate>
     
 	<atom:link href="https://antjowie.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Axios Framework Game Loop</title>
+      <link>https://antjowie.github.io/page/axios-framework/game-loop/</link>
+      <pubDate>Sat, 16 Jun 2018 13:56:00 +0200</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/axios-framework/game-loop/</guid>
+      <description>This page has yet to be written</description>
+    </item>
     
     <item>
       <title>About me</title>

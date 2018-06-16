@@ -5,23 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Into the Abyss</title>
-  <meta property="og:title" content="Into the Abyss" />
-  <meta name="twitter:title" content="Into the Abyss" />
-  <meta name="description" content="A roguelike game made with my own engine">
-  <meta property="og:description" content="A roguelike game made with my own engine">
-  <meta name="twitter:description" content="A roguelike game made with my own engine">
+  <title>Axios Framework</title>
+  <meta property="og:title" content="Axios Framework" />
+  <meta name="twitter:title" content="Axios Framework" />
+  <meta name="description" content="The framework that powers all of my 2D games">
+  <meta property="og:description" content="The framework that powers all of my 2D games">
+  <meta name="twitter:description" content="The framework that powers all of my 2D games">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://antjowie.github.io/projects/into-the-abyss/" />
+  <meta property="og:url" content="https://antjowie.github.io/projects/axios-framework/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
 
   <meta name="generator" content="Hugo 0.41" />
-  <link rel="canonical" href="https://antjowie.github.io/projects/into-the-abyss/" />
+  <link rel="canonical" href="https://antjowie.github.io/projects/axios-framework/" />
   <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -127,6 +127,12 @@
         
 
         
+          <li>
+            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+              <span class="hidden-sm hidden-md hidden-lg">Search</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+        
       </ul>
     </div>
 
@@ -144,6 +150,23 @@
 </nav>
 
 
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search Angelo&#39;s Portfolio</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
     
@@ -164,10 +187,10 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="projects-heading">
-              <h1>Into the Abyss</h1>
+              <h1>Axios Framework</h1>
                 
                   
-                    <h2 class="projects-subheading">A roguelike game made with my own engine</h2>
+                    <h2 class="projects-subheading">The framework that powers all of my 2D games</h2>
                   
                 
                 
@@ -184,15 +207,71 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>This post has no content right now but will have soon</p>
+        <p>The Axios framework makes use of <a href="https://www.sfml-dev.org/">SFML</a>. The Axios framework is used for 2D game development. It was actually meant to be a game engine, but I have no experience making a GUI yet, so a framework it is.
+</p>
 
+<blockquote>
+<p>You can follow this project on Github at this <a href="https://github.com/antjowie/axios-framework">repository</a></p>
+</blockquote>
+
+<h2 id="what-does-it-do">What does it do</h2>
+
+<p>The framework serves a role in the following subjects <code>(you can click the links to see the progress)</code>:</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> <a href="../../page/axios-framework/game-loop"><code>Game loop</code></a>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Update Input handler</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Render</label></li>
+</ul></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <code>Scene manager</code><br />
+<em>Scenes are containers that contain objects and sometimes static level data. A section can be the main menu, level, options menu, loading screen etc</em><br />
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> One frame stack</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Object management<br /></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Dynamic object management (add and remove objects during runtime)</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Object references</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Event handling</label></li>
+</ul></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <code>Objects</code><br />
+<em>Objects are the building blocks of the game. Objects are build of components</em>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Object factory</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Animation handling</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Collision and Physics</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
+</ul></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <code>Assets management</code><br />
+<em>Basic data containers for game assets</em>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Sound</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Music</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Images</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Fonts</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Asynchronous</label></li>
+</ul></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <code>String hashing (will probably be done by another library)</code></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <code>Tilemap import</code></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <code>Input handler</code>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Keyboard and mouse</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Controller</label></li>
+</ul></label></li>
+</ul>
 
         
           <div class="blog-tags">
             
-              <a href="https://antjowie.github.io//tags/c&#43;&#43;/">c&#43;&#43;</a>&nbsp;
+              <a href="https://antjowie.github.io//tags/game-development/">game-development</a>&nbsp;
             
-              <a href="https://antjowie.github.io//tags/game-development/">game development</a>&nbsp;
+              <a href="https://antjowie.github.io//tags/framework/">framework</a>&nbsp;
+            
+              <a href="https://antjowie.github.io//tags/cpp/">cpp</a>&nbsp;
             
           </div>
         
@@ -205,7 +284,7 @@
 
 
 <li>
-    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2finto-the-abyss%2f&amp;text=Into%20the%20Abyss&amp;via="
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;text=Axios%20Framework&amp;via="
        target="_blank" alt="" title="Share on Twitter">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -216,7 +295,7 @@
 
 
 <li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2finto-the-abyss%2f" target="_blank" title="Share on Google Plus">
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f" target="_blank" title="Share on Google Plus">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
@@ -226,7 +305,7 @@
 
 
 <li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fprojects%2finto-the-abyss%2f" target="_blank" title="Share on Facebook">
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f" target="_blank" title="Share on Facebook">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -236,7 +315,7 @@
 
 
 <li>
-    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2finto-the-abyss%2f&amp;title=Into%20the%20Abyss" target="_blank" title="Share on Reddit">
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank" title="Share on Reddit">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
@@ -246,7 +325,7 @@
 
 
 <li>
-    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fprojects%2finto-the-abyss%2f&amp;title=Into%20the%20Abyss" target="_blank"
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank"
        title="Share on LinkedIn">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -257,7 +336,7 @@
 
 
 <li>
-    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2finto-the-abyss%2f&amp;title=Into%20the%20Abyss" target="_blank"
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank"
        title="Share on StumbleUpon">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -268,7 +347,7 @@
 
 
 <li>
-    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fprojects%2finto-the-abyss%2f&amp;description=Into%20the%20Abyss" target="_blank"
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;description=Axios%20Framework" target="_blank"
        title="Share on Pinterest">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -394,6 +473,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
 <script src="https://antjowie.github.io/js/load-photoswipe.js"></script>
 
+
+<script>
+  (function() {
+    var cx = '001716844541583678590:jrms-ixh6ca';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
 
 
 

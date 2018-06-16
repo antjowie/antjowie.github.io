@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://antjowie.github.io/projects/into-the-abyss/</loc>
-    <lastmod>2018-06-10T02:10:03+02:00</lastmod>
+    <loc>https://antjowie.github.io/page/axios-framework/game-loop/</loc>
+    <lastmod>2018-06-16T13:56:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://antjowie.github.io/projects/axios-framework/</loc>
+    <lastmod>2018-06-16T13:53:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://antjowie.github.io/</loc>
+    <lastmod>2018-06-11T22:25:43+02:00</lastmod>
   </url>
   
   <url>
@@ -13,19 +23,12 @@
   </url>
   
   <url>
+    <loc>https://antjowie.github.io/post/my-journey-towards-nhtv/</loc>
+    <lastmod>2018-04-11T22:45:12+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://antjowie.github.io/page/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://antjowie.github.io/</loc>
-    <lastmod>2018-06-10T02:10:03+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://antjowie.github.io/tags/c&#43;&#43;/</loc>
-    <lastmod>2018-06-10T02:10:03+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -34,13 +37,26 @@
   </url>
   
   <url>
+    <loc>https://antjowie.github.io/tags/cpp/</loc>
+    <lastmod>2018-06-16T13:53:09+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://antjowie.github.io/tags/framework/</loc>
+    <lastmod>2018-06-16T13:53:09+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://antjowie.github.io/tags/game-development/</loc>
-    <lastmod>2018-06-10T02:10:03+02:00</lastmod>
+    <lastmod>2018-06-16T13:53:09+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://antjowie.github.io/page/</loc>
+    <lastmod>2018-06-16T13:56:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -52,13 +68,19 @@
   
   <url>
     <loc>https://antjowie.github.io/projects/</loc>
-    <lastmod>2018-06-10T02:10:03+02:00</lastmod>
+    <lastmod>2018-06-16T13:53:09+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://antjowie.github.io/tags/</loc>
-    <lastmod>2018-06-10T02:10:03+02:00</lastmod>
+    <lastmod>2018-06-16T13:53:09+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://antjowie.github.io/tags/university/</loc>
+    <lastmod>2018-04-11T22:45:12+02:00</lastmod>
     <priority>0</priority>
   </url>
   
