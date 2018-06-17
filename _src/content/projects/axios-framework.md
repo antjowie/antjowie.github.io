@@ -17,14 +17,17 @@ The Axios framework makes use of [SFML](https://www.sfml-dev.org/). The Axios fr
 ## What does it do
 The framework serves a role in the following subjects `(you can click the links to see the progress)`:
 
+- [ ] `Game instance`
+    - [ ] Manage data paths
+    - [ ] Manage user settings
 - [X] [`Game loop`](../../page/axios-framework/game-loop)
     - [X] [Update Input handler](../../page/axios-framework/game-loop#the-loop-itself)
     - [X] [Render](../../page/axios-framework/game-loop#the-loop-itself)
 - [ ] `Scene manager`  
     _Scenes are containers that contain objects and sometimes static level data. A section can be the main menu, level, options menu, loading screen etc_  
     - [ ] One frame stack
-    - [ ] Object management  
     - [ ] Dynamic object management (add and remove objects during runtime)
+    - [ ] Object updating
     - [ ] Object references 
     - [ ] Event handling
 - [ ] `Objects`  
@@ -41,7 +44,8 @@ The framework serves a role in the following subjects `(you can click the links 
     - [ ] Fonts
     - [ ] Asynchronous
 - [ ] `String hashing (will probably be done by another library)`
-- [ ] `Tilemap import`
+- [ ] `Tiled support`  
+    _[Tiled](https://www.mapeditor.org/) will be used as the main editor for scenes. With Tiled, all scenes initial state will be made._
 - [ ] `Input handler`
     - [ ] Keyboard and mouse
     - [ ] Controller
