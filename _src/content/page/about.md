@@ -20,7 +20,7 @@ Programming languages:
 * C++
 * Python
 
-That is all I've got at the moment regarding programming. Other skills that I'm practicing, but I'd rather learn a language thoroughly instead of skimming over everything.
+That is all I've got at the moment regarding programming. The list is quite small, but I rather want to understand a language thoroughly instead of skimming over eveerything and not really knowing what to do. In the end, your knowledge of different programming languages are not as important as your skills in problem solving. 
 
 > That concludes the short introduction. Down here follows a section about how I became who I am today, or at the moment of writing this page.  
 

@@ -17,12 +17,10 @@ The Axios framework makes use of [SFML](https://www.sfml-dev.org/). The Axios fr
 ## What does it do
 The framework serves a role in the following subjects `(you can click the links to see the progress)`:
 
-- [ ] `Game instance`
-    - [ ] Manage data paths
+- [ ] [`Game instance`]({{< ref "page\axios-framework\game-instance.md" >}})
     - [ ] Manage user settings
-- [X] [`Game loop`](../../page/axios-framework/game-loop)
-    - [X] [Update Input handler](../../page/axios-framework/game-loop#the-loop-itself)
-    - [X] [Render](../../page/axios-framework/game-loop#the-loop-itself)
+    - [ ] Manage (de)initialization of modules
+    - [ ] Game loop
 - [ ] `Scene manager`  
     _Scenes are containers that contain objects and sometimes static level data. A section can be the main menu, level, options menu, loading screen etc_  
     - [ ] One frame stack
@@ -36,12 +34,13 @@ The framework serves a role in the following subjects `(you can click the links 
     - [ ] Animation handling
     - [ ] Collision and Physics
     - [ ] Object serialization
-- [ ] `Assets management`  
-    _Basic data containers for game assets_
+- [ ] `Data manager`  
+    _Basic data containers for game data that has to be saved_
     - [ ] Sound
     - [ ] Music
     - [ ] Images
     - [ ] Fonts
+    - [ ] User config
     - [ ] Asynchronous
 - [ ] `String hashing (will probably be done by another library)`
 - [ ] `Tiled support`  
@@ -49,3 +48,9 @@ The framework serves a role in the following subjects `(you can click the links 
 - [ ] `Input handler`
     - [ ] Keyboard and mouse
     - [ ] Controller
+- [ ] `Parsers and Converters`
+    - [ ] JSON parser
+    - [ ] XML parser
+    - [ ] SFML key code converter
+- [ ] `Specialized containers`
+    - [ ] Average
