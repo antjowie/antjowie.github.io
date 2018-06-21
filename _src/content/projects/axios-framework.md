@@ -17,8 +17,7 @@ The Axios framework makes use of [SFML](https://www.sfml-dev.org/). The Axios fr
 ## What does it do
 The framework serves a role in the following subjects `(you can click the links to see the progress)`:
 
-- [ ] [`Game instance`]({{< ref "page\axios-framework\game-instance.md" >}})
-    - [ ] Manage user settings
+- [ ] [`Instance`]({{< ref "page\axios-framework\game-instance.md" >}})
     - [ ] Manage (de)initialization of modules
     - [ ] Game loop
 - [ ] `Scene manager`  
@@ -34,23 +33,25 @@ The framework serves a role in the following subjects `(you can click the links 
     - [ ] Animation handling
     - [ ] Collision and Physics
     - [ ] Object serialization
-- [ ] `Data manager`  
+- [X] [`Data manager`]({{< ref "page\axios-framework\data-manager.md" >}})  
     _Basic data containers for game data that has to be saved_
+    - [X] Game keybinding items
+    - [X] User config
+- [ ] `Assets manager`
+    _Game textures, sounds, files that have to be loaded during gameplay but do not have to be saved_
     - [ ] Sound
     - [ ] Music
     - [ ] Images
     - [ ] Fonts
-    - [ ] User config
     - [ ] Asynchronous
-- [ ] `String hashing (will probably be done by another library)`
 - [ ] `Tiled support`  
     _[Tiled](https://www.mapeditor.org/) will be used as the main editor for scenes. With Tiled, all scenes initial state will be made._
-- [ ] `Input handler`
-    - [ ] Keyboard and mouse
+    - [ ] Load external map
+    - [ ] Make file containing all Object types
+- [ ] [`Input handler`]({{< ref "page\axios-framework\input-handler.md" >}})
+    - [X] Keyboard and mouse
     - [ ] Controller
 - [ ] `Parsers and Converters`
-    - [ ] JSON parser
+    - [X] JSON parser
     - [ ] XML parser
     - [ ] SFML key code converter
-- [ ] `Specialized containers`
-    - [ ] Average

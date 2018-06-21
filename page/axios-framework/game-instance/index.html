@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Axios Framework Game Instance</title>
-  <meta property="og:title" content="Axios Framework Game Instance" />
-  <meta name="twitter:title" content="Axios Framework Game Instance" />
-  <meta name="description" content="The class that manages it all">
-  <meta property="og:description" content="The class that manages it all">
-  <meta name="twitter:description" content="The class that manages it all">
+  <title>Axios Framework Instance</title>
+  <meta property="og:title" content="Axios Framework Instance" />
+  <meta name="twitter:title" content="Axios Framework Instance" />
+  <meta name="description" content="The (fake) class that manages it all">
+  <meta property="og:description" content="The (fake) class that manages it all">
+  <meta name="twitter:description" content="The (fake) class that manages it all">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
@@ -187,11 +187,11 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
-              <h1>Axios Framework Game Instance</h1>
+              <h1>Axios Framework Instance</h1>
                 
                   
                     <hr class="small">
-                    <span class="page-subheading">The class that manages it all</span>
+                    <span class="page-subheading">The (fake) class that manages it all</span>
                   
                 
                 
@@ -208,166 +208,22 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The <code>Game Instance</code> is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. The <code>Game Instance</code> is responsible for managing the game settings. All the user configurations (keybindings, resolution, audio) and the data path (path to the game assets) will be managed by the <code>Game Instance</code>.
+        <p><code>Instance</code> is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. <code>Instance</code> is responsible for managing the game settings. All the user configurations (keybindings, resolution, audio) and the data path (path to the game assets) will be managed by <code>Instance</code>.
 </p>
 
-<h1 id="table-of-contents">Table of Contents</h1>
+<h2 id="documentation">Documentation</h2>
 
-<ul>
-<li><a href="#code">Code</a></li>
-<li><a href="#input-handler-loop">Input handler loop</a></li>
-<li><a href="#game-loop">Game loop</a></li>
-</ul>
+<blockquote>
+<p>Github files: <a href="https://github.com/antjowie/Axios-framework/blob/master/include/Axios/Instance.h">Header</a> and <a href="https://github.com/antjowie/Axios-framework/blob/master/src/Axios/Instance.cpp">Source</a></p>
+</blockquote>
 
-<h2 id="code">Code</h2>
+<h4 id="instance">Instance</h4>
 
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#998;font-style:italic">// GameInstance.h
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#998;font-style:italic"></span><span style="color:#999;font-weight:bold">#pragma once
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#999;font-weight:bold"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="font-weight:bold">namespace</span> ax
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="font-weight:bold">namespace</span> GameInstance
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    {    
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#998;font-style:italic">// Starts the game loop
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#998;font-style:italic"></span>        <span style="color:#458;font-weight:bold">void</span> start();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        <span style="color:#998;font-style:italic">// Initialize all modules
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#998;font-style:italic"></span>        <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">init</span>();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#998;font-style:italic">// GameInstance.cpp
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#998;font-style:italic">// Spacing between # and include is because of formatting errors
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#998;font-style:italic"></span><span style="color:#999;font-weight:bold"># include &#34;GameInstance.h&#34; 
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#999;font-weight:bold"># include &#34;InputHandler.h&#34;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#999;font-weight:bold"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#999;font-weight:bold"># include &lt;SFML/System/Clock.h&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span style="color:#999;font-weight:bold"># include &lt;SFML/System/Time.h&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span style="color:#999;font-weight:bold"># include &lt;SFML/System/Event.h&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#999;font-weight:bold"># include &lt;SFML/Graphics/RenderWindow.h&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#999;font-weight:bold"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#458;font-weight:bold">void</span> ax<span style="font-weight:bold">::</span>GameInstance<span style="font-weight:bold">::</span>start()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>    Average<span style="font-weight:bold">&lt;</span><span style="color:#458;font-weight:bold">float</span>,<span style="color:#099">20</span><span style="font-weight:bold">&gt;</span> averageTime; <span style="color:#998;font-style:italic">// 20 is the amount of elements to hold. Average 
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span style="color:#998;font-style:italic"></span>                                  <span style="color:#998;font-style:italic">// is a class queue like class with a max size of
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span style="color:#998;font-style:italic"></span>                                  <span style="color:#998;font-style:italic">// 20. It can return the average of all its elements
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#998;font-style:italic"></span>    Clock frameTime; <span style="color:#998;font-style:italic">// A class that keeps track of the time elapsed between reset calls
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#998;font-style:italic"></span>    sf<span style="font-weight:bold">::</span>RenderWindow window(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>        sf<span style="font-weight:bold">::</span>VideoMode(ax<span style="font-weight:bold">::</span>DataManager<span style="font-weight:bold">::</span>Config[<span style="color:#b84">&#34;windowX&#34;</span>],ax<span style="font-weight:bold">::</span>DataManager<span style="font-weight:bold">::</span>Config[<span style="color:#b84">&#34;windowY&#34;</span>]), 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>        ax<span style="font-weight:bold">::</span>DataManager<span style="font-weight:bold">::</span>Config[<span style="color:#b84">&#34;title&#34;</span>]);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    sf<span style="font-weight:bold">::</span>Event event;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>    Time elapsedTime;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>    elapsedTime <span style="font-weight:bold">=</span> frameTime.reset();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>    <span style="font-weight:bold">while</span>(window.isOpen())
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>        <span style="color:#998;font-style:italic">// If the game has an fps lower than 0, skip the frame
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span style="color:#998;font-style:italic"></span>        <span style="font-weight:bold">if</span> (elapsedTime.ms() <span style="font-weight:bold">&gt;</span> <span style="color:#099">1</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>        {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>            elapsedTime <span style="font-weight:bold">=</span> <span style="color:#099">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>            <span style="font-weight:bold">continue</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>        ax<span style="font-weight:bold">::</span>InputHandler.update();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>        <span style="color:#998;font-style:italic">// Event handling should be done in the game loop because if the
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span style="color:#998;font-style:italic"></span>        <span style="color:#998;font-style:italic">// events will be polled elsewhere, the events can be skipped
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span style="color:#998;font-style:italic"></span>        <span style="font-weight:bold">while</span>(window.pollEvent(event))
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>        {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>            <span style="font-weight:bold">switch</span>(event.type)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>            {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>                <span style="color:#998;font-style:italic">// Convert key code to key string
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span><span style="color:#998;font-style:italic"></span>                <span style="color:#998;font-style:italic">// Keyboard and mouse handling
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span><span style="color:#998;font-style:italic"></span>                <span style="font-weight:bold">case</span> sf<span style="font-weight:bold">::</span>Event<span style="font-weight:bold">::</span>Keyboard<span style="font-weight:bold">::</span>isKeyPressed:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>                    ax<span style="font-weight:bold">::</span>InputHandler<span style="font-weight:bold">::</span>updatePressedKey(event.key); 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>                    <span style="font-weight:bold">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>                <span style="font-weight:bold">case</span> sf<span style="font-weight:bold">::</span>Event<span style="font-weight:bold">::</span>Keyboard<span style="font-weight:bold">::</span>isKeyReleased:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>                    ax<span style="font-weight:bold">::</span>InputHandler<span style="font-weight:bold">::</span>updateReleasedKey(event.key); 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span>                    <span style="font-weight:bold">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span>                <span style="font-weight:bold">case</span> sf<span style="font-weight:bold">::</span>Event<span style="font-weight:bold">::</span>Mouse<span style="font-weight:bold">::</span>isButtonPressed:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span>                    ax<span style="font-weight:bold">::</span>InputHandler<span style="font-weight:bold">::</span>updatePressedButton(event.button); 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span>                    <span style="font-weight:bold">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span>                <span style="font-weight:bold">case</span> sf<span style="font-weight:bold">::</span>Event<span style="font-weight:bold">::</span>Mouse<span style="font-weight:bold">::</span>isButtonReleased:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span>                    ax<span style="font-weight:bold">::</span>InputHandler<span style="font-weight:bold">::</span>updateReleasedbutton(event.button); 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span>                    <span style="font-weight:bold">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span>                <span style="color:#998;font-style:italic">// TODO Add joystick support
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span><span style="color:#998;font-style:italic"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span>                <span style="font-weight:bold">case</span> sf<span style="font-weight:bold">::</span>Event<span style="font-weight:bold">::</span>Closed:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span>                    window.close();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76</span>                    <span style="font-weight:bold">break</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77</span>            }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79</span>        
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80</span>        <span style="color:#998;font-style:italic">// This unties our input polling rate from our rendering,
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81</span><span style="color:#998;font-style:italic"></span>        <span style="font-weight:bold">if</span> (<span style="color:#099">1.f</span><span style="font-weight:bold">/</span>elapsedTime.ms() <span style="font-weight:bold">&gt;=</span> ax<span style="font-weight:bold">::</span>DataManager<span style="font-weight:bold">::</span>Config[<span style="color:#b84">&#34;refreshRate&#34;</span>])
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82</span>        {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83</span>            averageTime.push(elapsedTime.ms());
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84</span>            elapsedTime <span style="font-weight:bold">%=</span> <span style="color:#099">1.f</span><span style="font-weight:bold">/</span>ax<span style="font-weight:bold">::</span>DataManager<span style="font-weight:bold">::</span>Config[<span style="color:#b84">&#34;refreshRate&#34;</span>];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86</span>            updateScene(averageTime.getAverage());
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87</span>            renderScreen();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89</span>        elapsedTime <span style="font-weight:bold">+=</span> frameTime.reset();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">92</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">93</span><span style="color:#458;font-weight:bold">void</span> ax<span style="font-weight:bold">::</span>GameInstance<span style="font-weight:bold">::</span>init(){
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">94</span>    <span style="color:#998;font-style:italic">// Write some code to parse config file(JSON parser)
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">95</span><span style="color:#998;font-style:italic"></span>    <span style="color:#998;font-style:italic">// Init ax::DataManager::Config with correct data
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">96</span><span style="color:#998;font-style:italic"></span>    <span style="color:#998;font-style:italic">// Init ax::InputHandler with correct data
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">97</span><span style="color:#998;font-style:italic"></span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">98</span></code></pre></div>
+<p><em>The <code>Instance</code> namespace keeps the function under one namespace. Because the three functions do not need any context, instance does not have to be a class.</em></p>
 
-<h2 id="input-handler-loop">Input handler loop</h2>
+<h2 id="additional-notes">Additional notes</h2>
 
-<p>Input items have three states, <code>pressed</code>, <code>hold</code>, <code>released</code>. The program checks if a key is pressed and will check if the <code>hold state</code> is <strong>true</strong>. If the <code>hold state</code> is <strong>true</strong>, the <code>hold state</code> will remain <strong>true</strong>. If the <code>hold state</code> is <strong>false</strong>, the <code>hold state</code> and <code>pressed state</code> will turn <strong>true</strong>.  After every frame, the <code>pressed state</code> and <code>released state</code> will become <strong>false</strong>. If a key is released, the <code>release state</code> will become <strong>true</strong> and <code>all other states</code> will become <strong>false</strong>.</p>
-
-<p>To summarize default flow (every column is a frame):</p>
-
-<table>
-<thead>
-<tr>
-<th>Situation</th>
-<th>Pressed</th>
-<th>Hold</th>
-<th>Released</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Pressing key</td>
-<td>X</td>
-<td>X</td>
-<td></td>
-</tr>
-
-<tr>
-<td>Holding the key</td>
-<td></td>
-<td>X</td>
-<td></td>
-</tr>
-
-<tr>
-<td>Holding the key</td>
-<td></td>
-<td>X</td>
-<td></td>
-</tr>
-
-<tr>
-<td>Releasing the key</td>
-<td></td>
-<td></td>
-<td>X</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="game-loop">Game Loop</h2>
+<h4 id="game-loop-and-the-importance-of-time">Game Loop and the importance of time</h4>
 
 <p>The <code>Game Loop</code> is responsible for updating everything, it is the code that is repeatedly run.</p>
 
@@ -397,7 +253,7 @@
 
 
 <li>
-    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;text=Axios%20Framework%20Game%20Instance&amp;via="
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;text=Axios%20Framework%20Instance&amp;via="
        target="_blank" alt="" title="Share on Twitter">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -428,7 +284,7 @@
 
 
 <li>
-    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;title=Axios%20Framework%20Game%20Instance" target="_blank" title="Share on Reddit">
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;title=Axios%20Framework%20Instance" target="_blank" title="Share on Reddit">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
@@ -438,7 +294,7 @@
 
 
 <li>
-    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;title=Axios%20Framework%20Game%20Instance" target="_blank"
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;title=Axios%20Framework%20Instance" target="_blank"
        title="Share on LinkedIn">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -449,7 +305,7 @@
 
 
 <li>
-    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;title=Axios%20Framework%20Game%20Instance" target="_blank"
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;title=Axios%20Framework%20Instance" target="_blank"
        title="Share on StumbleUpon">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -460,7 +316,7 @@
 
 
 <li>
-    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;description=Axios%20Framework%20Game%20Instance" target="_blank"
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;description=Axios%20Framework%20Instance" target="_blank"
        title="Share on Pinterest">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -477,6 +333,32 @@
       
 
 
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "angelos-portfolio" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
       
 
     </div>

@@ -5,23 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Axios Framework</title>
-  <meta property="og:title" content="Axios Framework" />
-  <meta name="twitter:title" content="Axios Framework" />
-  <meta name="description" content="The framework that powers all of my 2D games">
-  <meta property="og:description" content="The framework that powers all of my 2D games">
-  <meta name="twitter:description" content="The framework that powers all of my 2D games">
+  <title>Parsers and Converters</title>
+  <meta property="og:title" content="Parsers and Converters" />
+  <meta name="twitter:title" content="Parsers and Converters" />
+  <meta name="description" content="Passing data around and saving it">
+  <meta property="og:description" content="Passing data around and saving it">
+  <meta name="twitter:description" content="Passing data around and saving it">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://antjowie.github.io/projects/axios-framework/" />
+  <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/parsers-and-converters/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
 
   <meta name="generator" content="Hugo 0.41" />
-  <link rel="canonical" href="https://antjowie.github.io/projects/axios-framework/" />
+  <link rel="canonical" href="https://antjowie.github.io/page/axios-framework/parsers-and-converters/" />
   <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -186,11 +186,12 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="projects-heading">
-              <h1>Axios Framework</h1>
+            <div class="page-heading">
+              <h1>Parsers and Converters</h1>
                 
                   
-                    <h2 class="projects-subheading">The framework that powers all of my 2D games</h2>
+                    <hr class="small">
+                    <span class="page-subheading">Passing data around and saving it</span>
                   
                 
                 
@@ -207,92 +208,20 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The Axios framework makes use of <a href="https://www.sfml-dev.org/">SFML</a>. The Axios framework is used for 2D game development. It was actually meant to be a game engine, but I have no experience making a GUI yet, so a framework it is.
+        <p>Some things just have to be saved. In our case configurations. To make life easier for both of us (computers and humans), data is saved in a special format. There are many formats that we can choose from. But because of my recent studying of Python and Web Development. My preference for <a href="https://www.w3.org/XML/">XML</a> (which I only used because of Tiled) shifted to <a href="https://www.json.org/">JSON</a>, a much more easier format, IMHO.
 </p>
 
-<blockquote>
-<p>You can follow this project on Github at this <a href="https://github.com/antjowie/axios-framework">repository</a></p>
-</blockquote>
+<h2 id="so-many-possibilities-almost-roping">So many possibilities (almost roping)</h2>
 
-<h2 id="what-does-it-do">What does it do</h2>
+<p>This page will mainly explain the reasons why I chose certain libraries. So why did I chose JSON?</p>
 
-<p>The framework serves a role in the following subjects <code>(you can click the links to see the progress)</code>:</p>
+<p><strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation is such a simple format. It is like one big array. Is consist of key and values, just like our <code>Data</code> class. So why not JSON?<br />
+I also find JSON easy to read and thus to edit. XML is also quite easy, but accessing XML is another story (or maybe I should&rsquo;ve studied the librarys documentationa bit more). For our purposes, JSON suffies.</p>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> <a href="https://antjowie.github.io/page/axios-framework/game-instance/"><code>Instance</code></a>
+<p>I chose the library <a href="https://nlohmann.github.io/json/">JSON for Modern c++</a>. It isn&rsquo;t the fastest parser, but it is really easy to use. Just include one header. And parsing a 20kb text file doesn&rsquo;t take that long either.</p>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Manage (de)initialization of modules</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Game loop</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Scene manager</code><br />
-<em>Scenes are containers that contain objects and sometimes static level data. A section can be the main menu, level, options menu, loading screen etc</em><br />
+<p><a href="https://antjowie.github.io/projects/axios-framework/">Return to project page</a></p>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> One frame stack</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Dynamic object management (add and remove objects during runtime)</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Object updating</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Object references</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Event handling</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Objects</code><br />
-<em>Objects are the building blocks of the game. Objects are build of components</em>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Object factory</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Animation handling</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Collision and Physics</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://antjowie.github.io/page/axios-framework/data-manager/"><code>Data manager</code></a><br />
-<em>Basic data containers for game data that has to be saved</em>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Game keybinding items</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> User config</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Assets manager</code>
-<em>Game textures, sounds, files that have to be loaded during gameplay but do not have to be saved</em>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Sound</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Music</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Images</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Fonts</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Asynchronous</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Tiled support</code><br />
-<em><a href="https://www.mapeditor.org/">Tiled</a> will be used as the main editor for scenes. With Tiled, all scenes initial state will be made.</em>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Load external map</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Make file containing all Object types</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <a href="https://antjowie.github.io/page/axios-framework/input-handler/"><code>Input handler</code></a>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Keyboard and mouse</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Controller</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Parsers and Converters</code>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> JSON parser</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> XML parser</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> SFML key code converter</label></li>
-</ul></label></li>
-</ul>
-
-        
-          <div class="blog-tags">
-            
-              <a href="https://antjowie.github.io//tags/game-development/">game-development</a>&nbsp;
-            
-              <a href="https://antjowie.github.io//tags/framework/">framework</a>&nbsp;
-            
-              <a href="https://antjowie.github.io//tags/cpp/">cpp</a>&nbsp;
-            
-          </div>
         
 
         
@@ -303,7 +232,7 @@
 
 
 <li>
-    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;text=Axios%20Framework&amp;via="
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;text=Parsers%20and%20Converters&amp;via="
        target="_blank" alt="" title="Share on Twitter">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -314,7 +243,7 @@
 
 
 <li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f" target="_blank" title="Share on Google Plus">
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f" target="_blank" title="Share on Google Plus">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
@@ -324,7 +253,7 @@
 
 
 <li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f" target="_blank" title="Share on Facebook">
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f" target="_blank" title="Share on Facebook">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -334,7 +263,7 @@
 
 
 <li>
-    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank" title="Share on Reddit">
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;title=Parsers%20and%20Converters" target="_blank" title="Share on Reddit">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
@@ -344,7 +273,7 @@
 
 
 <li>
-    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank"
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;title=Parsers%20and%20Converters" target="_blank"
        title="Share on LinkedIn">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -355,7 +284,7 @@
 
 
 <li>
-    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank"
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;title=Parsers%20and%20Converters" target="_blank"
        title="Share on StumbleUpon">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -366,7 +295,7 @@
 
 
 <li>
-    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;description=Axios%20Framework" target="_blank"
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;description=Parsers%20and%20Converters" target="_blank"
        title="Share on Pinterest">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -380,11 +309,6 @@
         
       </article>
 
-      
-        <ul class="pager blog-pager">
-          
-          
-        </ul>
       
 
 

@@ -5,23 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Axios Framework</title>
-  <meta property="og:title" content="Axios Framework" />
-  <meta name="twitter:title" content="Axios Framework" />
-  <meta name="description" content="The framework that powers all of my 2D games">
-  <meta property="og:description" content="The framework that powers all of my 2D games">
-  <meta name="twitter:description" content="The framework that powers all of my 2D games">
+  <title>Data Manager</title>
+  <meta property="og:title" content="Data Manager" />
+  <meta name="twitter:title" content="Data Manager" />
+  <meta name="description" content="I need some way to keep track of everything">
+  <meta property="og:description" content="I need some way to keep track of everything">
+  <meta name="twitter:description" content="I need some way to keep track of everything">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://antjowie.github.io/projects/axios-framework/" />
+  <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/data-manager/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
 
   <meta name="generator" content="Hugo 0.41" />
-  <link rel="canonical" href="https://antjowie.github.io/projects/axios-framework/" />
+  <link rel="canonical" href="https://antjowie.github.io/page/axios-framework/data-manager/" />
   <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -186,11 +186,12 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="projects-heading">
-              <h1>Axios Framework</h1>
+            <div class="page-heading">
+              <h1>Data Manager</h1>
                 
                   
-                    <h2 class="projects-subheading">The framework that powers all of my 2D games</h2>
+                    <hr class="small">
+                    <span class="page-subheading">I need some way to keep track of everything</span>
                   
                 
                 
@@ -207,92 +208,37 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The Axios framework makes use of <a href="https://www.sfml-dev.org/">SFML</a>. The Axios framework is used for 2D game development. It was actually meant to be a game engine, but I have no experience making a GUI yet, so a framework it is.
+        <p>The <code>Data Manager</code> is responsible for the data. This is not to be confused with the <code>Assets Manager</code> which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. It acutally is a map.
 </p>
 
-<blockquote>
-<p>You can follow this project on Github at this <a href="https://github.com/antjowie/axios-framework">repository</a></p>
-</blockquote>
+<h2 id="documentation">Documentation</h2>
 
-<h2 id="what-does-it-do">What does it do</h2>
+<h4 id="data-manager">Data Manager</h4>
 
-<p>The framework serves a role in the following subjects <code>(you can click the links to see the progress)</code>:</p>
+<p><em>Can also be a class. Holds two instances of Data</em></p>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> <a href="https://antjowie.github.io/page/axios-framework/game-instance/"><code>Instance</code></a>
+<h4 id="data">Data</h4>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Manage (de)initialization of modules</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Game loop</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Scene manager</code><br />
-<em>Scenes are containers that contain objects and sometimes static level data. A section can be the main menu, level, options menu, loading screen etc</em><br />
+<p><em>The Data class is a wrapper around an unordered map. It support serialization and checking</em></p>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> One frame stack</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Dynamic object management (add and remove objects during runtime)</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Object updating</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Object references</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Event handling</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Objects</code><br />
-<em>Objects are the building blocks of the game. Objects are build of components</em>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Object factory</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Animation handling</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Collision and Physics</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://antjowie.github.io/page/axios-framework/data-manager/"><code>Data manager</code></a><br />
-<em>Basic data containers for game data that has to be saved</em>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Game keybinding items</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> User config</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Assets manager</code>
-<em>Game textures, sounds, files that have to be loaded during gameplay but do not have to be saved</em>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Sound</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Music</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Images</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Fonts</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Asynchronous</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Tiled support</code><br />
-<em><a href="https://www.mapeditor.org/">Tiled</a> will be used as the main editor for scenes. With Tiled, all scenes initial state will be made.</em>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Load external map</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Make file containing all Object types</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <a href="https://antjowie.github.io/page/axios-framework/input-handler/"><code>Input handler</code></a>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Keyboard and mouse</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Controller</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Parsers and Converters</code>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> JSON parser</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> XML parser</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> SFML key code converter</label></li>
-</ul></label></li>
+<ul>
+<li><code>Functions</code></li>
+<li><strong>void check(name, value, force)</strong><br />
+Check a certain value. If force is true, force the change, else change only if it doesn&rsquo;t exist.</li>
+<li><strong>void check(force)</strong><br />
+Check the whole map, used before starting the game to see if every config item exists.</li>
+<li><strong>load/save</strong>
+Loads a JSON file or dumps to a JSON file. JSON files are parsed with the library <a href="https://nlohmann.github.io/json/">JSON for Modern C++</a>.</li>
 </ul>
 
-        
-          <div class="blog-tags">
-            
-              <a href="https://antjowie.github.io//tags/game-development/">game-development</a>&nbsp;
-            
-              <a href="https://antjowie.github.io//tags/framework/">framework</a>&nbsp;
-            
-              <a href="https://antjowie.github.io//tags/cpp/">cpp</a>&nbsp;
-            
-          </div>
+<h2 id="additional-notes">Additional notes</h2>
+
+<p>The reason why <code>Data Manager</code> and <code>Assets Manager</code> are seperated from eachother, is because the Data can be changed by the user. Assets are not supposed to be changed by the user. Assets do however, keep changing, atleast the content in <code>Assets Manager</code>. This means that the <code>Assets Manager</code> class will support asynchronios loading of assets, or some second buffer that is supposed to be swapped when changing <code>Scenes</code>. Data does not play a part in this. That is why I have split the two up in different classes.</p>
+
+<p>Suggestions or questions can be written down below as always.</p>
+
+<p><a href="https://antjowie.github.io/projects/axios-framework/">Return to project page</a></p>
+
         
 
         
@@ -303,7 +249,7 @@
 
 
 <li>
-    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;text=Axios%20Framework&amp;via="
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;text=Data%20Manager&amp;via="
        target="_blank" alt="" title="Share on Twitter">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -314,7 +260,7 @@
 
 
 <li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f" target="_blank" title="Share on Google Plus">
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f" target="_blank" title="Share on Google Plus">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
@@ -324,7 +270,7 @@
 
 
 <li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f" target="_blank" title="Share on Facebook">
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f" target="_blank" title="Share on Facebook">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -334,7 +280,7 @@
 
 
 <li>
-    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank" title="Share on Reddit">
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;title=Data%20Manager" target="_blank" title="Share on Reddit">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
@@ -344,7 +290,7 @@
 
 
 <li>
-    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank"
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;title=Data%20Manager" target="_blank"
        title="Share on LinkedIn">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -355,7 +301,7 @@
 
 
 <li>
-    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank"
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;title=Data%20Manager" target="_blank"
        title="Share on StumbleUpon">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -366,7 +312,7 @@
 
 
 <li>
-    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;description=Axios%20Framework" target="_blank"
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;description=Data%20Manager" target="_blank"
        title="Share on Pinterest">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -380,11 +326,6 @@
         
       </article>
 
-      
-        <ul class="pager blog-pager">
-          
-          
-        </ul>
       
 
 
