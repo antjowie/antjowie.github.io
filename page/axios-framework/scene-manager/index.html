@@ -5,23 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Data Manager</title>
-  <meta property="og:title" content="Data Manager" />
-  <meta name="twitter:title" content="Data Manager" />
-  <meta name="description" content="I need some way to keep track of everything">
-  <meta property="og:description" content="I need some way to keep track of everything">
-  <meta name="twitter:description" content="I need some way to keep track of everything">
+  <title>Scene Manager</title>
+  <meta property="og:title" content="Scene Manager" />
+  <meta name="twitter:title" content="Scene Manager" />
+  <meta name="description" content="Simple, a manager for all our scenes">
+  <meta property="og:description" content="Simple, a manager for all our scenes">
+  <meta name="twitter:description" content="Simple, a manager for all our scenes">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/data-manager/" />
+  <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/scene-manager/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
 
   <meta name="generator" content="Hugo 0.41" />
-  <link rel="canonical" href="https://antjowie.github.io/page/axios-framework/data-manager/" />
+  <link rel="canonical" href="https://antjowie.github.io/page/axios-framework/scene-manager/" />
   <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -187,11 +187,11 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
-              <h1>Data Manager</h1>
+              <h1>Scene Manager</h1>
                 
                   
                     <hr class="small">
-                    <span class="page-subheading">I need some way to keep track of everything</span>
+                    <span class="page-subheading">Simple, a manager for all our scenes</span>
                   
                 
                 
@@ -208,36 +208,65 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The <code>Data Manager</code> is responsible for the data. This is not to be confused with the <code>Assets Manager</code> which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. It actually is a map.
+        <p>A <code>Scene</code> is a level or a section. A certain moment in the program where a certain group of objects are loaded. The main menu is a scene. The level is a scene. <code>Scenes</code> are managers of objects.
 </p>
 
 <h2 id="documentation">Documentation</h2>
 
-<h4 id="data-manager">Data Manager</h4>
+<!-- > Github files: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/SceneManager.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/SceneManager.cpp) -->
 
-<p><em>Can also be a class. Holds two instances of Data</em></p>
-
-<h4 id="data">Data</h4>
-
-<p><em>The Data class is a wrapper around an unordered map. It supports serialization and checking</em></p>
-
-<ul>
-<li><code>Functions</code></li>
-<li><strong>void check(name, value, force)</strong><br />
-Check a certain value. If force is true, force the change, else change only if it doesn&rsquo;t exist.</li>
-<li><strong>void check(force)</strong><br />
-Check the whole map, used before starting the game to see if every config item exists.</li>
-<li><strong>load/save</strong>
-Loads a JSON file or dumps to a JSON file. JSON files are parsed with the library <a href="https://nlohmann.github.io/json/">JSON for Modern C++</a>.</li>
-</ul>
+<blockquote>
+<p>Github files yet to be added</p>
+</blockquote>
 
 <h2 id="design-choices">Design choices</h2>
 
-<p>The reason why <code>Data Manager</code> and <code>Assets Manager</code> are separated from each other, is because the Data can be changed by the user. Assets are not supposed to be changed by the user. Assets do, however, keep changing, or at least the content in <code>Assets Manager</code>. This means that the <code>Assets Manager</code> class will support asynchronous loading of assets or some second buffer that is supposed to be swapped when changing <code>Scenes</code>. Data does not play a part in this. That is why I have split the two up into different classes.</p>
+<p>Jump to a certain section:</p>
 
-<p>Suggestions or questions can be written down below as always.</p>
+<ul>
+<li><a href="#runtime-data-containers">Runtime data containers</a></li>
+<li><a href="#object-updating">Object updating</a></li>
+<li><a href="#object-reference-handling">Object reference handling</a></li>
+<li><a href="#event-handling">Event handling</a></li>
+</ul>
 
-<p><a href="https://antjowie.github.io/projects/axios-framework/">Return to project page</a></p>
+<h4 id="runtime-data-containers">Runtime data containers</h4>
+
+<p>The runtime data containers (one/two frame data container and dynamic data container) are used by objects. Because they only apply to objects are they not included in the <code>Assets Manager</code>.<br />
+The runtime data containers are kept in the <code>Scene Manager</code>. objects can access these containers via the reference they have to the <code>Scene</code>. The <code>Scene</code> holds a reference to the <code>Scene Manager</code> to push new <code>Scenes</code> and access the runtime data containers.<br />
+The user can specify the number of bytes the runtime containers can dynamically allocate. The <strong>new</strong> keyword is expansive, and during runtime object may need to dynamically allocate some memory. In that case, the runtime data containers are used.</p>
+
+<h4 id="the-difference-between-the-two-containers">The difference between the two containers</h4>
+
+<p>There are two data containers (one/two frame data container and dynamic data container). The difference is small. The one/two frame data container contains data that will live for two frames. Think about event data of internal calculations needed for the next frame. The data will be destructed automatically, so pointers become invalid very easily.<br />
+The dynamic data container contains data that will live for the whole lifetime of the <code>Scene</code>. They can be manually deallocated and are deallocated when the <code>Scene</code> ends. This container contains data that has to last longer than the next frame, like bullets from a gun or a flying arrow.</p>
+
+<h4 id="object-updating">Object updating</h4>
+
+<p>On paper it sounds easy, just call a virtual update function with the time and let an object do its thing. While this can work for simple games, things tend to get rough when objects depend on each other (or have references to each other) see the following examples.<br />
+When updating objects. The order can be very important. For example. Imagine a player position that is being updated by the car he is inside of. If the player is updated before the car, the player&rsquo;s position will be wrong because, at that moment in the game, the car hasn&rsquo;t moved yet. To help with this problem a simple priority system can be used. It goes by the name of buckets.<br />
+If we let an object update itself, it gets a lot of freedom. It will probably call all of its <code>Components</code> ([read more about objects and <code>Components</code> here] Yet to make the page). And so will the next object, and the next one. This causes the CPU to jump around doing the same calculations. It is far more efficient for a CPU to do an update of the same component at one time. This process is called <code>Batched Updates</code>.<br />
+At last, virtual functions can be expansive. Some objects don&rsquo;t even need to update every frame. It also means that every class that has to be updated or is dependent on subsystems in some way be an object. It is way better to make callback function hooks to the subsystems. This way, CPU cycles won&rsquo;t be wasted iterating over classes that don&rsquo;t even need to be updated.</p>
+
+<p>So how do we update?
+I&rsquo;ll write about it soon</p>
+
+<h4 id="object-reference-handling">Object reference handling</h4>
+
+<p>Objects are dependent on one another, so they need to be able to reference each other. A simple way could be to request a reference to an object. But what will happen if the object is destroyed and we try to access it?<br />
+This is why all references are wrapped in a simple checker class. It works as follows.</p>
+
+<p>There are two classes. ObjectReferenceManager(ORM) and ObjectReference(OR).<br />
+The ORM can be seen as a database containing all the references and the OR can be seen as a key to get the reference.</p>
+
+<p>Every object gets assigned a unique ID. This ID is not visible for the developer. The OR class contains two values, the unique ID of the object, and the index in the ORM database. When an object wants to construct a reference to an object. It passes the object into the constructor of an OR instance.<br />
+When a user wants to get the object, it passes the OR into the ORM. The OR checks the index, if the unique ID is still the same, the OR will return a <strong>pointer</strong> to the object, else it will return a <strong>nullptr</strong>.</p>
+
+<p>With this design, the object can check if the references object still exists.</p>
+
+<h4 id="event-handling">Event handling</h4>
+
+<p>I&rsquo;ll write about this soon</p>
 
         
 
@@ -249,7 +278,7 @@ Loads a JSON file or dumps to a JSON file. JSON files are parsed with the librar
 
 
 <li>
-    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;text=Data%20Manager&amp;via="
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;text=Scene%20Manager&amp;via="
        target="_blank" alt="" title="Share on Twitter">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -260,7 +289,7 @@ Loads a JSON file or dumps to a JSON file. JSON files are parsed with the librar
 
 
 <li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f" target="_blank" title="Share on Google Plus">
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f" target="_blank" title="Share on Google Plus">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
@@ -270,7 +299,7 @@ Loads a JSON file or dumps to a JSON file. JSON files are parsed with the librar
 
 
 <li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f" target="_blank" title="Share on Facebook">
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f" target="_blank" title="Share on Facebook">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -280,7 +309,7 @@ Loads a JSON file or dumps to a JSON file. JSON files are parsed with the librar
 
 
 <li>
-    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;title=Data%20Manager" target="_blank" title="Share on Reddit">
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;title=Scene%20Manager" target="_blank" title="Share on Reddit">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
@@ -290,7 +319,7 @@ Loads a JSON file or dumps to a JSON file. JSON files are parsed with the librar
 
 
 <li>
-    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;title=Data%20Manager" target="_blank"
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;title=Scene%20Manager" target="_blank"
        title="Share on LinkedIn">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -301,7 +330,7 @@ Loads a JSON file or dumps to a JSON file. JSON files are parsed with the librar
 
 
 <li>
-    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;title=Data%20Manager" target="_blank"
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;title=Scene%20Manager" target="_blank"
        title="Share on StumbleUpon">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -312,7 +341,7 @@ Loads a JSON file or dumps to a JSON file. JSON files are parsed with the librar
 
 
 <li>
-    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fdata-manager%2f&amp;description=Data%20Manager" target="_blank"
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;description=Scene%20Manager" target="_blank"
        title="Share on Pinterest">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>

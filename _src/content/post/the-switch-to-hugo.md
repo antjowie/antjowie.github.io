@@ -1,17 +1,17 @@
 ---
 title: "The Switch to Hugo"
 date: 2018-06-09T21:12:36+02:00
-subtitle: "But what is wrong with WordPress?"
+subtitle: "Goodbye WordPresss, hello Hugo"
 tags: 
     - web development
 bigimg: 
     # - {src: "path", desc: "description"}
 ---
-I used to have another portfolio site I made in preparation to enter the course [Creative Media and Game Technologies](https://www.nhtv.nl/bachelors/creative-media-and-game-technologies/introduction.html) at [NHTV](https://www.nhtv.nl/). `(I actually got a place in the course, read more about it [Have yet to import]())`. By doing so I hoped to increase my chances during the conversation.
+I used to have another portfolio site I made in preparation to enter the course [Creative Media and Game Technologies](https://www.nhtv.nl/bachelors/creative-media-and-game-technologies/introduction.html) at [NHTV](https://www.nhtv.nl/). [`(I actually got a place in the course, read more about it here)`]({{< ref "post/my-journey-towards-nhtv.md" >}}). By doing so I hoped to increase my chances during the conversation.
 
 > NHTV will be renamed to Breda University of Applied Sciences as of September 2018
 
-But I didn't have any prior knowledge of web development. So I started doing research. I always wondered how the web worked.
+Problem is, I didn't have any prior knowledge of web development. So I started doing research. I always wondered how the web worked.
 <!--more-->
 ___
 # Lets host a site

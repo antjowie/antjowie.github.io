@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Scene Manager</title>
+      <link>https://antjowie.github.io/page/axios-framework/scene-manager/</link>
+      <pubDate>Fri, 22 Jun 2018 14:36:52 +0200</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/axios-framework/scene-manager/</guid>
+      <description>&lt;p&gt;A &lt;code&gt;Scene&lt;/code&gt; is a level or a section. A certain moment in the program where a certain group of objects are loaded. The main menu is a scene. The level is a scene. &lt;code&gt;Scenes&lt;/code&gt; are managers of objects.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Parsers and Converters</title>
       <link>https://antjowie.github.io/page/axios-framework/parsers-and-converters/</link>
       <pubDate>Thu, 21 Jun 2018 19:57:14 +0200</pubDate>
@@ -28,7 +38,7 @@
       <pubDate>Tue, 19 Jun 2018 18:20:16 +0200</pubDate>
       <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
       <guid>https://antjowie.github.io/page/axios-framework/data-manager/</guid>
-      <description>&lt;p&gt;The &lt;code&gt;Data Manager&lt;/code&gt; is responsible for the data. This is not to be confused with the &lt;code&gt;Assets Manager&lt;/code&gt; which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. It acutally is a map.
+      <description>&lt;p&gt;The &lt;code&gt;Data Manager&lt;/code&gt; is responsible for the data. This is not to be confused with the &lt;code&gt;Assets Manager&lt;/code&gt; which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. It actually is a map.
 &lt;/p&gt;</description>
     </item>
     
@@ -68,13 +78,13 @@
       <pubDate>Sat, 09 Jun 2018 21:12:36 +0200</pubDate>
       <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
       <guid>https://antjowie.github.io/post/the-switch-to-hugo/</guid>
-      <description>&lt;p&gt;I used to have another portfolio site I made in preparation to enter the course &lt;a href=&#34;https://www.nhtv.nl/bachelors/creative-media-and-game-technologies/introduction.html&#34;&gt;Creative Media and Game Technologies&lt;/a&gt; at &lt;a href=&#34;https://www.nhtv.nl/&#34;&gt;NHTV&lt;/a&gt;. &lt;code&gt;(I actually got a place in the course, read more about it [Have yet to import]())&lt;/code&gt;. By doing so I hoped to increase my chances during the conversation.&lt;/p&gt;
+      <description>&lt;p&gt;I used to have another portfolio site I made in preparation to enter the course &lt;a href=&#34;https://www.nhtv.nl/bachelors/creative-media-and-game-technologies/introduction.html&#34;&gt;Creative Media and Game Technologies&lt;/a&gt; at &lt;a href=&#34;https://www.nhtv.nl/&#34;&gt;NHTV&lt;/a&gt;. &lt;a href=&#34;https://antjowie.github.io/post/my-journey-towards-nhtv/&#34;&gt;&lt;code&gt;(I actually got a place in the course, read more about it here)&lt;/code&gt;&lt;/a&gt;. By doing so I hoped to increase my chances during the conversation.&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;NHTV will be renamed to Breda University of Applied Sciences as of September 2018&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;But I didn&amp;rsquo;t have any prior knowledge of web development. So I started doing research. I always wondered how the web worked.
+&lt;p&gt;Problem is, I didn&amp;rsquo;t have any prior knowledge of web development. So I started doing research. I always wondered how the web worked.
 &lt;/p&gt;</description>
     </item>
     

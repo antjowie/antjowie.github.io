@@ -1,6 +1,10 @@
 /* --- Custom --- */
-ul.task-list {
+ul.task-list li{
   list-style: none;
+}
+
+ul.task-list li label{
+  font-weight: 400;
 }
 
 /* --- General --- */

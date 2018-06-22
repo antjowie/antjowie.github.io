@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>angelo05rettob@gmail.com (Angelo Anthony Rettob)</managingEditor>
     <webMaster>angelo05rettob@gmail.com (Angelo Anthony Rettob)</webMaster>
-    <lastBuildDate>Thu, 21 Jun 2018 19:57:14 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 22 Jun 2018 14:36:52 +0200</lastBuildDate>
     
 	<atom:link href="https://antjowie.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scene Manager</title>
+      <link>https://antjowie.github.io/page/axios-framework/scene-manager/</link>
+      <pubDate>Fri, 22 Jun 2018 14:36:52 +0200</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/axios-framework/scene-manager/</guid>
+      <description>&lt;p&gt;A &lt;code&gt;Scene&lt;/code&gt; is a level or a section. A certain moment in the program where a certain group of objects are loaded. The main menu is a scene. The level is a scene. &lt;code&gt;Scenes&lt;/code&gt; are managers of objects.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Parsers and Converters</title>
@@ -28,7 +38,7 @@
       <pubDate>Tue, 19 Jun 2018 18:20:16 +0200</pubDate>
       <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
       <guid>https://antjowie.github.io/page/axios-framework/data-manager/</guid>
-      <description>&lt;p&gt;The &lt;code&gt;Data Manager&lt;/code&gt; is responsible for the data. This is not to be confused with the &lt;code&gt;Assets Manager&lt;/code&gt; which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. It acutally is a map.
+      <description>&lt;p&gt;The &lt;code&gt;Data Manager&lt;/code&gt; is responsible for the data. This is not to be confused with the &lt;code&gt;Assets Manager&lt;/code&gt; which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. It actually is a map.
 &lt;/p&gt;</description>
     </item>
     

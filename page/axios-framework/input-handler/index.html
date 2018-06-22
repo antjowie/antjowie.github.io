@@ -222,23 +222,22 @@
 <p><em>The Input Handler serves as a layer between the program and all the supported HIDs. It does so by mapping every possible key and button into a KeyState (more on that later) and monitoring the events. The InputHandler polls the events and listens to key press states and key release states. It updates accordingly.</em></p>
 
 <ul>
-<li><code>Structures</code></li>
+<li><code>Classes</code></li>
 <li><strong>KeyState</strong><br />
-Every key has an KeyState instance. A KeyState keeps track of the state of the key, it has three booleans. isPressed, isHold and isReleased. These three values are updated in the update function. <a href="#deciding-the-state-of-a-key">Read below for more information about the way states are updates</a>.</li>
+Every key has a KeyState instance. A KeyState keeps track of the state of the key, it has three booleans. isPressed, isHold and isReleased. These three values are updated in the update function. <a href="#deciding-the-state-of-a-key">Read below for more information about the way states are updates</a>.</li>
 <li><code>Functions</code></li>
 <li><strong>void update(sf::RenderWindow&amp; window, sf::Event &amp;event)</strong>
-The update function uses the window and event because it uses the original event loop. If it created it&rsquo;s own event variable, not all the events would be captured. This is more apperant on lower fps. It first resets all the pressed and released states and then updates it if an event has happened.</li>
+The update function uses the window and event because it uses the original event loop. If it created it&rsquo;s own event variable, not all the events would be captured. This is more apparent on lower fps. It first resets all the pressed and released states and then updates it if an event has happened.</li>
 <li><strong>bool getters/setters</strong>
-Every key is an enumerator, which means every key has an unique int. We pass that int into the array that contains all the key states and it returns the key state.</li>
+Every key is an enumerator, which means every key has a unique int. We pass that int into the array that contains all the key states and it returns the key state.</li>
 </ul>
 
 <h2 id="additional-notes">Additional notes</h2>
 
 <h4 id="deciding-the-state-of-a-key">Deciding the state of a key</h4>
 
-<p>Input items have three states, <code>pressed</code>, <code>hold</code>, <code>released</code>. The program checks if a key is pressed and will check if the <code>hold state</code> is <strong>true</strong>. If the <code>hold state</code> is <strong>true</strong>, the <code>hold state</code> will remain <strong>true</strong>. If the <code>hold state</code> is <strong>false</strong>, the <code>hold state</code> and <code>pressed state</code> will turn <strong>true</strong>.  After every frame, the <code>pressed state</code> and <code>released state</code> will become <strong>false</strong>. If a key is released, the <code>release state</code> will become <strong>true</strong> and <code>all other states</code> will become <strong>false</strong>. (this actually reads terrible).</p>
-
-<p>To summarize default flow (every column is a frame):</p>
+<p>Input items have three states, <code>pressed</code>, <code>hold</code> and <code>released</code>. <code>When a key is pressed</code> the program will set <code>pressed and hold to true</code>. <strong>IF</strong> <code>hold already is true, pressed is false</code>. the program will reset every state to false each update call(which is usually each render loop <strong>not game loop</strong>). If a <code>key is released</code>, the <code>release will become true</code>.<br />
+To summarize default flow (every column is an update call):</p>
 
 <table>
 <thead>

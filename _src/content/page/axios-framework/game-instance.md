@@ -17,7 +17,7 @@ comments: true
 #### Instance
 _The `Instance` namespace keeps the function under one namespace. Because the three functions do not need any context, instance does not have to be a class._  
 
-## Additional notes
+## Design choices
 #### Game Loop and the importance of time
 The `Game Loop` is responsible for updating everything, it is the code that is repeatedly run.  
 

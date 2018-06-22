@@ -210,32 +210,31 @@
         <p>The Axios framework makes use of <a href="https://www.sfml-dev.org/">SFML</a>. The Axios framework is used for 2D game development. It was actually meant to be a game engine, but I have no experience making a GUI yet, so a framework it is.
 </p>
 
-<blockquote>
-<p>You can follow this project on Github at this <a href="https://github.com/antjowie/axios-framework">repository</a></p>
-</blockquote>
+<p>The framework is supposed to be an all inclusive pack. During the development of my two first games [Runaway]() and [Ray Shaper]() I noticed a certain pattern. Because time was crucial (Ray Shaper was my intake assignment for Breda University, <a href="https://antjowie.github.io/post/my-journey-towards-nhtv/">read more about that here</a>)
+&gt; You can follow this project on Github at this <a href="https://github.com/antjowie/axios-framework">repository</a></p>
 
 <h2 id="what-does-it-do">What does it do</h2>
 
 <p>The framework serves a role in the following subjects <code>(you can click the links to see the progress)</code>:</p>
 
 <ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> <a href="https://antjowie.github.io/page/axios-framework/game-instance/"><code>Instance</code></a>
+<li><a href="https://antjowie.github.io/page/axios-framework/game-instance/"><strong>Instance</strong></a>
 
 <ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Manage (de)initialization of modules</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Game loop</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Scene manager</code><br />
-<em>Scenes are containers that contain objects and sometimes static level data. A section can be the main menu, level, options menu, loading screen etc</em><br />
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Manage (de)initialization of modules</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Game loop</label></li>
+</ul></li>
+<li><a href="https://antjowie.github.io/page/axios-framework/scene-manager/"><strong>Scene manager</strong></a><br />
+<em>Scenes are containers that manage objects and allow object to interact with eachother. It also allows object to easilly make new data during runtime. A scene can be a menu or level, basically everything that the user makes in Tiled.</em><br />
 
 <ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> One frame stack</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Dynamic object management (add and remove objects during runtime)</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> One/two frame stack</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Dynamic runtime stack</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Object updating</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Object references</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Object reference handling</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Event handling</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Objects</code><br />
+</ul></li>
+<li><strong>Objects</strong><br />
 <em>Objects are the building blocks of the game. Objects are build of components</em>
 
 <ul class="task-list">
@@ -243,45 +242,47 @@
 <li><label><input type="checkbox" disabled class="task-list-item"> Animation handling</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Collision and Physics</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://antjowie.github.io/page/axios-framework/data-manager/"><code>Data manager</code></a><br />
+</ul></li>
+<li><a href="https://antjowie.github.io/page/axios-framework/data-manager/"><strong>Data manager</strong></a><br />
 <em>Basic data containers for game data that has to be saved</em>
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Game keybinding items</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> User config</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Assets manager</code>
-<em>Game textures, sounds, files that have to be loaded during gameplay but do not have to be saved</em>
+</ul></li>
+<li><strong>Assets manager</strong><br />
+<em>Game textures, sounds, files that are static and are different depending on the scene.</em>
 
 <ul class="task-list">
 <li><label><input type="checkbox" disabled class="task-list-item"> Sound</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Music</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Images</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Fonts</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Asynchronous</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Tiled support</code><br />
+<li><label><input type="checkbox" disabled class="task-list-item"> Asynchronous scene transition</label></li>
+</ul></li>
+<li><strong>Tiled support</strong><br />
 <em><a href="https://www.mapeditor.org/">Tiled</a> will be used as the main editor for scenes. With Tiled, all scenes initial state will be made.</em>
 
 <ul class="task-list">
 <li><label><input type="checkbox" disabled class="task-list-item"> Load external map</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Make file containing all Object types</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <a href="https://antjowie.github.io/page/axios-framework/input-handler/"><code>Input handler</code></a>
+</ul></li>
+<li><a href="https://antjowie.github.io/page/axios-framework/input-handler/"><strong>Input handler</strong></a>
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Keyboard and mouse</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Controller</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>Parsers and Converters</code>
+</ul></li>
+<li><a href="https://antjowie.github.io/page/axios-framework/parsers-and-converters/"><strong>Parsers and Converters</strong></a>
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> JSON parser</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> XML parser</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> SFML key code converter</label></li>
-</ul></label></li>
+</ul></li>
 </ul>
+
+<p>Please ask questions about the project in the dedicated subject.</p>
 
         
           <div class="blog-tags">
@@ -388,32 +389,6 @@
       
 
 
-      
-        
-          <div class="disqus-comments">
-            <div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "angelos-portfolio" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-          </div>
-        
-        
       
 
     </div>
