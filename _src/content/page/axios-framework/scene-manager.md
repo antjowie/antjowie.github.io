@@ -34,12 +34,25 @@ The dynamic data container contains data that will live for the whole lifetime o
 
 #### Object updating
 On paper it sounds easy, just call a virtual update function with the time and let an object do its thing. While this can work for simple games, things tend to get rough when objects depend on each other (or have references to each other) see the following examples.  
-When updating objects. The order can be very important. For example. Imagine a player position that is being updated by the car he is inside of. If the player is updated before the car, the player's position will be wrong because, at that moment in the game, the car hasn't moved yet. To help with this problem a simple priority system can be used. It goes by the name of buckets.  
-If we let an object update itself, it gets a lot of freedom. It will probably call all of its `Components` ([read more about objects and `Components` here] Yet to make the page). And so will the next object, and the next one. This causes the CPU to jump around doing the same calculations. It is far more efficient for a CPU to do an update of the same component at one time. This process is called `Batched Updates`.  
+
+When updating objects. The order can be very important. For example. Imagine a player position that is being updated by the car he is inside of. If the player is updated before the car, the player's position will be wrong because, at that moment in the game, the car hasn't moved yet. To help with this problem a simple priority system can be used. It goes by the name of buckets.
+
+If we let an object update itself, it gets a lot of freedom. It will probably call all of its `Components` ([read more about objects and `Components` here] Yet to make the page). And so will the next object, and the next one. This causes the CPU to jump around doing the same calculations. It is far more efficient for a CPU to do an update of the same component at one time. This process is called `Batched Updates`.
+
 At last, virtual functions can be expansive. Some objects don't even need to update every frame. It also means that every class that has to be updated or is dependent on subsystems in some way be an object. It is way better to make callback function hooks to the subsystems. This way, CPU cycles won't be wasted iterating over classes that don't even need to be updated.
 
-So how do we update?
-I'll write about it soon 
+So how do we update? Pretty easy actually. The scene manager will have two additional hooks. The beforeUpdate and afterUpdate hooks. This way, any class that wants to do something after and before the submodules updates will have access to do so. The update order will look a bit like this:
+{{< highlight cpp >}}
+beforeUpdate(elapsedTime);
+
+animation.updatePreMove(); 
+rigidBody.updatePosition(elapsedTime);
+rigidBody.resolveCollision();
+animation.updatePostMove(elapsedTime);
+// Update other subsystems if neccessary
+
+afterUpdate(elapsedTime);
+{{< /highlight >}}
 
 #### Object reference handling
 Objects are dependent on one another, so they need to be able to reference each other. A simple way could be to request a reference to an object. But what will happen if the object is destroyed and we try to access it?  
@@ -51,7 +64,9 @@ The ORM can be seen as a database containing all the references and the OR can b
 Every object gets assigned a unique ID. This ID is not visible for the developer. The OR class contains two values, the unique ID of the object, and the index in the ORM database. When an object wants to construct a reference to an object. It passes the object into the constructor of an OR instance.  
 When a user wants to get the object, it passes the OR into the ORM. The OR checks the index, if the unique ID is still the same, the OR will return a **pointer** to the object, else it will return a **nullptr**.
 
-With this design, the object can check if the references object still exists. 
+With this design, the object can check if the referenced object still exists. 
 
 #### Event handling
 I'll write about this soon
+
+[Return to project page]({{< ref "projects\axios-framework.md" >}})
