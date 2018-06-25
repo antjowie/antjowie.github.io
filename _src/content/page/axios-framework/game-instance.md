@@ -8,7 +8,7 @@ bigimg:
     # - {src: "path", desc: "description"}
 comments: true
 ---
-`Instance` is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. `Instance` is responsible for managing the render window and guiding the program. It is the main loop of the game
+`Instance` is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. `Instance` is responsible for managing the render window and guiding the program. It is the main loop of the game.
 <!--more-->
 
 ## Documentation
