@@ -13,7 +13,7 @@ The `Data Manager` is responsible for the data. This is not to be confused with 
 
 ## Documentation
 #### Data Manager
-_Can also be a class. Holds two instances of Data_
+_A global class that hides the Data class. Holds two static Data instances. One for keybindings, the other for game configurations._
 
 #### Data
 _The Data class is a wrapper around an unordered map. It supports serialization and checking_
@@ -24,7 +24,7 @@ Check a certain value. If force is true, force the change, else change only if i
 - **void check(force)**  
 Check the whole map, used before starting the game to see if every config item exists.
 - **load/save**
-Loads a JSON file or dumps to a JSON file. JSON files are parsed with the library [JSON for Modern C++](https://nlohmann.github.io/json/).
+Loads a JSON file or dumps to a JSON file. JSON files are parsed with the library [JSON for Modern C++](https://nlohmann.github.io/json/). ([Read more about why I chose this library here]({{< ref "page/axios-framework/utilities.md">}}#So-many-possibilities-(almost roping))).
 
 ## Design choices
 The reason why `Data Manager` and `Assets Manager` are separated from each other, is because the Data can be changed by the user. Assets are not supposed to be changed by the user. Assets do, however, keep changing, or at least the content in `Assets Manager`. This means that the `Assets Manager` class will support asynchronous loading of assets or some second buffer that is supposed to be swapped when changing ` Scenes`. Data does not play a part in this. That is why I have split the two up into different classes.

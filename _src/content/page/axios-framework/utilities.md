@@ -11,12 +11,15 @@ comments: true
 Some things just have to be saved. In our case configurations. To make life easier for both of us (computers and humans), data is saved in a special format. There are many formats that we can choose from. But because of my recent studying of Python and Web Development. My preference for [XML](https://www.w3.org/XML/) (which I only used because of Tiled) shifted to [JSON](https://www.json.org/), a much more easier format, IMHO.
 <!--more-->
 
+## Table of Contents
+- [Table of Contents](#table-of-contents)
 - [So many possibilities (almost roping)](#so-many-possibilities-almost-roping)
 - [SFML key code converter](#sfml-key-code-converter)
 - [Logger](#logger)
 
 ## So many possibilities (almost roping)
 > Code hosted on GitHub: [Header] and [Source]
+
 As told in the first paragraph my preference has gone to JSON. But what is JSON?
 
 **J**ava**S**cript **O**bject **N**otation is such a simple format. It is like one big array. Is consist of key and values, just like our `Data` class. So why not JSON?  

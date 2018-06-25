@@ -215,7 +215,7 @@
 
 <h4 id="data-manager">Data Manager</h4>
 
-<p><em>Can also be a class. Holds two instances of Data</em></p>
+<p><em>A global class that hides the Data class. Holds two static Data instances. One for keybindings, the other for game configurations.</em></p>
 
 <h4 id="data">Data</h4>
 
@@ -228,7 +228,7 @@ Check a certain value. If force is true, force the change, else change only if i
 <li><strong>void check(force)</strong><br />
 Check the whole map, used before starting the game to see if every config item exists.</li>
 <li><strong>load/save</strong>
-Loads a JSON file or dumps to a JSON file. JSON files are parsed with the library <a href="https://nlohmann.github.io/json/">JSON for Modern C++</a>.</li>
+Loads a JSON file or dumps to a JSON file. JSON files are parsed with the library <a href="https://nlohmann.github.io/json/">JSON for Modern C++</a>. (<a href="https://antjowie.github.io/page/axios-framework/utilities/#So-many-possibilities-(almost roping)">Read more about why I chose this library here</a>).</li>
 </ul>
 
 <h2 id="design-choices">Design choices</h2>
