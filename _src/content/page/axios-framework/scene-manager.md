@@ -13,7 +13,7 @@ A `Scene` is a level or a section. A certain moment in the program where a certa
  
 ## Documentation
 <!-- > Github files: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/SceneManager.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/SceneManager.cpp) -->
-> Github files yet to be added
+> Code hosted on Github: yet to **add** files
 
 ## Design choices
 Jump to a certain section:
@@ -35,7 +35,8 @@ The dynamic data container contains data that will live for the whole lifetime o
 #### Object updating
 On paper it sounds easy, just call a virtual update function with the time and let an object do its thing. While this can work for simple games, things tend to get rough when objects depend on each other (or have references to each other) see the following examples.  
 
-When updating objects. The order can be very important. For example. Imagine a player position that is being updated by the car he is inside of. If the player is updated before the car, the player's position will be wrong because, at that moment in the game, the car hasn't moved yet. To help with this problem a simple priority system can be used. It goes by the name of buckets.
+#### Problems with a virtual update function
+When updating objects. The order can be very important. For example. Imagine a player position that is being updated by the car he is inside of. If the player is updated before the car, the player's position will be wrong because, at that moment in the game, the car hasn't moved yet. To help with this problem a simple priority system can be used. It goes by the name of [`Buckets`](#buckets).
 
 If we let an object update itself, it gets a lot of freedom. It will probably call all of its `Components` ([read more about objects and `Components` here] Yet to make the page). And so will the next object, and the next one. This causes the CPU to jump around doing the same calculations. It is far more efficient for a CPU to do an update of the same component at one time. This process is called `Batched Updates`.
 
@@ -43,7 +44,8 @@ At last, virtual functions can be expansive. Some objects don't even need to upd
 
 So how do we update? Pretty easy actually. The scene manager will have two additional hooks. The beforeUpdate and afterUpdate hooks. This way, any class that wants to do something after and before the submodules updates will have access to do so. The update order will look a bit like this:
 {{< highlight cpp >}}
-beforeUpdate(elapsedTime);
+// In scene.update(const float &elapsedTime)
+beforeUpdateManager(elapsedTime);
 
 animation.updatePreMove(); 
 rigidBody.updatePosition(elapsedTime);
@@ -51,8 +53,13 @@ rigidBody.resolveCollision();
 animation.updatePostMove(elapsedTime);
 // Update other subsystems if neccessary
 
-afterUpdate(elapsedTime);
+afterUpdateManager(elapsedTime);
 {{< /highlight >}}
+
+#### Buckets
+Buckets are a way to prioritize updating order. It acutally is a very simple enumerator that decides in which order the function object appear. Indeed, the beforeUpdate and afterUpdate are classes. They contain two member variables. mBucket and mFunction (struct would make more sense, but all members are private. In the end, worrying about it is just wasting time IMO). The class will friend (Before/After)UpdateManager (UM). UM will sort the function object internally. 
+
+The lowest enumerator will have the highest priority (same as our [Logger Verbosity]({{< ref "page\axios-framework\utilities.md">}}#logger) value). It is also kown as the weight. The internal data container is just a simple vector.
 
 #### Object reference handling
 Objects are dependent on one another, so they need to be able to reference each other. A simple way could be to request a reference to an object. But what will happen if the object is destroyed and we try to access it?  
@@ -69,4 +76,4 @@ With this design, the object can check if the referenced object still exists.
 #### Event handling
 I'll write about this soon
 
-[Return to project page]({{< ref "projects\axios-framework.md" >}})
+[Return to project page.]({{< ref "projects\axios-framework.md" >}}#what-does-it-do)

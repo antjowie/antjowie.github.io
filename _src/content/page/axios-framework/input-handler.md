@@ -12,7 +12,7 @@ The `Input handler` listens to all events. It is the layer between everything th
 <!--more-->
 
 ## Documentation
-> Github files: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/InputHandler.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/InputHandler.cpp)
+> Code hosted on Github: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/InputHandler.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/InputHandler.cpp)
 
 #### InputHandler
 _The Input Handler serves as a layer between the program and all the supported HIDs. It does so by mapping every possible key and button into a KeyState (more on that later) and monitoring the events. The InputHandler polls the events and listens to key press states and key release states. It updates accordingly._
@@ -40,4 +40,4 @@ To summarize default flow (every column is an update call):
 
 Be sure to talk if you have something on your mind, you can even do so down below, I won't mind.
 
-[Return to project page]({{< ref "projects\axios-framework.md" >}})
+[Return to project page.]({{< ref "projects\axios-framework.md" >}}#what-does-it-do)

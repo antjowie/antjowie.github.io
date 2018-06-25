@@ -12,7 +12,7 @@ comments: true
 <!--more-->
 
 ## Documentation
-> Github files: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/Instance.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/Instance.cpp)
+> Code hosted on Github: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/Instance.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/Instance.cpp)
 
 #### Instance
 _The `Instance` namespace keeps the function under one namespace. Because the three functions do not need any context, instance does not have to be a class._  
@@ -34,4 +34,4 @@ In the end, it all depends on your game. I will take the latter approach because
 
 That should conclude the game instance class. If you have any questions or suggestions, leave them in the comments down below. Thank you!
 
-[Return to project page]({{< ref "projects\axios-framework.md" >}})
+[Return to project page.]({{< ref "projects\axios-framework.md" >}}#what-does-it-do)

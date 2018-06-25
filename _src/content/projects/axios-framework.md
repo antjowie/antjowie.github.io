@@ -14,7 +14,8 @@ comments: false
 The Axios framework makes use of [SFML](https://www.sfml-dev.org/). The Axios framework is used for 2D game development. It was actually meant to be a game engine, but I have no experience making a GUI yet. I believe that you should not do two major new subjects at the same time, so a framework it is. 
 <!--more-->
 
-The framework is supposed to be an all inclusive pack. During the development of my two first games [Runaway]() and [Ray Shaper]() I noticed a certain pattern. Because time was crucial (Ray Shaper was my intake assignment for Breda University, [read more about that here]({{< ref "post\my-journey-towards-nhtv.md" >}}))
+The framework is supposed to be an all inclusive pack. During the development of my two first games [Runaway](https://github.com/antjowie/Runaway) and [Ray Shaper](https://github.com/antjowie/Ray-Shaper) I noticed a certain pattern. Because time was crucial (Ray Shaper was my intake assignment for Breda University, [read more about that here]({{< ref "post\my-journey-towards-nhtv.md" >}}))
+
 > You can follow this project on Github at this [repository](https://github.com/antjowie/axios-framework)
 
 ## What does it do
@@ -36,6 +37,10 @@ The framework serves a role in the following subjects `(you can click the bold t
     - [ ] Animation handling
     - [ ] Collision and Physics
     - [ ] Object serialization
+-  **Subsystems**  
+    _Subsystems are systems that classes can make hooks to. They are updated in every scene. The reason why subsystems are not in the objects is because this way couping between subsystems and objects is not present_
+    - [ ] Animation
+    - [ ] Rigid body (collision response/physics)
 - [**Data manager**]({{< ref "page\axios-framework\data-manager.md" >}})  
     _Basic data containers for game data that has to be saved_
     - [X] Game keybinding items
@@ -54,9 +59,9 @@ The framework serves a role in the following subjects `(you can click the bold t
 - [**Input handler**]({{< ref "page\axios-framework\input-handler.md" >}})
     - [X] Keyboard and mouse
     - [ ] Controller
-- [**Parsers and Converters**]({{< ref "page\axios-framework\parsers-and-converters.md" >}})
+- [**Utilities**]({{< ref "page\axios-framework\utilities.md" >}})
     - [X] JSON parser
-    - [ ] XML parser
     - [ ] SFML key code converter
+    - [X] Logger
 
 Please ask questions about the project in the dedicated subject. 

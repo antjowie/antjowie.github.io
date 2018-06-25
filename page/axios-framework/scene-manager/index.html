@@ -216,7 +216,7 @@
 <!-- > Github files: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/SceneManager.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/SceneManager.cpp) -->
 
 <blockquote>
-<p>Github files yet to be added</p>
+<p>Code hosted on Github: yet to <strong>add</strong> files</p>
 </blockquote>
 
 <h2 id="design-choices">Design choices</h2>
@@ -245,14 +245,17 @@ The dynamic data container contains data that will live for the whole lifetime o
 
 <p>On paper it sounds easy, just call a virtual update function with the time and let an object do its thing. While this can work for simple games, things tend to get rough when objects depend on each other (or have references to each other) see the following examples.</p>
 
-<p>When updating objects. The order can be very important. For example. Imagine a player position that is being updated by the car he is inside of. If the player is updated before the car, the player&rsquo;s position will be wrong because, at that moment in the game, the car hasn&rsquo;t moved yet. To help with this problem a simple priority system can be used. It goes by the name of buckets.</p>
+<h4 id="problems-with-a-virtual-update-function">Problems with a virtual update function</h4>
+
+<p>When updating objects. The order can be very important. For example. Imagine a player position that is being updated by the car he is inside of. If the player is updated before the car, the player&rsquo;s position will be wrong because, at that moment in the game, the car hasn&rsquo;t moved yet. To help with this problem a simple priority system can be used. It goes by the name of <a href="#buckets"><code>Buckets</code></a>.</p>
 
 <p>If we let an object update itself, it gets a lot of freedom. It will probably call all of its <code>Components</code> ([read more about objects and <code>Components</code> here] Yet to make the page). And so will the next object, and the next one. This causes the CPU to jump around doing the same calculations. It is far more efficient for a CPU to do an update of the same component at one time. This process is called <code>Batched Updates</code>.</p>
 
 <p>At last, virtual functions can be expansive. Some objects don&rsquo;t even need to update every frame. It also means that every class that has to be updated or is dependent on subsystems in some way be an object. It is way better to make callback function hooks to the subsystems. This way, CPU cycles won&rsquo;t be wasted iterating over classes that don&rsquo;t even need to be updated.</p>
 
 <p>So how do we update? Pretty easy actually. The scene manager will have two additional hooks. The beforeUpdate and afterUpdate hooks. This way, any class that wants to do something after and before the submodules updates will have access to do so. The update order will look a bit like this:
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">beforeUpdate(elapsedTime);
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#998;font-style:italic">// In scene.update(const float &amp;elapsedTime)
+</span><span style="color:#998;font-style:italic"></span>beforeUpdateManager(elapsedTime);
 
 animation.updatePreMove(); 
 rigidBody.updatePosition(elapsedTime);
@@ -260,8 +263,14 @@ rigidBody.resolveCollision();
 animation.updatePostMove(elapsedTime);
 <span style="color:#998;font-style:italic">// Update other subsystems if neccessary
 </span><span style="color:#998;font-style:italic"></span>
-afterUpdate(elapsedTime);
+afterUpdateManager(elapsedTime);
 </code></pre></div></p>
+
+<h4 id="buckets">Buckets</h4>
+
+<p>Buckets are a way to prioritize updating order. It acutally is a very simple enumerator that decides in which order the function object appear. Indeed, the beforeUpdate and afterUpdate are classes. They contain two member variables. mBucket and mFunction (struct would make more sense, but all members are private. In the end, worrying about it is just wasting time IMO). The class will friend (Before/After)UpdateManager (UM). UM will sort the function object internally.</p>
+
+<p>The lowest enumerator will have the highest priority (same as our <a href="https://antjowie.github.io/page/axios-framework/utilities/#logger">Logger Verbosity</a> value). It is also kown as the weight. The internal data container is just a simple vector.</p>
 
 <h4 id="object-reference-handling">Object reference handling</h4>
 
@@ -280,7 +289,7 @@ When a user wants to get the object, it passes the OR into the ORM. The OR check
 
 <p>I&rsquo;ll write about this soon</p>
 
-<p><a href="https://antjowie.github.io/projects/axios-framework/">Return to project page</a></p>
+<p><a href="https://antjowie.github.io/projects/axios-framework/#what-does-it-do">Return to project page.</a></p>
 
         
 

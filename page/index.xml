@@ -23,11 +23,11 @@
     </item>
     
     <item>
-      <title>Parsers and Converters</title>
-      <link>https://antjowie.github.io/page/axios-framework/parsers-and-converters/</link>
+      <title>Utilities</title>
+      <link>https://antjowie.github.io/page/axios-framework/utilities/</link>
       <pubDate>Thu, 21 Jun 2018 19:57:14 +0200</pubDate>
       <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
-      <guid>https://antjowie.github.io/page/axios-framework/parsers-and-converters/</guid>
+      <guid>https://antjowie.github.io/page/axios-framework/utilities/</guid>
       <description>&lt;p&gt;Some things just have to be saved. In our case configurations. To make life easier for both of us (computers and humans), data is saved in a special format. There are many formats that we can choose from. But because of my recent studying of Python and Web Development. My preference for &lt;a href=&#34;https://www.w3.org/XML/&#34;&gt;XML&lt;/a&gt; (which I only used because of Tiled) shifted to &lt;a href=&#34;https://www.json.org/&#34;&gt;JSON&lt;/a&gt;, a much more easier format, IMHO.
 &lt;/p&gt;</description>
     </item>

@@ -5,23 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Parsers and Converters</title>
-  <meta property="og:title" content="Parsers and Converters" />
-  <meta name="twitter:title" content="Parsers and Converters" />
-  <meta name="description" content="Passing data around and saving it">
-  <meta property="og:description" content="Passing data around and saving it">
-  <meta name="twitter:description" content="Passing data around and saving it">
+  <title>Utilities</title>
+  <meta property="og:title" content="Utilities" />
+  <meta name="twitter:title" content="Utilities" />
+  <meta name="description" content="Classes and functions with no specific purpose">
+  <meta property="og:description" content="Classes and functions with no specific purpose">
+  <meta name="twitter:description" content="Classes and functions with no specific purpose">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/parsers-and-converters/" />
+  <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/utilities/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
 
   <meta name="generator" content="Hugo 0.41" />
-  <link rel="canonical" href="https://antjowie.github.io/page/axios-framework/parsers-and-converters/" />
+  <link rel="canonical" href="https://antjowie.github.io/page/axios-framework/utilities/" />
   <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -187,11 +187,11 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
-              <h1>Parsers and Converters</h1>
+              <h1>Utilities</h1>
                 
                   
                     <hr class="small">
-                    <span class="page-subheading">Passing data around and saving it</span>
+                    <span class="page-subheading">Classes and functions with no specific purpose</span>
                   
                 
                 
@@ -211,16 +211,40 @@
         <p>Some things just have to be saved. In our case configurations. To make life easier for both of us (computers and humans), data is saved in a special format. There are many formats that we can choose from. But because of my recent studying of Python and Web Development. My preference for <a href="https://www.w3.org/XML/">XML</a> (which I only used because of Tiled) shifted to <a href="https://www.json.org/">JSON</a>, a much more easier format, IMHO.
 </p>
 
+<ul>
+<li><a href="#so-many-possibilities-almost-roping">So many possibilities (almost roping)</a></li>
+<li><a href="#sfml-key-code-converter">SFML key code converter</a></li>
+<li><a href="#logger">Logger</a></li>
+</ul>
+
 <h2 id="so-many-possibilities-almost-roping">So many possibilities (almost roping)</h2>
 
-<p>This page will mainly explain the reasons why I chose certain libraries. So why did I chose JSON?</p>
+<blockquote>
+<p>Code hosted on GitHub: [Header] and [Source]
+As told in the first paragraph my preference has gone to JSON. But what is JSON?</p>
+</blockquote>
 
 <p><strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation is such a simple format. It is like one big array. Is consist of key and values, just like our <code>Data</code> class. So why not JSON?<br />
 I also find JSON easy to read and thus to edit. XML is also quite easy, but accessing XML is another story (or maybe I should&rsquo;ve studied the librarys documentationa bit more). For our purposes, JSON suffies.</p>
 
 <p>I chose the library <a href="https://nlohmann.github.io/json/">JSON for Modern c++</a>. It isn&rsquo;t the fastest parser, but it is really easy to use. Just include one header. And parsing a 20kb text file doesn&rsquo;t take that long either.</p>
 
-<p><a href="https://antjowie.github.io/projects/axios-framework/">Return to project page</a></p>
+<h2 id="sfml-key-code-converter">SFML key code converter</h2>
+
+<p>Yet to be written</p>
+
+<h2 id="logger">Logger</h2>
+
+<blockquote>
+<p>Code hosted on Github: <a href="https://github.com/antjowie/Axios-framework/blob/master/include/Axios/Logger.h">Header</a> and <a href="https://github.com/antjowie/Axios-framework/blob/master/src/Axios/Logger.cpp">Source</a></p>
+
+<p>Note: At the moment there is a very simple logger that only logs our messages to the console because I&rsquo;m investing my time in more important manners. This is just a simple bit of code so that when the logger will gain some functionallity, I don&rsquo;t have to change all the code.</p>
+</blockquote>
+
+<p>The logger is a very handy tool for every programmer. It allows the programmer to send custom messages when it is needed. After a while more different messages will pop up. Some may be less important than others. This is when Verbosity plays a role.<br />
+Verbosity is implemented as a weight system, the lower the value, the more important it is. The programmer can set a verbosity limit. Messages higher than this verbosity will not be logged or displayed.</p>
+
+<p><a href="https://antjowie.github.io/projects/axios-framework/#what-does-it-do">Return to project page.</a></p>
 
         
 
@@ -232,7 +256,7 @@ I also find JSON easy to read and thus to edit. XML is also quite easy, but acce
 
 
 <li>
-    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;text=Parsers%20and%20Converters&amp;via="
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2futilities%2f&amp;text=Utilities&amp;via="
        target="_blank" alt="" title="Share on Twitter">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -243,7 +267,7 @@ I also find JSON easy to read and thus to edit. XML is also quite easy, but acce
 
 
 <li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f" target="_blank" title="Share on Google Plus">
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2futilities%2f" target="_blank" title="Share on Google Plus">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
@@ -253,7 +277,7 @@ I also find JSON easy to read and thus to edit. XML is also quite easy, but acce
 
 
 <li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f" target="_blank" title="Share on Facebook">
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2futilities%2f" target="_blank" title="Share on Facebook">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -263,7 +287,7 @@ I also find JSON easy to read and thus to edit. XML is also quite easy, but acce
 
 
 <li>
-    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;title=Parsers%20and%20Converters" target="_blank" title="Share on Reddit">
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2futilities%2f&amp;title=Utilities" target="_blank" title="Share on Reddit">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
@@ -273,7 +297,7 @@ I also find JSON easy to read and thus to edit. XML is also quite easy, but acce
 
 
 <li>
-    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;title=Parsers%20and%20Converters" target="_blank"
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2futilities%2f&amp;title=Utilities" target="_blank"
        title="Share on LinkedIn">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -284,7 +308,7 @@ I also find JSON easy to read and thus to edit. XML is also quite easy, but acce
 
 
 <li>
-    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;title=Parsers%20and%20Converters" target="_blank"
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2futilities%2f&amp;title=Utilities" target="_blank"
        title="Share on StumbleUpon">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -295,7 +319,7 @@ I also find JSON easy to read and thus to edit. XML is also quite easy, but acce
 
 
 <li>
-    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fparsers-and-converters%2f&amp;description=Parsers%20and%20Converters" target="_blank"
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2futilities%2f&amp;description=Utilities" target="_blank"
        title="Share on Pinterest">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
