@@ -8,14 +8,14 @@ bigimg:
     # - {src: "path", desc: "description"}
 comments: true
 ---
-`Instance` is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. `Instance` is responsible for managing the game settings. All the user configurations (keybindings, resolution, audio) and the data path (path to the game assets) will be managed by `Instance`.
+`Instance` is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. `Instance` is responsible for managing the render window and guiding the program. It is the main loop of the game
 <!--more-->
 
 ## Documentation
 > Code hosted on Github: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/Instance.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/Instance.cpp)
 
 #### Instance
-_The `Instance` namespace keeps the function under one namespace. Because the three functions do not need any context, instance does not have to be a class._  
+_The `Instance` class manages the whole render window. It has been made a class to work around the fact that SFML does not support open windows to turn to fullscreen._  
 
 ## Design choices
 #### Game Loop and the importance of time

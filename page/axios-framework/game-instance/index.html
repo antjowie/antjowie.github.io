@@ -208,7 +208,7 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p><code>Instance</code> is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. <code>Instance</code> is responsible for managing the game settings. All the user configurations (keybindings, resolution, audio) and the data path (path to the game assets) will be managed by <code>Instance</code>.
+        <p><code>Instance</code> is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. <code>Instance</code> is responsible for managing the render window and guiding the program. It is the main loop of the game
 </p>
 
 <h2 id="documentation">Documentation</h2>
@@ -219,7 +219,7 @@
 
 <h4 id="instance">Instance</h4>
 
-<p><em>The <code>Instance</code> namespace keeps the function under one namespace. Because the three functions do not need any context, instance does not have to be a class.</em></p>
+<p><em>The <code>Instance</code> class manages the whole render window. It has been made a class to work around the fact that SFML does not support open windows to turn to fullscreen.</em></p>
 
 <h2 id="design-choices">Design choices</h2>
 

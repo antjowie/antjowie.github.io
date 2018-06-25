@@ -19,11 +19,12 @@ The framework is supposed to be an all inclusive pack. During the development of
 > You can follow this project on Github at this [repository](https://github.com/antjowie/axios-framework)
 
 ## What does it do
-The framework serves a role in the following subjects `(you can click the bold title to see the progress)`:
+The framework serves a role in the following subjects. Marked subject are under development. Unmarked dubjects are yet to be worked on. `(you can click the bold title to see the progress)`:
 
 -  [**Instance**]({{< ref "page\axios-framework\game-instance.md" >}})
     - [X] Manage (de)initialization of modules
     - [X] Game loop
+    - [X] Workaround to make window fullscreen during runtime
 -  [**Scene manager**]({{< ref "page\axios-framework\scene-manager.md" >}})  
     _Scenes are containers that manage objects and allow object to interact with eachother. It also allows object to easilly make new data during runtime. A scene can be a menu or level, basically everything that the user makes in Tiled._  
     - [ ] One/two frame stack
