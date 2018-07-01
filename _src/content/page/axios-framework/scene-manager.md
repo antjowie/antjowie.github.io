@@ -42,22 +42,54 @@ If we let an object update itself, it gets a lot of freedom. It will probably ca
 
 At last, virtual functions can be expansive. Some objects don't even need to update every frame. It also means that every class that has to be updated or is dependent on subsystems in some way be an object. It is way better to make callback function hooks to the subsystems. This way, CPU cycles won't be wasted iterating over classes that don't even need to be updated.
 
-So how do we update? Pretty easy actually. The scene manager will have two additional hooks. The beforeUpdate and afterUpdate hooks. This way, any class that wants to do something after and before the submodules updates will have access to do so. The update order will look a bit like this:
+So how do we update? Pretty easy actually. The scene manager will have two additional hooks. The postUpdate and preUpdate hooks. This way, any class that wants to do something after and before the submodules updates will have access to do so. The update order will look a bit like this:
 {{< highlight cpp >}}
 // In scene.update(const float &elapsedTime)
-beforeUpdateManager(elapsedTime);
+preUpdateManager(elapsedTime);
 
-animation.updatePreMove(); 
-rigidBody.updatePosition(elapsedTime);
-rigidBody.resolveCollision();
-animation.updatePostMove(elapsedTime);
+animation._updatePreMove(); // Get the movement before the position is updated
+rigidBody._moveAndResolveCollision(elapsedTime); // Update the requested position and resolve collisions 
+animation._updatePostMove(elapsedTime); // Use the difference in movement to update animation
 // Update other subsystems if neccessary
 
-afterUpdateManager(elapsedTime);
+postUpdateManager(elapsedTime);
+{{< /highlight >}}
+
+And an example of including the preUpdate class:
+{{< highlight cpp >}}
+Object Object():
+    m_vehicle(nullptr),m_movement(0)
+{
+    preUpdateManager.callback(preUpdate(Bucket::Entity, [&](const float elapsedTime)
+    {
+        if(m_vehicle != nullptr)
+        {
+            m_movement = m_vehicle.getPosition() - m_sprite.getPosition();
+        }
+        else
+        {
+            m_movement.x -= ax::InputHandler.getInstance().getItem("left").isHold ? 1 * elapsedTime : 0;
+            m_movement.x += ax::InputHandler.getInstance().getItem("right").isHold ? 1 * elapsedTime : 0;
+            
+            if(ax::InputHandler.getInstance().getItem("jump").isPressed == true)
+            {
+                m_movement.y +=  ? 1 : 0;
+                m_jumped = true;
+            }
+            else
+                m_movement.y -= ax::InputHandler.getInstance().getItem("left") ? 1 * elapsedTime : 0;
+        }
+    });
+
+    ax::rigidBody.callback([&](const float elapsedTime)
+    {
+        m_sprite.move(m_movement * elapsedTime)
+    });
+}
 {{< /highlight >}}
 
 #### Buckets
-Buckets are a way to prioritize updating order. It acutally is a very simple enumerator that decides in which order the function object appear. Indeed, the beforeUpdate and afterUpdate are classes. They contain two member variables. mBucket and mFunction (struct would make more sense, but all members are private. In the end, worrying about it is just wasting time IMO). The class will friend (Before/After)UpdateManager (UM). UM will sort the function object internally. 
+Buckets are a way to prioritize updating order. It acutally is a very simple enumerator that decides in which order the function object appear. Indeed, the postUpdate and preUpdate are classes. They contain two member variables. mBucket and mFunction (struct would make more sense, but all members are private. In the end, worrying about it is just wasting time IMO). Components can add hooks to the manager of these classes. The PreUpdateManager and PostUpdateManager. UM will sort the function object internally.
 
 The lowest enumerator will have the highest priority (same as our [Logger Verbosity]({{< ref "page\axios-framework\utilities.md">}}#logger) value). It is also kown as the weight. The internal data container is just a simple vector.
 
@@ -74,6 +106,8 @@ When a user wants to get the object, it passes the OR into the ORM. The OR check
 With this design, the object can check if the referenced object still exists. 
 
 #### Event handling
-I'll write about this soon
+Events are... events. Activities happening in game that other objects should react at. Explosions, gun shots, but also things like a player entering a car, or a player picking up a health pack. Events are not only in game events, but also input events. So how should we handle these events in an efficient manner?
+
+
 
 [Return to project page.]({{< ref "projects\axios-framework.md" >}}#what-does-it-do)

@@ -14,12 +14,12 @@ comments: false
 The Axios framework makes use of [SFML](https://www.sfml-dev.org/). The Axios framework is used for 2D game development. It was actually meant to be a game engine, but I have no experience making a GUI yet. I believe that you should not do two major new subjects at the same time, so a framework it is. 
 <!--more-->
 
-The framework is supposed to be an all inclusive pack. During the development of my two first games [Runaway](https://github.com/antjowie/Runaway) and [Ray Shaper](https://github.com/antjowie/Ray-Shaper) I noticed a certain pattern. Because time was crucial (Ray Shaper was my intake assignment for Breda University, [read more about that here]({{< ref "post\my-journey-towards-nhtv.md" >}}))
+The framework is supposed to be an all inclusive pack. During the development of my two first games [Runaway](https://github.com/antjowie/Runaway) and [Ray Shaper](https://github.com/antjowie/Ray-Shaper) I noticed a certain pattern. Time was crucial (Ray Shaper was my intake assignment for Breda University, [read more about that here]({{< ref "post\my-journey-towards-nhtv.md" >}})) so I copied and pasted much of the code from Runaway. Many of those files were modified to meet certain needs, but the animation files and the game loop stayed the same. With that knowledge and some extensive reading of the book [Game Engine Architecture](http://gameenginebook.com/), the Axios framework started to become my next project. 
 
 > You can follow this project on Github at this [repository](https://github.com/antjowie/axios-framework)
 
 ## What does it do
-The framework serves a role in the following subjects. Marked subject are under development. Unmarked dubjects are yet to be worked on. `(you can click the bold title to see the progress)`:
+The framework serves a role in the following subjects. Marked subject have a solid idea. Unmarked subjects have yet to take any shape. `(you can click the bold title to see the progress)`:
 
 -  [**Instance**]({{< ref "page\axios-framework\game-instance.md" >}})
     - [X] Manage (de)initialization of modules
@@ -27,10 +27,10 @@ The framework serves a role in the following subjects. Marked subject are under 
     - [X] Workaround to make window fullscreen during runtime
 -  [**Scene manager**]({{< ref "page\axios-framework\scene-manager.md" >}})  
     _Scenes are containers that manage objects and allow object to interact with eachother. It also allows object to easilly make new data during runtime. A scene can be a menu or level, basically everything that the user makes in Tiled._  
-    - [ ] One/two frame stack
-    - [ ] Dynamic runtime stack
-    - [ ] Object updating
-    - [ ] Object reference handling
+    - [X] One/two frame stack
+    - [X] Dynamic runtime stack
+    - [X] Object updating
+    - [X] Object reference handling
     - [ ] Event handling
 -  **Objects**  
     _Objects are the building blocks of the game. Objects are build of components_
