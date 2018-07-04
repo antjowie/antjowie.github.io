@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Scene Manager</title>
+  <meta property="og:title" content="Scene Manager" />
+  <meta name="twitter:title" content="Scene Manager" />
+  <meta name="description" content="Simple, a manager for all our scenes">
+  <meta property="og:description" content="Simple, a manager for all our scenes">
+  <meta name="twitter:description" content="Simple, a manager for all our scenes">
+  <meta name="author" content="Angelo Anthony Rettob"/>
+  <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
+  <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/scene-manager/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="https://antjowie.github.io/page/axios-framework/scene-manager/" />
+  <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://antjowie.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://antjowie.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://antjowie.github.io/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://antjowie.github.io/">Angelo&#39;s Portfolio</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags/">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+          <li>
+            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+              <span class="hidden-sm hidden-md hidden-lg">Search</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Angelo&#39;s Portfolio" href="https://antjowie.github.io/">
+            <img class="avatar-img" src="https://antjowie.github.io/img/icons/site-icon.png" alt="Angelo&#39;s Portfolio" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search Angelo&#39;s Portfolio</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Scene Manager</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Simple, a manager for all our scenes</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>A <code>Scene</code> is a level or a section. A certain moment in the program where a certain group of objects are loaded. The main menu is a scene. The level is a scene. <code>Scenes</code> are managers of objects.
+</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<!-- > Github files: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/SceneManager.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/SceneManager.cpp) -->
+
+<blockquote>
+<p>Code hosted on Github: yet to <strong>add</strong> files</p>
+</blockquote>
+
+<h2 id="design-choices">Design choices</h2>
+
+<p>Jump to a certain section:</p>
+
+<ul>
+<li><a href="#runtime-data-containers">Runtime data containers</a></li>
+<li><a href="#object-updating">Object updating</a></li>
+<li><a href="#object-reference-handling">Object reference handling</a></li>
+<li><a href="#event-handling">Event handling</a></li>
+</ul>
+
+<h4 id="runtime-data-containers">Runtime data containers</h4>
+
+<p>The runtime data containers (one/two frame data container and dynamic data container) are used by objects. Because they only apply to objects are they not included in the <code>Assets Manager</code>.<br />
+The runtime data containers are kept in the <code>Scene Manager</code>. objects can access these containers via the reference they have to the <code>Scene</code>. The <code>Scene</code> holds a reference to the <code>Scene Manager</code> to push new <code>Scenes</code> and access the runtime data containers.<br />
+The user can specify the number of bytes the runtime containers can dynamically allocate. The <strong>new</strong> keyword is expansive, and during runtime object may need to dynamically allocate some memory. In that case, the runtime data containers are used.</p>
+
+<h4 id="the-difference-between-the-two-containers">The difference between the two containers</h4>
+
+<p>There are two data containers (one/two frame data container and dynamic data container). The difference is small. The one/two frame data container contains data that will live for two frames. Think about event data of internal calculations needed for the next frame. The data will be destructed automatically, so pointers become invalid very easily.<br />
+The dynamic data container contains data that will live for the whole lifetime of the <code>Scene</code>. They can be manually deallocated and are deallocated when the <code>Scene</code> ends. This container contains data that has to last longer than the next frame, like bullets from a gun or a flying arrow.</p>
+
+<h4 id="object-updating">Object updating</h4>
+
+<p>On paper it sounds easy, just call a virtual update function with the time and let an object do its thing. While this can work for simple games, things tend to get rough when objects depend on each other (or have references to each other) see the following examples.</p>
+
+<h4 id="problems-with-a-virtual-update-function">Problems with a virtual update function</h4>
+
+<p>When updating objects. The order can be very important. For example. Imagine a player position that is being updated by the car he is inside of. If the player is updated before the car, the player&rsquo;s position will be wrong because, at that moment in the game, the car hasn&rsquo;t moved yet. To help with this problem a simple priority system can be used. It goes by the name of <a href="#buckets"><code>Buckets</code></a>.</p>
+
+<p>If we let an object update itself, it gets a lot of freedom. It will probably call all of its <code>Components</code> ([read more about objects and <code>Components</code> here] Yet to make the page). And so will the next object, and the next one. This causes the CPU to jump around doing the same calculations. It is far more efficient for a CPU to do an update of the same component at one time. This process is called <code>Batched Updates</code>.</p>
+
+<p>At last, virtual functions can be expansive. Some objects don&rsquo;t even need to update every frame. It also means that every class that has to be updated or is dependent on subsystems in some way be an object. It is way better to make callback function hooks to the subsystems. This way, CPU cycles won&rsquo;t be wasted iterating over classes that don&rsquo;t even need to be updated.</p>
+
+<p>So how do we update? Pretty easy actually. The scene manager will have two additional hooks. The postUpdate and preUpdate hooks. This way, any class that wants to do something after and before the submodules updates will have access to do so. The update order will look a bit like this:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#998;font-style:italic">// In scene.update(const float &amp;elapsedTime)
+</span><span style="color:#998;font-style:italic"></span>preUpdateManager(elapsedTime);
+
+animation._updatePreMove(); <span style="color:#998;font-style:italic">// Get the movement before the position is updated
+</span><span style="color:#998;font-style:italic"></span>rigidBody._moveAndResolveCollision(elapsedTime); <span style="color:#998;font-style:italic">// Update the requested position and resolve collisions 
+</span><span style="color:#998;font-style:italic"></span>animation._updatePostMove(elapsedTime); <span style="color:#998;font-style:italic">// Use the difference in movement to update animation
+</span><span style="color:#998;font-style:italic">// Update other subsystems if neccessary
+</span><span style="color:#998;font-style:italic"></span>
+postUpdateManager(elapsedTime);
+</code></pre></div></p>
+
+<p>And an example of including the preUpdate class:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Object <span style="color:#900;font-weight:bold">Object</span>()<span style="font-weight:bold">:</span>
+    m_vehicle(<span style="font-weight:bold">nullptr</span>),m_movement(<span style="color:#099">0</span>)
+{
+    preUpdateManager.callback(preUpdate(Bucket<span style="font-weight:bold">::</span>Entity, [<span style="font-weight:bold">&amp;</span>](<span style="font-weight:bold">const</span> <span style="color:#458;font-weight:bold">float</span> elapsedTime)
+    {
+        <span style="font-weight:bold">if</span>(m_vehicle <span style="font-weight:bold">!=</span> <span style="font-weight:bold">nullptr</span>)
+        {
+            m_movement <span style="font-weight:bold">=</span> m_vehicle.getPosition() <span style="font-weight:bold">-</span> m_sprite.getPosition();
+        }
+        <span style="font-weight:bold">else</span>
+        {
+            m_movement.x <span style="font-weight:bold">-=</span> ax<span style="font-weight:bold">::</span>InputHandler.getInstance().getItem(<span style="color:#b84">&#34;left&#34;</span>).isHold <span style="font-weight:bold">?</span> <span style="color:#099">1</span> <span style="font-weight:bold">*</span> elapsedTime : <span style="color:#099">0</span>;
+            m_movement.x <span style="font-weight:bold">+=</span> ax<span style="font-weight:bold">::</span>InputHandler.getInstance().getItem(<span style="color:#b84">&#34;right&#34;</span>).isHold <span style="font-weight:bold">?</span> <span style="color:#099">1</span> <span style="font-weight:bold">*</span> elapsedTime : <span style="color:#099">0</span>;
+            
+            <span style="font-weight:bold">if</span>(ax<span style="font-weight:bold">::</span>InputHandler.getInstance().getItem(<span style="color:#b84">&#34;jump&#34;</span>).isPressed <span style="font-weight:bold">==</span> <span style="color:#999">true</span>)
+            {
+                m_movement.y <span style="font-weight:bold">+=</span>  <span style="font-weight:bold">?</span> <span style="color:#099">1</span> <span style="font-weight:bold">:</span> <span style="color:#099">0</span>;
+                m_jumped <span style="font-weight:bold">=</span> <span style="color:#999">true</span>;
+            }
+            <span style="font-weight:bold">else</span>
+                m_movement.y <span style="font-weight:bold">-=</span> ax<span style="font-weight:bold">::</span>InputHandler.getInstance().getItem(<span style="color:#b84">&#34;left&#34;</span>) <span style="font-weight:bold">?</span> <span style="color:#099">1</span> <span style="font-weight:bold">*</span> elapsedTime : <span style="color:#099">0</span>;
+        }
+    });
+
+    ax<span style="font-weight:bold">::</span>rigidBody.callback([<span style="font-weight:bold">&amp;</span>](<span style="font-weight:bold">const</span> <span style="color:#458;font-weight:bold">float</span> elapsedTime)
+    {
+        m_sprite.move(m_movement <span style="font-weight:bold">*</span> elapsedTime)
+    });
+}
+</code></pre></div></p>
+
+<h4 id="buckets">Buckets</h4>
+
+<p>Buckets are a way to prioritize updating order. It acutally is a very simple enumerator that decides in which order the function object appear. Indeed, the postUpdate and preUpdate are classes. They contain two member variables. mBucket and mFunction (struct would make more sense, but all members are private. In the end, worrying about it is just wasting time IMO). Components can add hooks to the manager of these classes. The PreUpdateManager and PostUpdateManager. UM will sort the function object internally.</p>
+
+<p>The lowest enumerator will have the highest priority (same as our <a href="https://antjowie.github.io/page/axios-framework/utilities/#logger">Logger Verbosity</a> value). It is also kown as the weight. The internal data container is just a simple vector.</p>
+
+<h4 id="object-reference-handling">Object reference handling</h4>
+
+<p>Objects are dependent on one another, so they need to be able to reference each other. A simple way could be to request a reference to an object. But what will happen if the object is destroyed and we try to access it?<br />
+This is why all references are wrapped in a simple checker class. It works as follows.</p>
+
+<p>There are two classes. ObjectReferenceManager(ORM) and ObjectReference(OR).<br />
+The ORM can be seen as a database containing all the references and the OR can be seen as a key to get the reference.</p>
+
+<p>Every object gets assigned a unique ID. This ID is not visible for the developer. The OR class contains two values, the unique ID of the object, and the index in the ORM database. When an object wants to construct a reference to an object. It passes the object into the constructor of an OR instance.<br />
+When a user wants to get the object, it passes the OR into the ORM. The OR checks the index, if the unique ID is still the same, the OR will return a <strong>pointer</strong> to the object, else it will return a <strong>nullptr</strong>.</p>
+
+<p>With this design, the object can check if the referenced object still exists.</p>
+
+<h4 id="event-handling">Event handling</h4>
+
+<p>Events are&hellip; events. Activities happening in game that other objects should react at. Explosions, gun shots, but also things like a player entering a car, or a player picking up a health pack.<br />
+But wait a second. why would I use an event for explosions or picking up health packs. Can&rsquo;t I just check for collisions with the object and react when a collision happens? Of couse you <strong>can</strong>, but is that really such a smart idea? (as we always ask ourselves). Think about it. You would have to iterate over all objects just to check for one collision. That&rsquo;s quite a huge operation and it would go against <code>Batched Updates</code>.</p>
+
+<p>Well then, why not make it another sub system?</p>
+
+<p><a href="https://antjowie.github.io/projects/axios-framework/#what-does-it-do">Return to project page.</a></p>
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;text=Scene%20Manager&amp;via="
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;title=Scene%20Manager" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;title=Scene%20Manager" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;title=Scene%20Manager" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fscene-manager%2f&amp;description=Scene%20Manager" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "angelos-portfolio" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:angelo05rettob@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/antjowie" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://antjowie.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://antjowie.github.io/">Angelo Anthony Rettob</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://antjowie.github.io/">Angelo&#39;s Portfolio</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://antjowie.github.io/js/main.js"></script>
+<script src="https://antjowie.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://antjowie.github.io/js/load-photoswipe.js"></script>
+
+
+<script>
+  (function() {
+    var cx = '001716844541583678590:jrms-ixh6ca';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+
+
+
+  </body>
+</html>
+
