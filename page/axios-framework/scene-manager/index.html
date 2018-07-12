@@ -319,7 +319,8 @@ When a user wants to get the object, it passes the OR into the ORM. The OR check
 <h4 id="event-handling">Event handling</h4>
 
 <p>Events are&hellip; events. Activities happening in game that other objects should react at. Explosions, gun shots, but also things like a player entering a car, or a player picking up a health pack.<br />
-But wait a second. why would I use an event for explosions or picking up health packs. Can&rsquo;t I just check for collisions with the object and react when a collision happens? Of couse you <strong>can</strong>, but is that really such a smart idea? (as we always ask ourselves). Think about it. You would have to iterate over all objects just to check for one collision. That&rsquo;s quite a huge operation and it would go against <code>Batched Updates</code>.</p>
+But wait a second. why would I use an event for explosions or picking up health packs. Can&rsquo;t I just check for collisions with the object and react when a collision happens?<br />
+Of couse you <strong>can</strong>, but is that really such a smart idea? (as we always ask ourselves). Think about it. You would have to iterate over all objects just to check for one collision. That&rsquo;s quite a huge operation and it would go against <code>Batched Updates</code>. Every object would need some kind of interface for every type of event. An explosion has a whole different effect than a health pack. Not every object would react to a health pack. You could divide every object by what it can and can&rsquo;t react, but this would get clumbersome very quickly.</p>
 
 <p>Well then, why not make it another sub system?</p>
 

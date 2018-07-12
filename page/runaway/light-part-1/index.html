@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Light part 1</title>
+  <meta property="og:title" content="Light part 1" />
+  <meta name="twitter:title" content="Light part 1" />
+  <meta name="description" content="This part will discuss the games light system. So let&#8217;s start off with devising one. I&#8217;ll first make a simple drawing so we&#8217;re on the same page.
+Simple drawing showing my idea of the light Pretty simple right! I thought so, this is by no means a complex game. If you do not the objective of the game yet, allow me to explain. Else you can skip over the following paragraph.">
+  <meta property="og:description" content="This part will discuss the games light system. So let&#8217;s start off with devising one. I&#8217;ll first make a simple drawing so we&#8217;re on the same page.
+Simple drawing showing my idea of the light Pretty simple right! I thought so, this is by no means a complex game. If you do not the objective of the game yet, allow me to explain. Else you can skip over the following paragraph.">
+  <meta name="twitter:description" content="This part will discuss the games light system. So let&#8217;s start off with devising one. I&#8217;ll first make a simple drawing so we&#8217;re on the same page.
+Simple drawing showing my idea of …">
+  <meta name="author" content="Angelo Anthony Rettob"/>
+  <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
+  <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://antjowie.github.io/page/runaway/light-part-1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="https://antjowie.github.io/page/runaway/light-part-1/" />
+  <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://antjowie.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://antjowie.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://antjowie.github.io/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://antjowie.github.io/">Angelo&#39;s Portfolio</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags/">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+          <li>
+            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+              <span class="hidden-sm hidden-md hidden-lg">Search</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Angelo&#39;s Portfolio" href="https://antjowie.github.io/">
+            <img class="avatar-img" src="https://antjowie.github.io/img/icons/site-icon.png" alt="Angelo&#39;s Portfolio" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search Angelo&#39;s Portfolio</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Light part 1</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>This part will discuss the games light system. So let&#8217;s start off with devising one. I&#8217;ll first make a simple drawing so we&#8217;re on the same page.</p>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/runaway/Ligth-example.png" />
+    </div>
+      <figcaption><h4>Simple drawing showing my idea of the light</h4>
+      </figcaption>
+    <a href="/img/runaway/Ligth-example.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>Pretty simple right! I thought so, this is by no means a complex game. If you do not the objective of the game yet, allow me to explain. Else you can skip over the following paragraph.</p>
+
+<p>Runaway will be a 2D side-scrolling fast-paced puzzle game. The player has only one tool to get around, his light. When the player arrives in a dark zone. Light blocks will emit light as does the player. The player his light, however, get&#8217;s depleted while he is present in a dark zone. In the dark zone, the player has to solve a or several puzzles. The player can toggle switches by emitting light in them or use his light to dash away, a mechanic used for some puzzles. The player can also recall towards his latest checkpoint for the cost of some of his light. The player can recharge his light by standing in a light pool, which is my term for a place where light is present.</p>
+
+<p>So observing this picture we need to have light blocks emit their light. The light spread a half block wide for every block it travels down. I will also render a darkened overlay when the player is entering a dark zone.</p>
+
+<h1 id="devising-a-class">Devising a class</h1>
+
+<p>So we need a class with the following functions</p>
+
+<ul>
+<li>A way to draw light rays.</li>
+<li>A way to draw the dark overlay.</li>
+<li>A way to find all the light emitting blocks.</li>
+<li>A way to check if the player is inside light rays.</li>
+</ul>
+
+<p>Not all of these must be handled by one class (although I&#8217;m planning to do just that). Doesn&#8217;t sound like this class is too hard to make. During my five-minute brainstorm session, I came up with the following solutions</p>
+
+<ul>
+<li>Make a vector containing all the light emitting tiles and render them above a dark overlay. The overlay itself will be written over the whole scene.</li>
+<li>Make holes in the dark overlay where all the light emitting tiles are supposed to be. This way only the non-light emitting tiles will emit light.</li>
+<li>Draw all the light emitting blocks onto an off-screen texture. Multiply the whole scene by this texture.</li>
+</ul>
+
+<p>Let&#8217;s discuss each solution.</p>
+
+<p>The first solution is by far the most simple one. Just make a vector with pointers towards the tiles which emit light in the level tilemap. Then draw a dark overlay over the whole scene and draw your light objects on top. This solution, however, breaks the gate tile. Because the gate tile will be rendered above other blocks. Something which I fixed before by first rendering all the gate tiles. This solution is busted.</p>
+
+<p>The second solution sounds easy on paper. But I couldn&#8217;t find a way to &#8216;subtract&#8217; shapes from a shape. Maybe I could overwrite rectangles in the large overlay, but I have the feeling that this would give me a system with some crazy limitations. It probably can&#8217;t ever be expanded. Just for that reason alone, I don&#8217;t think this is the appropriate solution.</p>
+
+<p>The last solution sounds the most interesting. I have been reading some source code of the library for this project (<a href="https://www.sfml-dev.org/index.php" rel="noopener">SFML</a>) and came to a conclusion that I&#8217;m using it wrong. Something I noticed with programming specifically is that many solutions I have made in the past just seem plain inefficient or ugly right now. So I have changed all my code to be a bit more logical. Something the user won&#8217;t notice though.</p>
+
+<h1 id="blend-modes">Blend Modes</h1>
+
+<p>I came up with this solution when I started reading the source code. It said something about blend mode. Blend mode determines how new to be drawn pixels affect the buffer in which pixels may already have been drawn. We got 4 different blend modes. I decided to write <a href="https://github.com/antjowie/Blend-test" rel="noopener">a little program</a> to test how each of these blend modes reacts.</p>
+
+<p>Blend add adds colors which each other. When we add the color red and green, we get yellow. The same results are shown in the program.</p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/runaway/Blend-add.png" />
+    </div>
+      <figcaption><h4>Showcases the result of using blend add</h4>
+      </figcaption>
+    <a href="/img/runaway/Blend-add.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>Blend multiply multiplies the colors. But what does it mean to multiply colors? Time to test! I noticed that multiply darkens the whole scene. So my conclusion is that multiply effects the brightness of the objects it is drawn over.</p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/runaway/Blend-multiply.png" />
+    </div>
+      <figcaption><h4>Showcases the result of blend multiply</h4>
+      </figcaption>
+    <a href="/img/runaway/Blend-multiply.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>Something I noticed when swapping the dark overlay to draw itself first are the following results.</p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/runaway/Overlay-before.png" />
+    </div>
+      <figcaption><h4>Shows the results when overlay is drawn before all the objects are drawn</h4>
+      </figcaption>
+    <a href="/img/runaway/Overlay-before.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>As you can see, the cube with blend mode add shows different behavior than the one with blend mode none. This seems rather odd because mixing green with red makes yellow. So why is it showing black? The blend mode can&#8217;t be the culprit because in the previous image the blend mode none cube also got a bit darker. It probably has something to do with the darkness filter. On the interesting note. See how using blend mode add onto the (blend mode add) cube makes it the same color as the background. And using blend mode add to the background restores its original color. This means that if we use a blend mode add with all the light objects. Every light object will remain in its original color.</p>
+
+<p>Unfortunately, it doesn&#8217;t work. In this case, the dark overlay is drawn first. So the already existing scene won&#8217;t be affected. I do, however, have another idea. And that is with the use of blend mode Multiply.</p>
+
+<h1 id="using-blend-mode-multiply">Using Blend Mode Multiply</h1>
+
+<p>With blend mode multiply we can darken everything on the scene. I have written a small bit of code to test this out and the results are great.</p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/runaway/Testing-renderTexture.png" />
+    </div>
+      <figcaption><h4>Testing dark overlay</h4>
+      </figcaption>
+    <a href="/img/runaway/Testing-renderTexture.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>As you can see. The object which we add to the buffer will not change from color. That is exactly the result I want. To achieve this, you will have to do the following bit of code.</p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Clear window
+Clear RenderTexture
+Draw all sprites to window
+
+Draw dark overlay to RenderTexture
+Draw all light objects with BlendAdd to RenderTexture
+
+Set overlaySprite texture to RenderTexture
+Draw overlaySprite with BlendMultiply to window
+
+Display window</code></pre></div>
+
+<p>That&#8217;s all there is to it. Now that we have the system nailed down. We will start implementing it into the game. One thing to note for the gate problem is to use the default gate positions.</p>
+
+<h1 id="implementing-into-the-game">Implementing Into The Game</h1>
+
+<p>Let&#8217;s start designing a class which handles all the light objects. This class will also draw the darkened overlay. That way, this class is responsible for all light emitting objects. This class needs the following functions.</p>
+
+<ul>
+<li>Function to add tiles</li>
+<li>Function to draw the whole texture</li>
+<li>An update function for the darkened overlay</li>
+<li>A function to specify the amount we want to darken the screen</li>
+<li>An init function to set the texture as large as the level</li>
+<li>A function to specify the fade time</li>
+</ul>
+
+<p>Because I want the class to fade from his brightness, a local elapsed time value is used. We modify this value with our fade time to specify how long we want the fade to take. The same technique can be used to slow down game mechanics</p>
+
+<p>With the help of a linear interpolation function, we can find the exact color at a given to for the overlay to display. The elapsed time value will be divided by the fade time value. This will always give a value between 0 and 1 if we make sure that the elapsed time value is not larger than the fade time value.</p>
+
+<p>With the use of blend modes, we then draw all our light objects onto the darkened buffer. By doing this, the tiles which &#8217;emit&#8217; light will not be affected by the darkened overlay. We are making &#8216;holes&#8217; in our overlay, or we are multiplying the texture with the same texture, which results in the same texture.</p>
+
+<p>Having said all this. The function work beautifully. Everything from the fade to the light &#8217;emitting&#8217; tiles are not effected. There is only one problem.
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/runaway/Light-test-1.png" />
+    </div>
+      <figcaption><h4>Shows the results of the light class in action</h4>
+      </figcaption>
+    <a href="/img/runaway/Light-test-1.png" itemprop="contentUrl"></a>
+  </figure>
+</div></p>
+
+<p>As you can see, the gates are still visible even after closing. Quite a bummer. I also know why. So my next part <code>(it never came)</code> will be about fixing this problem.</p>
+
+<p>Still, the class works as it is supposed to. If you want to take a look at the code. You can click <a href="https://github.com/antjowie/Runaway/blob/master/Runaway/source/Light.cpp" rel="noopener">here </a>to open a link to the GitHub page. With all that said, I thank you for reading this post about light. Any question or suggestions can be written down in the comments. I wish you a beautiful day.</p>
+
+<p><a href="https://antjowie.github.io/projects/runaway/">Return to the project page</a>.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2flight-part-1%2f&amp;text=Light%20part%201&amp;via="
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2flight-part-1%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2flight-part-1%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2flight-part-1%2f&amp;title=Light%20part%201" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2flight-part-1%2f&amp;title=Light%20part%201" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2flight-part-1%2f&amp;title=Light%20part%201" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2flight-part-1%2f&amp;description=Light%20part%201" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "angelos-portfolio" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:angelo05rettob@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/antjowie" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://antjowie.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://antjowie.github.io/">Angelo Anthony Rettob</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://antjowie.github.io/">Angelo&#39;s Portfolio</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://antjowie.github.io/js/main.js"></script>
+<script src="https://antjowie.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://antjowie.github.io/js/load-photoswipe.js"></script>
+
+
+<script>
+  (function() {
+    var cx = '001716844541583678590:jrms-ixh6ca';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+
+
+
+  </body>
+</html>
+

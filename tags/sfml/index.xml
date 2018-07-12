@@ -22,5 +22,56 @@
 &lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Runaway</title>
+      <link>https://antjowie.github.io/projects/runaway/</link>
+      <pubDate>Mon, 02 Oct 2017 17:39:32 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/projects/runaway/</guid>
+      <description>&lt;div class=&#34;gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition&#34; itemscope itemtype=&#34;http://schema.org/ImageGallery&#34;&gt;
+	  
+  
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://antjowie.github.io/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/img/runaway/Light-test-1.png&#39;);&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://antjowie.github.io/img/runaway/Light-test-1.png&#34; alt=&#34;Light is a very important aspect in this game&#34;/&gt;
+    &lt;/div&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Working with light&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;a href=&#34;https://antjowie.github.io/img/runaway/Light-test-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+  
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/img/runaway/Ligth-example.png&#39;);&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://antjowie.github.io/img/runaway/Ligth-example.png&#34; alt=&#34;You have to start somewhere&#34;/&gt;
+    &lt;/div&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;A broad idea&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;a href=&#34;https://antjowie.github.io/img/runaway/Ligth-example.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+  
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/img/runaway/playerSpritesheet.png&#39;);&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://antjowie.github.io/img/runaway/playerSpritesheet.png&#34; alt=&#34;How do we process this spritesheet?&#34;/&gt;
+    &lt;/div&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Make him move&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;a href=&#34;https://antjowie.github.io/img/runaway/playerSpritesheet.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</description>
+    </item>
+    
   </channel>
 </rss>

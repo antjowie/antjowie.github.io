@@ -107,9 +107,10 @@ With this design, the object can check if the referenced object still exists.
 
 #### Event handling
 Events are... events. Activities happening in game that other objects should react at. Explosions, gun shots, but also things like a player entering a car, or a player picking up a health pack.  
-But wait a second. why would I use an event for explosions or picking up health packs. Can't I just check for collisions with the object and react when a collision happens? Of couse you **can**, but is that really such a smart idea? (as we always ask ourselves). Think about it. You would have to iterate over all objects just to check for one collision. That's quite a huge operation and it would go against `Batched Updates`. 
+But wait a second. why would I use an event for explosions or picking up health packs. Can't I just check for collisions with the object and react when a collision happens?  
+Of couse you **can**, but is that really such a smart idea? (as we always ask ourselves). Think about it. You would have to iterate over all objects just to check for one collision. That's quite a huge operation and it would go against `Batched Updates`. Every object would need some kind of interface for every type of event. An explosion has a whole different effect than a health pack. Not every object would react to a health pack. You could divide every object by what it can and can't react, but this would get clumbersome very quickly.
 
-Well then, why not make it another sub system?
+Well then, why not make it another sub system? 
 
 
 [Return to project page.]({{< ref "projects\axios-framework.md" >}}#what-does-it-do)

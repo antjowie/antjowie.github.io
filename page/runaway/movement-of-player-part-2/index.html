@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Movement of player part 2</title>
+  <meta property="og:title" content="Movement of player part 2" />
+  <meta name="twitter:title" content="Movement of player part 2" />
+  <meta name="description" content="So to implement acceleration. The smartest thing to do would be to use real-life formulas. What can be more realistic or accurate than that? Oddly enough, I decided to use my own formula for it. I did it this way because I thought it would be more fitting for my game, while I&#8217;m not so sure about the pros and cons, I decided to implement them both with different games. When I&#8217;m going to make another game in the near future, I will use real life formulas for my game, Right now though, I&#8217;m going to use my own implementation.">
+  <meta property="og:description" content="So to implement acceleration. The smartest thing to do would be to use real-life formulas. What can be more realistic or accurate than that? Oddly enough, I decided to use my own formula for it. I did it this way because I thought it would be more fitting for my game, while I&#8217;m not so sure about the pros and cons, I decided to implement them both with different games. When I&#8217;m going to make another game in the near future, I will use real life formulas for my game, Right now though, I&#8217;m going to use my own implementation.">
+  <meta name="twitter:description" content="So to implement acceleration. The smartest thing to do would be to use real-life formulas. What can be more realistic or accurate than that? Oddly enough, I decided to use my own formula for it. I did …">
+  <meta name="author" content="Angelo Anthony Rettob"/>
+  <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
+  <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://antjowie.github.io/page/runaway/movement-of-player-part-2/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="https://antjowie.github.io/page/runaway/movement-of-player-part-2/" />
+  <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://antjowie.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://antjowie.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://antjowie.github.io/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://antjowie.github.io/">Angelo&#39;s Portfolio</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags/">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+          <li>
+            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+              <span class="hidden-sm hidden-md hidden-lg">Search</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Angelo&#39;s Portfolio" href="https://antjowie.github.io/">
+            <img class="avatar-img" src="https://antjowie.github.io/img/icons/site-icon.png" alt="Angelo&#39;s Portfolio" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search Angelo&#39;s Portfolio</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Movement of player part 2</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>So to implement acceleration. The smartest thing to do would be to use real-life formulas. What can be more realistic or accurate than that? Oddly enough, I decided to use my own formula for it. I did it this way because I thought it would be more fitting for my game, while I&#8217;m not so sure about the pros and cons, I decided to implement them both with different games. When I&#8217;m going to make another game in the near future, I will use real life formulas for my game, Right now though, I&#8217;m going to use my own implementation.</p>
+
+<p>Let&#8217;s get started. First off, I start with my pseudocode. The reason why is because I think it is alway better to thoroughly devise your plan, instead of making it on the go. It&#8217;s easier to scrap a plan than to scrap a building. It also makes it easier to recognize bugs or flaws in your logic. The pseudocode goes as follows.</p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Get players 
+requested move direction
+Update specific acceleration values with acceleration
+Check <span style="color:#900;font-weight:bold">if</span> acceleration values are in maxAcceleration bounds
+Update position with acceleration
+Update position with gravity
+Check for collisions
+Update all acceleration values with deceleration
+Check <span style="color:#900;font-weight:bold">if</span> acceleration values are supposed to be zero when decalerating</code></pre></div>
+
+<p>Looks good. While it may look a bit vague like &#8220;Update specific acceleration values with acceleration&#8221;, all this really means is that we increase the acceleration of the direction the player wanted to move in. We have two variables and one local variable. The two variables in the class will be m_moveDirection, which track the requested move direction and m_acceleration, which will track the acceleration of each direction. Our local variable, m_movement, will track the movement that will be made to the player. All our movement calculation will be done onto this vector. To get the specified direction, I wrote this code.</p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="font-weight:bold">if</span> ((isItemPressed(<span style="color:#b84">&#34;moveUp&#34;</span>) <span style="font-weight:bold">||</span> isItemPressed(<span style="color:#b84">&#34;jump&#34;</span>)) <span style="font-weight:bold">&amp;&amp;</span> <span style="font-weight:bold">!</span>m_hasJumped)
+{
+    m_moveDirection.y <span style="font-weight:bold">=</span> <span style="font-weight:bold">-</span><span style="color:#099">1</span>;	
+    m_hasJumped <span style="font-weight:bold">=</span> <span style="color:#999">true</span>;
+}
+	
+<span style="font-weight:bold">if</span> (isItemPressed(<span style="color:#b84">&#34;moveLeft&#34;</span>)) 
+    m_moveDirection.x <span style="font-weight:bold">-=</span> <span style="color:#099">1</span>;
+<span style="font-weight:bold">if</span> (m_moveDirection.x <span style="font-weight:bold">&lt;</span> <span style="font-weight:bold">-</span><span style="color:#099">1</span>) 
+    m_moveDirection.x <span style="font-weight:bold">=</span> <span style="font-weight:bold">-</span><span style="color:#099">1</span>; 
+<span style="font-weight:bold">if</span> (isItemPressed(<span style="color:#b84">&#34;moveRight&#34;</span>))
+    m_moveDirection.x <span style="font-weight:bold">+=</span> <span style="color:#099">1</span>; 
+<span style="font-weight:bold">if</span> (m_moveDirection.x <span style="font-weight:bold">&gt;</span> <span style="color:#099">1</span>) 
+    m_moveDirection.x <span style="font-weight:bold">=</span> <span style="color:#099">1</span>;
+
+m_isCrouching <span style="font-weight:bold">=</span> isItemPressed(<span style="color:#b84">&#34;moveDown&#34;</span>);
+</code></pre></div>
+
+<p>The function isItemPressed just returns true when the button is pressed. m_hasJumped is a bool value which purpose it to make sure the player can only jump once.</p>
+
+<p>With the direction out of the way, the interesting part comes. The movement consists of three parts.</p>
+
+<ul>
+<li>Update requested direction accelerations</li>
+<li>Check move bounds</li>
+<li>Move player with corresponding accelerations</li>
+<li>Decrease all accelerations</li>
+</ul>
+
+<p>I will explain all implementations for one direction since the same logic applies in almost all directions. Implementation of the first part is as follows.</p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="font-weight:bold">if</span> (m_moveDirection.x <span style="font-weight:bold">==</span> <span style="color:#099">1</span>)
+{
+    <span style="font-weight:bold">if</span> (m_acceleration.x <span style="font-weight:bold">&lt;</span> <span style="color:#099">0</span>)
+        m_acceleration.x <span style="font-weight:bold">=</span> <span style="color:#099">0</span>;
+    m_acceleration.x <span style="font-weight:bold">+=</span> accelerate;
+}
+</code></pre></div>
+
+<p>We use the m_moveDirection value to see whether or not the player wants to move in that direction. Then we check if the player previously moved in the opposite direction. If he did, the movement in that direction will immediately stop. Of course, you could not do that and make for some weird movement over which the player has less control. While this would increase the difficulty of the game, I think it is not the right way to do so since it will only lead to more frustration. It would not feel more rewarding in any way. Alas, we will update the players&#8217; movement with an accelerate value which is defined somewhere (maybe by the level or the player self). One thing to note about the added acceleration is that you should do that times the elapsed time. We can not assume this function would be called at the same frequency every time. In my case, I have defined the accelerate value with the elapsed time already applies to it.</p>
+
+<p>Now we have to check the bounds, which is really simple. Too simple to explain, but I will still put it down here.</p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="font-weight:bold">if</span> (m_acceleration.x <span style="font-weight:bold">&gt;</span> maxAccelerate) 
+    m_acceleration.x <span style="font-weight:bold">=</span> maxAccelerate;
+</code></pre></div>
+
+<p>For our next part, we have to move the player with the corresponding accelerations. See the following code.</p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="font-weight:bold">if</span> (m_acceleration.x <span style="font-weight:bold">&gt;</span> <span style="color:#099">0</span>)
+{
+    movement.x <span style="font-weight:bold">=</span> speed <span style="font-weight:bold">*</span> m_acceleration.x;
+    m_player.move(movement.x <span style="font-weight:bold">*</span> elapsedTime, <span style="color:#099">0</span>);
+}
+</code></pre></div>
+
+<p>Again quite simple, it really isn&#8217;t difficult, but you just have to make sure that every value is going to be correctly calculated. Let me explain the speed value. The speed value is a number of pixels I want the player to move in one second. By multiplying it with m_acceleration. We can double the speed of this. That way, we can make speed go twice as fast. The rest should make sense I hope, If not, feel free to ask down below.</p>
+
+<p>And for the last part of the loop, we will implement our deceleration. Which is as simple as the following.</p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="font-weight:bold">if</span> (m_moveDirection.x <span style="font-weight:bold">==</span> <span style="color:#099">0</span> )
+{
+    <span style="font-weight:bold">if</span> (m_acceleration.x <span style="font-weight:bold">&gt;</span> <span style="color:#099">0</span>)
+    {
+	m_acceleration.x <span style="font-weight:bold">-=</span> decelerate;
+        <span style="font-weight:bold">if</span> (m_acceleration.x <span style="font-weight:bold">&lt;</span> <span style="color:#099">0</span>)
+            m_acceleration.x <span style="font-weight:bold">=</span> <span style="color:#099">0</span>;
+    }
+    <span style="font-weight:bold">else</span> <span style="font-weight:bold">if</span> (m_acceleration.x <span style="font-weight:bold">&lt;</span> <span style="color:#099">0</span>) 
+    { 
+        m_acceleration.x <span style="font-weight:bold">+=</span> decelerate; 
+        <span style="font-weight:bold">if</span> (m_acceleration.x <span style="font-weight:bold">&gt;</span> <span style="color:#099">0</span>)
+            m_acceleration.x <span style="font-weight:bold">=</span> <span style="color:#099">0</span>;
+    }
+}
+</code></pre></div>
+
+<p>It may not look that simple, but it really is simple. Let&#8217;s deconstruct is. First, we check if the player isn&#8217;t moving. If so, we can decelerate. Then we check in which direction we have to decelerate. If we are still moving to the right, we should subtract from our acceleration. The last thing to check is that if we are decelerating, are we not going into the opposite direction. Otherwise, the player would be jumping from right to left endlessly. That should be it right?</p>
+
+<p>Oh no, one thing I almost forgot! Gravity! Gravity was probably the hardest of all because it follows a different way of calculating. Well, not really. I mean, look at the following.</p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="font-weight:bold">if</span> (m_bottomDistance <span style="font-weight:bold">==</span> <span style="color:#099">0</span>) <span style="color:#998;font-style:italic">// If player is in air
+</span><span style="color:#998;font-style:italic"></span>{
+    m_acceleration.y <span style="font-weight:bold">+=</span> gravity <span style="font-weight:bold">*</span> <span style="color:#099">2</span> <span style="font-weight:bold">*</span> elapsedTime;
+    m_player.move(<span style="color:#099">0</span>, gravity <span style="font-weight:bold">*</span> elapsedTime);
+    distanceTillBottomCollision();
+}
+<span style="font-weight:bold">if</span> (m_bottomDistance <span style="font-weight:bold">&gt;</span> <span style="color:#099">0</span>) <span style="color:#998;font-style:italic">// If player is in ground
+</span><span style="color:#998;font-style:italic"></span>{
+    m_player.move(<span style="color:#099">0</span>, <span style="font-weight:bold">-</span>m_bottomDistance);
+    m_hasJumped <span style="font-weight:bold">=</span> <span style="color:#999">false</span>;
+}
+</code></pre></div>
+
+<p>Oh no, magic numbers. I really dislike those, because they are usually signs of bad coding, or just laziness, you could give it a name, couldn&#8217;t you? Wait, let me explain. When somebody uses magic numbers and uses some sort of unrelated or related value and uses that result as a parameter. A thing may get out of hand when changing the related or unrelated value. I just think it doesn&#8217;t look right so why did I use them? It&#8217;s quite simple. As of right now, gravity and acceleration are the same. Which means that when the player jumps. It will take a long time before he drops again. So I speeded that process up twice as fast. This way, the player will always drop twice as fast as previously, no room for error, I hope. The rest is self-explanatory with the comments I hope. If not, you know where to ask by now.</p>
+
+<p>That&#8217;s all there is to it. See a demonstration of the result down below.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/s9v7cGpLnak" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+</div>
+
+
+<p>Should I allow the player to always jump once, I don&#8217;t know. But that&#8217;s not the discussion for this post. That&#8217;s something game design related. Oh, and if you are interested in the whole implementation of my movement. You can find it at by clicking <a href="https://github.com/antjowie/Runaway/blob/master/Runaway/source/objects/PlayerObject.cpp" target="_blank" rel="noopener">GitHub</a>. Just scroll to input the input related section or something. I&#8217;m not sure how my project will advance.</p>
+
+<p>You&#8217;ve made it quite far, this is the end of this post, my longest post as of now! Thank you for reading. If you have any question or have some commentary regarding these longer posts. Please tell me. Do you prefer longer or shorter posts? I&#8217;m all open for suggestions.</p>
+
+<p>Have a lovely day!</p>
+
+<p><a href="https://antjowie.github.io/projects/runaway/">Return to the project page</a>.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fmovement-of-player-part-2%2f&amp;text=Movement%20of%20player%20part%202&amp;via="
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fmovement-of-player-part-2%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fmovement-of-player-part-2%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fmovement-of-player-part-2%2f&amp;title=Movement%20of%20player%20part%202" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fmovement-of-player-part-2%2f&amp;title=Movement%20of%20player%20part%202" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fmovement-of-player-part-2%2f&amp;title=Movement%20of%20player%20part%202" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fmovement-of-player-part-2%2f&amp;description=Movement%20of%20player%20part%202" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "angelos-portfolio" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:angelo05rettob@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/antjowie" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://antjowie.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://antjowie.github.io/">Angelo Anthony Rettob</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://antjowie.github.io/">Angelo&#39;s Portfolio</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://antjowie.github.io/js/main.js"></script>
+<script src="https://antjowie.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://antjowie.github.io/js/load-photoswipe.js"></script>
+
+
+<script>
+  (function() {
+    var cx = '001716844541583678590:jrms-ixh6ca';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+
+
+
+  </body>
+</html>
+

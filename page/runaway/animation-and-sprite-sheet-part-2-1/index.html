@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Animation and sprite sheet part 2.1</title>
+  <meta property="og:title" content="Animation and sprite sheet part 2.1" />
+  <meta name="twitter:title" content="Animation and sprite sheet part 2.1" />
+  <meta name="description" content="Hello, today we will discuss the problem surrounding the not that groundbreaking (or should I say game-breaking?) glitch seen in this video.
+  Absolutely horrible! How could this happen? We will discuss that right here. This was the implementation.
+// Brace for some ugly vector checkingif (newPos.x &gt; 0 &amp;&amp; newPos.y == 0)m_animHandler.changeAnimation(playerDirection::Right);else if (newPos.x &lt; 0 &amp;&amp; newPos.y == 0) m_animHandler.changeAnimation(playerDirection::Left); else if (newPos.x &gt;= 0 &amp;&amp; newPos.">
+  <meta property="og:description" content="Hello, today we will discuss the problem surrounding the not that groundbreaking (or should I say game-breaking?) glitch seen in this video.
+  Absolutely horrible! How could this happen? We will discuss that right here. This was the implementation.
+// Brace for some ugly vector checkingif (newPos.x &gt; 0 &amp;&amp; newPos.y == 0)m_animHandler.changeAnimation(playerDirection::Right);else if (newPos.x &lt; 0 &amp;&amp; newPos.y == 0) m_animHandler.changeAnimation(playerDirection::Left); else if (newPos.x &gt;= 0 &amp;&amp; newPos.">
+  <meta name="twitter:description" content="Hello, today we will discuss the problem surrounding the not that groundbreaking (or should I say game-breaking?) glitch seen in this video.
+  Absolutely horrible! How could this happen? We will …">
+  <meta name="author" content="Angelo Anthony Rettob"/>
+  <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
+  <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-2-1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
+
+  <meta name="generator" content="Hugo 0.41" />
+  <link rel="canonical" href="https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-2-1/" />
+  <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://antjowie.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://antjowie.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://antjowie.github.io/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://antjowie.github.io/">Angelo&#39;s Portfolio</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags/">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+          <li>
+            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+              <span class="hidden-sm hidden-md hidden-lg">Search</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Angelo&#39;s Portfolio" href="https://antjowie.github.io/">
+            <img class="avatar-img" src="https://antjowie.github.io/img/icons/site-icon.png" alt="Angelo&#39;s Portfolio" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search Angelo&#39;s Portfolio</h4>
+        </div>
+        <div class="modal-body">
+          <gcse:search></gcse:search>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Animation and sprite sheet part 2.1</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Hello, today we will discuss the problem surrounding the not that groundbreaking (or should I say game-breaking?) glitch seen in this video.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/1YNBxzX-38c" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+</div>
+
+
+<p>Absolutely horrible! How could this happen? We will discuss that right here. This was the implementation.</p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#998;font-style:italic">// Brace for some ugly vector checking
+</span><span style="color:#998;font-style:italic"></span>
+<span style="font-weight:bold">if</span> (newPos.x <span style="font-weight:bold">&gt;</span> <span style="color:#099">0</span> <span style="font-weight:bold">&amp;&amp;</span> newPos.y <span style="font-weight:bold">==</span> <span style="color:#099">0</span>)
+	m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>Right);
+<span style="font-weight:bold">else</span> <span style="color:#900;font-weight:bold">if</span> (newPos.x <span style="font-weight:bold">&lt;</span> <span style="color:#099">0</span> <span style="font-weight:bold">&amp;&amp;</span> newPos.y <span style="font-weight:bold">==</span> <span style="color:#099">0</span>) 
+        m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>Left); 
+<span style="font-weight:bold">else</span> <span style="color:#900;font-weight:bold">if</span> (newPos.x <span style="font-weight:bold">&gt;=</span> <span style="color:#099">0</span> <span style="font-weight:bold">&amp;&amp;</span> newPos.y <span style="font-weight:bold">!=</span> <span style="color:#099">0</span>)
+{
+	<span style="font-weight:bold">if</span> (newPos.y <span style="font-weight:bold">&gt;</span> <span style="color:#099">0</span>)
+		m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>DropRight);
+	<span style="font-weight:bold">else</span>
+		m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>JumpRight);
+}
+
+<span style="font-weight:bold">else</span> <span style="color:#900;font-weight:bold">if</span> (newPos.x <span style="font-weight:bold">&lt;=</span> <span style="color:#099">0</span> <span style="font-weight:bold">&amp;&amp;</span> newPos.y <span style="font-weight:bold">!=</span> <span style="color:#099">0</span>) { <span style="font-weight:bold">if</span> (newPos.y <span style="font-weight:bold">&gt;</span> <span style="color:#099">0</span>)
+		m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>DropLeft);
+	<span style="font-weight:bold">else</span>
+		m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>JumpLeft);
+</code></pre></div>
+
+<p>Can you see the problem, I obviously couldn&#8217;t. It all seemed correct, so what was the problem? For that, I decided to use the powerful debug functions. By setting some breakpoint, I could read the values of newPos while I was trying to recreate the bug. The result was weird. For some reason. newPos.y was a very, very small value. It was 1⋅10ˆ−5. Why this happened, I don&#8217;t know. For some reason only at that specific place. So, how do I fix this? The way I fixed it seemed rather incorrect, but it did get the job done. I even tested it on different states of the game(referring to the fps). Instead of comparing it with zero, I compared it with an offset, so that small values wouldn&#8217;t matter. Take a look at the following.</p>
+
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#998;font-style:italic">// Brace for some ugly vector checking
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">float</span> offset{ elapsedTime };
+</span>
+<span style="color:#998;font-style:italic">// Horizontal movement
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">if</span> (newPos.x <span style="font-weight:bold">&gt;</span> offset <span style="font-weight:bold">&amp;&amp;</span> newPos.y <span style="font-weight:bold">&gt;</span> <span style="font-weight:bold">-</span>offset <span style="font-weight:bold">&amp;&amp;</span> newPos.y <span style="font-weight:bold">&lt;</span> offset)
+</span>	m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>Right);
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="font-weight:bold">else</span> <span style="color:#900;font-weight:bold">if</span> (newPos.x <span style="font-weight:bold">&lt;</span> <span style="font-weight:bold">-</span>offset <span style="font-weight:bold">&amp;&amp;</span> newPos.y <span style="font-weight:bold">&gt;</span> <span style="font-weight:bold">-</span>offset <span style="font-weight:bold">&amp;&amp;</span> newPos.y <span style="font-weight:bold">&lt;</span> offset) 
+</span>        m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>Left); 
+
+<span style="color:#998;font-style:italic">// Vertical movement 
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">else</span> <span style="color:#900;font-weight:bold">if</span> (newPos.x <span style="font-weight:bold">&gt;=</span> <span style="font-weight:bold">-</span>offset <span style="font-weight:bold">&amp;&amp;</span> (newPos.y <span style="font-weight:bold">&lt;</span> <span style="font-weight:bold">-</span>offset <span style="font-weight:bold">||</span> newPos.y <span style="font-weight:bold">&gt;</span> offset))
+</span>{
+<span style="display:block;width:100%;background-color:#e5e5e5">	<span style="font-weight:bold">if</span> (newPos.y <span style="font-weight:bold">&gt;</span> offset)
+</span>		m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>DropRight);
+	<span style="font-weight:bold">else</span>
+<span style="display:block;width:100%;background-color:#e5e5e5">		m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>JumpRight);
+</span>}
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="font-weight:bold">else</span> <span style="color:#900;font-weight:bold">if</span> (newPos.x <span style="font-weight:bold">&lt;=</span> <span style="font-weight:bold">-</span>offset <span style="font-weight:bold">&amp;&amp;</span> (newPos.y <span style="font-weight:bold">&lt;</span> <span style="font-weight:bold">-</span>offset <span style="font-weight:bold">||</span> newPos.y <span style="font-weight:bold">&gt;</span> offset))
+</span>{
+<span style="display:block;width:100%;background-color:#e5e5e5">	<span style="font-weight:bold">if</span> (newPos.y <span style="font-weight:bold">&gt;</span> offset)
+</span>		m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>DropLeft);
+	<span style="font-weight:bold">else</span>
+		m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>JumpLeft);
+}
+
+<span style="color:#998;font-style:italic">// No movement
+</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">else</span>
+	m_animHandler.changeAnimation(playerDirection<span style="font-weight:bold">::</span>Rest);
+</code></pre></div></p>
+
+<p>We now compare it with an offset which is dependent on the elapsed time. For some reason, there was a relation between the elapsed time and the very low value. But it is fixed now, and or player can walk around without breakdancing.</p>
+
+<p>Have a productive day!</p>
+
+<p><a href="https://antjowie.github.io/projects/runaway/">Return to the project page</a>.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fanimation-and-sprite-sheet-part-2-1%2f&amp;text=Animation%20and%20sprite%20sheet%20part%202.1&amp;via="
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fanimation-and-sprite-sheet-part-2-1%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fanimation-and-sprite-sheet-part-2-1%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fanimation-and-sprite-sheet-part-2-1%2f&amp;title=Animation%20and%20sprite%20sheet%20part%202.1" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fanimation-and-sprite-sheet-part-2-1%2f&amp;title=Animation%20and%20sprite%20sheet%20part%202.1" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fanimation-and-sprite-sheet-part-2-1%2f&amp;title=Animation%20and%20sprite%20sheet%20part%202.1" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2frunaway%2fanimation-and-sprite-sheet-part-2-1%2f&amp;description=Animation%20and%20sprite%20sheet%20part%202.1" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:angelo05rettob@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/antjowie" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://antjowie.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://antjowie.github.io/">Angelo Anthony Rettob</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://antjowie.github.io/">Angelo&#39;s Portfolio</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.41</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://antjowie.github.io/js/main.js"></script>
+<script src="https://antjowie.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://antjowie.github.io/js/load-photoswipe.js"></script>
+
+
+<script>
+  (function() {
+    var cx = '001716844541583678590:jrms-ixh6ca';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+
+
+
+  </body>
+</html>
+

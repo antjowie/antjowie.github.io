@@ -98,6 +98,175 @@
     </item>
     
     <item>
+      <title>Light part 1.1</title>
+      <link>https://antjowie.github.io/page/runaway/light-part-1-1/</link>
+      <pubDate>Sat, 11 Nov 2017 14:48:59 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/light-part-1-1/</guid>
+      <description>Just a little note for you, this post is less about the project and more about me. You will notice that halfway through the text I&amp;#8217;m kinda changing the whole message of this post and it becomes less about the program and more about me. If you are not interested in that, you should stop after reading the following chapter.
+ Back when I added gates to the program.</description>
+    </item>
+    
+    <item>
+      <title>Light part 1</title>
+      <link>https://antjowie.github.io/page/runaway/light-part-1/</link>
+      <pubDate>Thu, 09 Nov 2017 20:11:05 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/light-part-1/</guid>
+      <description>This part will discuss the games light system. So let&amp;#8217;s start off with devising one. I&amp;#8217;ll first make a simple drawing so we&amp;#8217;re on the same page.
+Simple drawing showing my idea of the light Pretty simple right! I thought so, this is by no means a complex game. If you do not the objective of the game yet, allow me to explain. Else you can skip over the following paragraph.</description>
+    </item>
+    
+    <item>
+      <title>Movement of player part 3</title>
+      <link>https://antjowie.github.io/page/runaway/movement-of-player-part-3/</link>
+      <pubDate>Sun, 15 Oct 2017 10:21:30 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/movement-of-player-part-3/</guid>
+      <description>Welcome to one of my favorite things about programming, making up some kind of formula for your game.
+While I was quite satisfied with my previous implementation of the movement system (it is my first time implementing collision), I still found it to be quite sloppy. It&amp;#8217;s probably a programmer&amp;#8217;s nature to think badly of their code like an artist thinks lowly of their drawings. I&amp;#8217;m both of these. So I decided to try and neaten some things up.</description>
+    </item>
+    
+    <item>
+      <title>Animation and sprite sheet part 2.2</title>
+      <link>https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-2-2/</link>
+      <pubDate>Sat, 07 Oct 2017 12:36:13 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-2-2/</guid>
+      <description>Another day in the life of a programmer == another day for bugs. For those with a keen eye. You may have noticed something strange in my videos, or rather, something different. Take a look at these two videos before and after the animation handler class.
+Before   After   Have you noticed it? The player seems to spawn in a different location. But I haven&amp;#8217;t changed anything regarding the spawn location or movement.</description>
+    </item>
+    
+    <item>
+      <title>Animation and sprite sheet part 2.1</title>
+      <link>https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-2-1/</link>
+      <pubDate>Sat, 07 Oct 2017 12:09:53 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-2-1/</guid>
+      <description>Hello, today we will discuss the problem surrounding the not that groundbreaking (or should I say game-breaking?) glitch seen in this video.
+  Absolutely horrible! How could this happen? We will discuss that right here. This was the implementation.
+// Brace for some ugly vector checkingif (newPos.x &amp;gt; 0 &amp;amp;&amp;amp; newPos.y == 0)m_animHandler.changeAnimation(playerDirection::Right);else if (newPos.x &amp;lt; 0 &amp;amp;&amp;amp; newPos.y == 0) m_animHandler.changeAnimation(playerDirection::Left); else if (newPos.x &amp;gt;= 0 &amp;amp;&amp;amp; newPos.</description>
+    </item>
+    
+    <item>
+      <title>Movement of player part 2</title>
+      <link>https://antjowie.github.io/page/runaway/movement-of-player-part-2/</link>
+      <pubDate>Sat, 07 Oct 2017 10:08:14 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/movement-of-player-part-2/</guid>
+      <description>So to implement acceleration. The smartest thing to do would be to use real-life formulas. What can be more realistic or accurate than that? Oddly enough, I decided to use my own formula for it. I did it this way because I thought it would be more fitting for my game, while I&amp;#8217;m not so sure about the pros and cons, I decided to implement them both with different games. When I&amp;#8217;m going to make another game in the near future, I will use real life formulas for my game, Right now though, I&amp;#8217;m going to use my own implementation.</description>
+    </item>
+    
+    <item>
+      <title>Movement of player part 1</title>
+      <link>https://antjowie.github.io/page/runaway/movement-of-player-part-1/</link>
+      <pubDate>Sat, 07 Oct 2017 10:07:14 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/movement-of-player-part-1/</guid>
+      <description>Implementing movement can be as simple as adding values to the players&amp;#8217; position to calculating their position with all kinds of forces integrated into a formula. Because Runaway will be a simple but quite challenging game, I will implement an acceleration based move set. This way, the player will need to think about how long he keeps buttons pressed, and I can add some interesting game mechanics to keep levels feel a bit different from each other.</description>
+    </item>
+    
+    <item>
+      <title>Animation and sprite sheet part 2</title>
+      <link>https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-2/</link>
+      <pubDate>Thu, 05 Oct 2017 20:49:52 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-2/</guid>
+      <description>To implement an animation handler you first have to know the order of the frames in the sprite sheet. Or perhaps the other way around. Or maybe you are way further ahead than me and have already made a class that can handle both situations. Either way, the implementation is the same, or should I say the meaning of it. Most sprite sheets work the same way as any sprite sheet you will see.</description>
+    </item>
+    
+    <item>
+      <title>Animation and sprite sheet part 1</title>
+      <link>https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-1/</link>
+      <pubDate>Thu, 05 Oct 2017 15:46:08 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/animation-and-sprite-sheet-part-1/</guid>
+      <description>Tools make us productive if you choose the right one for the job. When it comes to sprite sheets, there are a whole bunch of choices. I too have got my little bag of drawing tools which we will discuss below.
+Because I&amp;#8217;m fairly new to game developing, I still program 2D games. Not that it is a bad thing, but I haven&amp;#8217;t even once touched 3D animations. This post is about Runaway so let us discuss the tools that I&amp;#8217;ve used to make this sprite sheet.</description>
+    </item>
+    
+    <item>
+      <title>Collision with static blocks part 2</title>
+      <link>https://antjowie.github.io/page/runaway/collision-with-static-blocks-part-2/</link>
+      <pubDate>Wed, 04 Oct 2017 14:39:23 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/collision-with-static-blocks-part-2/</guid>
+      <description>Finally! I have made the function work in all direction. It looks pretty nasty to the eye though and I&amp;#8217;m certain that there are way better implementations than mine, but just having it work makes me more than happy.
+In the previous part which you can go to by clicking on this, I have implemented a function which calculates the distance between a block and the player. While this does work, it can get quite confusing when you continue to program since all the differences in length will be relative to the player.</description>
+    </item>
+    
+    <item>
+      <title>Collision with static blocks part 1.1</title>
+      <link>https://antjowie.github.io/page/runaway/collision-with-static-blocks-part-1-1/</link>
+      <pubDate>Tue, 03 Oct 2017 16:27:36 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/collision-with-static-blocks-part-1-1/</guid>
+      <description>In my previous part, my implementation for this function was very barebone. It really wasn&amp;#8217;t thought out well. So in this part, I will explain all my thoughts. So you can see how I calculated all of it.
+I first made some basic sketches to see how the coordinates of the player and object relate to each other. You can see them here down below, although it really is unnecessary.</description>
+    </item>
+    
+    <item>
+      <title>Collision with static blocks part 1</title>
+      <link>https://antjowie.github.io/page/runaway/collision-with-static-blocks-part-1/</link>
+      <pubDate>Mon, 02 Oct 2017 17:58:30 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/runaway/collision-with-static-blocks-part-1/</guid>
+      <description>Normally part 1 starts at the planning phase, but I already started this projects before I made this site. With that out-of-the-way, let&amp;#8217;s discuss our problem.
+With our basic move set done, we are ready to add collision. There are many ways to program collision. The way I&amp;#8217;ve chosen to do it is by calculating the vertical distance from the player to his first solid lower block. This way, when the distance is negative, we can snap the player back into a correct distance.</description>
+    </item>
+    
+    <item>
+      <title>Runaway</title>
+      <link>https://antjowie.github.io/projects/runaway/</link>
+      <pubDate>Mon, 02 Oct 2017 17:39:32 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/projects/runaway/</guid>
+      <description>&lt;div class=&#34;gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition&#34; itemscope itemtype=&#34;http://schema.org/ImageGallery&#34;&gt;
+	  
+  
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://antjowie.github.io/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/img/runaway/Light-test-1.png&#39;);&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://antjowie.github.io/img/runaway/Light-test-1.png&#34; alt=&#34;Light is a very important aspect in this game&#34;/&gt;
+    &lt;/div&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Working with light&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;a href=&#34;https://antjowie.github.io/img/runaway/Light-test-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+  
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/img/runaway/Ligth-example.png&#39;);&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://antjowie.github.io/img/runaway/Ligth-example.png&#34; alt=&#34;You have to start somewhere&#34;/&gt;
+    &lt;/div&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;A broad idea&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;a href=&#34;https://antjowie.github.io/img/runaway/Ligth-example.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+  
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/img/runaway/playerSpritesheet.png&#39;);&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://antjowie.github.io/img/runaway/playerSpritesheet.png&#34; alt=&#34;How do we process this spritesheet?&#34;/&gt;
+    &lt;/div&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Make him move&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;a href=&#34;https://antjowie.github.io/img/runaway/playerSpritesheet.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
       <title>About me</title>
       <link>https://antjowie.github.io/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
