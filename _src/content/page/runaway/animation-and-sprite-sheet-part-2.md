@@ -1,6 +1,7 @@
 ---
 title: Animation and sprite sheet part 2
 date: 2017-10-05T20:49:52+00:00
+comments: true
 ---
 To implement an animation handler you first have to know the order of the frames in the sprite sheet. Or perhaps the other way around. Or maybe you are way further ahead than me and have already made a class that can handle both situations. Either way, the implementation is the same, or should I say the meaning of it. Most sprite sheets work the same way as any sprite sheet you will see. You have the rows and the columns, as described in [part 1][1]. So in this part, I will explain my implementation of an animation handler class.
 

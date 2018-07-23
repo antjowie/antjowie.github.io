@@ -1,6 +1,7 @@
 ---
 title: Animation and sprite sheet part 2.2
 date: 2017-10-07T12:36:13+00:00
+comments: true
 ---
 Another day in the life of a programmer == another day for bugs. For those with a keen eye. You may have noticed something strange in my videos, or rather, something different. Take a look at these two videos before and after the animation handler class.
 

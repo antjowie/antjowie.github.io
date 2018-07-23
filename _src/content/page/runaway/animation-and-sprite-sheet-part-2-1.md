@@ -1,6 +1,7 @@
 ---
 title: Animation and sprite sheet part 2.1
 date: 2017-10-07T12:09:53+00:00
+comments: true
 ---
 Hello, today we will discuss the problem surrounding the not that groundbreaking (or should I say game-breaking?) glitch seen in this video.
 

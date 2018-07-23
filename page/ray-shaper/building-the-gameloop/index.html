@@ -5,21 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts</title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>Building the gameloop</title>
+  <meta property="og:title" content="Building the gameloop" />
+  <meta name="twitter:title" content="Building the gameloop" />
+  <meta name="description" content="A bit of reflection This is one of the things that keep impressing me about programming. Every time when I make a solution it feels like the best solution I ever came up with. But I am programming I notice that it almost never is true. That also is the case this time.
+One of the main issues that I had during the development of Runaway was my implementation of the parent class.">
+  <meta property="og:description" content="A bit of reflection This is one of the things that keep impressing me about programming. Every time when I make a solution it feels like the best solution I ever came up with. But I am programming I notice that it almost never is true. That also is the case this time.
+One of the main issues that I had during the development of Runaway was my implementation of the parent class.">
+  <meta name="twitter:description" content="A bit of reflection This is one of the things that keep impressing me about programming. Every time when I make a solution it feels like the best solution I ever came up with. But I am programming I …">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://antjowie.github.io/post/" />
+  <meta property="og:url" content="https://antjowie.github.io/page/ray-shaper/building-the-gameloop/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
 
   <meta name="generator" content="Hugo 0.41" />
-  <link rel="canonical" href="https://antjowie.github.io/post/" />
-  <link rel="alternate" href="https://antjowie.github.io/post/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
+  <link rel="canonical" href="https://antjowie.github.io/page/ray-shaper/building-the-gameloop/" />
+  <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -167,14 +172,26 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
-              <h1>Posts</h1>
-              <hr class="small">
+              <h1>Building the gameloop</h1>
+                
+                
             </div>
           </div>
         </div>
@@ -182,111 +199,158 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="https://antjowie.github.io/post/the-switch-to-hugo/">
-                <h2 class="post-title">The Switch to Hugo</h2>
 
-                
-                  <h3 class="post-subtitle">
-                    Goodbye WordPresss, hello Hugo
-                  </h3>
-                
-              </a>
+<h2 id="a-bit-of-reflection">A bit of reflection</h2>
 
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 9, 2018
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 8 minutes (1689 words)
-  
-  
-</span>
+<p>This is one of the things that keep impressing me about programming. Every time when I make a solution it feels like the best solution I ever came up with. But I am programming I notice that it almost never is true. That also is the case this time.</p>
 
+<p>One of the main issues that I had during the development of Runaway was my implementation of the parent class. Polymorphism is suposed to help you reduce the ammount of code work and therefore reduce the ammount of errors. Then, you can use the class as a base clase for a different class and change some functions that require different interaction. But in Runaway every class overrode the virtual function. My parent class became an interface.</p>
 
-              </p>
-              <div class="post-entry">
-                
-                  <p>I used to have another portfolio site I made in preparation to enter the course <a href="https://www.nhtv.nl/bachelors/creative-media-and-game-technologies/introduction.html">Creative Media and Game Technologies</a> at <a href="https://www.nhtv.nl/">NHTV</a>. <a href="https://antjowie.github.io/post/my-journey-towards-nhtv/"><code>(I actually got a place in the course, read more about it here)</code></a>. By doing so I hoped to increase my chances during the conversation.</p>
+<p>Not this time. In my new implementation the parent class defines the default paths for every menu.</p>
+
+<h2 id="building-the-game-loop">Building the game loop</h2>
+
+<p>Every game has a game loop. Its basically a loop that gets the user input, updates the objects and draws them on the screen. Just like in real life do objects react by their surroundings and update their state accordingly. So every object has these 3 functions.</p>
 
 <blockquote>
-<p>NHTV will be renamed to Breda University of Applied Sciences as of September 2018</p>
+<p>That&#8217;s also the basic class for my object. By making a class with these three functions, every object can be put inside a data container. By doing this, we can easily update all objects with one line.</p>
 </blockquote>
 
-<p>Problem is, I didn&rsquo;t have any prior knowledge of web development. So I started doing research. I always wondered how the web worked.
-</p>
-                  <a href="https://antjowie.github.io/post/the-switch-to-hugo/" class="post-read-more">[Read More]</a>
-                
-              </div>
+<p>This is the core point of my new menu class. A menu is comparable to a state. But instead of changing the state, I push a new state onto the menu stack. By doing this we can keep track of our previous states and it gives us a lot if flexibility.</p>
 
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://antjowie.github.io//tags/web-development/">web development</a>&nbsp;
-                  
-                </div>
-              
+<p>I made this system after I realized that I could use the heap without keeping a pointer to it. In my new design every object has a reference to the object manager. So when an object is made, they push themselves onto the object manager. The object manager handles the drawing, updating, input and lifetime of the objects. So all we have to do is allocate memory on the heap using the new keyword and make our object. The beauty in it us that all the objects have to be declared in the constructor and the rest of the functions do not have to be touched.</p>
 
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://antjowie.github.io/post/my-journey-towards-nhtv/">
-                <h2 class="post-title">My Journey Towards NHTV</h2>
-
-                
-                  <h3 class="post-subtitle">
-                    How one night changed my &#39;Destiny&#39;
-                  </h3>
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on April 11, 2018
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (3 words)
-  
-  
-</span>
+<p><a href="https://antjowie.github.io/projects/ray-shaper/">Return to project page.</a></p>
 
 
-              </p>
-              <div class="post-entry">
-                
-                  <p>Will write soon.</p>
-
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://antjowie.github.io//tags/university/">university</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-        </div>
         
-      </div>
+
+        
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2fray-shaper%2fbuilding-the-gameloop%2f&amp;text=Building%20the%20gameloop&amp;via="
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2fray-shaper%2fbuilding-the-gameloop%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2fray-shaper%2fbuilding-the-gameloop%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2fray-shaper%2fbuilding-the-gameloop%2f&amp;title=Building%20the%20gameloop" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2fray-shaper%2fbuilding-the-gameloop%2f&amp;title=Building%20the%20gameloop" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2fray-shaper%2fbuilding-the-gameloop%2f&amp;title=Building%20the%20gameloop" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2fray-shaper%2fbuilding-the-gameloop%2f&amp;description=Building%20the%20gameloop" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "angelos-portfolio" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -313,7 +377,7 @@
           
           <li>
             
-            <a href="https://antjowie.github.io/post/index.xml" title="RSS">
+            <a href="https://antjowie.github.io/index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>

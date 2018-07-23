@@ -63,6 +63,35 @@
     </item>
     
     <item>
+      <title>Building the gameloop</title>
+      <link>https://antjowie.github.io/page/ray-shaper/building-the-gameloop/</link>
+      <pubDate>Sat, 13 Jan 2018 20:10:48 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/ray-shaper/building-the-gameloop/</guid>
+      <description>A bit of reflection This is one of the things that keep impressing me about programming. Every time when I make a solution it feels like the best solution I ever came up with. But I am programming I notice that it almost never is true. That also is the case this time.
+One of the main issues that I had during the development of Runaway was my implementation of the parent class.</description>
+    </item>
+    
+    <item>
+      <title>Building a foundation</title>
+      <link>https://antjowie.github.io/page/ray-shaper/building-a-foundation/</link>
+      <pubDate>Tue, 09 Jan 2018 17:15:11 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/ray-shaper/building-a-foundation/</guid>
+      <description>After having brainstormed for a while, I decided to make a puzzle game based on the reflection of lasers. It is not the most creative game but I am interested in programming it. I will call the game Ray Shaper because you shape the ray using objects and your own glass shield. The objective is to get the ray to the door. Sounds pretty easy, right?
+After having made my first game, there are many things I have learned.</description>
+    </item>
+    
+    <item>
+      <title>Planning is key</title>
+      <link>https://antjowie.github.io/page/ray-shaper/planning-is-key/</link>
+      <pubDate>Tue, 09 Jan 2018 15:41:35 +0000</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/ray-shaper/planning-is-key/</guid>
+      <description>Reflection is an interesting theme because I have never done anything with it. When I think about it, the first thing that comes to mind is light. Because ideas go away so fast I always write them down in a word web/mind map or some other kind of structure. This gives me an ordered overview of all my ideas and by doing that I can mix them together to make something interesting.</description>
+    </item>
+    
+    <item>
       <title>Light part 1.1</title>
       <link>https://antjowie.github.io/page/runaway/light-part-1-1/</link>
       <pubDate>Sat, 11 Nov 2017 14:48:59 +0000</pubDate>

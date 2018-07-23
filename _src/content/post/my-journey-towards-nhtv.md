@@ -7,4 +7,4 @@ tags:
 bigimg: 
     - {src: "/img/my-journey-towards-nhtv/NHTV_Breda_logo.jpg", desc: "The NHTV logo"}
 ---
-Have yet to write the information
+Will write soon.

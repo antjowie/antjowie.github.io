@@ -1,5 +1,6 @@
 ---
 title: Animation and sprite sheet part 1
+comments: true
 date: 2017-10-05T15:46:08+00:00
 ---
 Tools make us productive if you choose the right one for the job. When it comes to sprite sheets, there are a whole bunch of choices. I too have got my little bag of drawing tools which we will discuss below.
