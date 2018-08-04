@@ -11,58 +11,64 @@ bigimg:
     # - {src: "path", desc: "description"}
 comments: false
 ---
-The Axios framework makes use of [SFML](https://www.sfml-dev.org/). The Axios framework is used for 2D game development. It was actually meant to be a game engine, but I have no experience making a GUI yet. I believe that you should not do two major new subjects at the same time, so a framework it is. 
+The Axios Framework makes use of [SFML](https://www.sfml-dev.org/). The Axios Framework is a 2D game framework that runs  on files made by [Tiled](https://www.mapeditor.org/). The programmer only writes the objects. The objects are exported to a file that can be loaded in [Tiled](https://www.mapeditor.org/), a 2D tilemap editor. At first I wanted to make a game engine, but I have no experience making any kind of GUI yet. I believe that you should not do two major new subjects at the same time, so a framework it is. Hopefully this project can one day evolve into a game engine.
 <!--more-->
 
-The framework is supposed to be an all inclusive pack. During the development of my two first games [Runaway](https://github.com/antjowie/Runaway) and [Ray Shaper](https://github.com/antjowie/Ray-Shaper) I noticed a certain pattern. Time was crucial (Ray Shaper was my intake assignment for Breda University, [read more about that here]({{< ref "post\my-journey-towards-nhtv.md" >}})) so I copied and pasted much of the code from Runaway. Many of those files were modified to meet certain needs, but the animation files and the game loop stayed the same. With that knowledge and some extensive reading of the book [Game Engine Architecture](http://gameenginebook.com/), the Axios framework started to become my next project. 
+## My motivation for this project
+The framework is supposed to be an all inclusive pack. During the development of my two first games [Runaway](https://github.com/antjowie/Runaway) and [Ray Shaper](https://github.com/antjowie/Ray-Shaper) I noticed a certain pattern. Time was crucial (Ray Shaper was my intake assignment for Breda University, [read more about that here]({{< ref "post\my-journey-towards-nhtv.md" >}})) so I copied and pasted much of the code from Runaway. Many of those files were modified to meet certain needs, but the animation files and the game loop stayed the same.  
+Most of the time when I'm programming and come up with a new idea, I first prototype that idea. I make some throwaway code to test if it may be something to implement. Because of my limited time, all the prototype and throwaway code came into the final product. Optimalization was my last priority, which is why that simple game lagged in it's final stage. Everything just had to work. But I had no base code to start with. Only another prototyped project.
 
-> You can follow this project on Github at this [repository](https://github.com/antjowie/axios-framework)
+So wWith that knowledge and some extensive reading of the book [Game Engine Architecture](http://gameenginebook.com/), the Axios Framework started to become my next project. 
+
+> The source code for this project is hosted on Github at this [repository](https://github.com/antjowie/axios-framework)
 
 ## What does it do
-The framework serves a role in the following subjects. Marked subject have a solid idea. Unmarked subjects have yet to take any shape. `(you can click the bold title to see the progress)`:
+The framework serves a role in the following subjects. Marked subject are being worked on. Unmarked subjects aren't. `(you can click the bold title to see the progress)`:
 
 -  [**Instance**]({{< ref "page\axios-framework\game-instance.md" >}})
+    _The `Instance` class is an instance of the framework or, easier said, the game loop. The `Instance` class manages the update loops. All the classes can make hooks to the update loops._  
     - [X] Manage (de)initialization of modules
-    - [X] Game loop
-    - [X] Workaround to make window fullscreen during runtime
--  [**Scene manager**]({{< ref "page\axios-framework\scene-manager.md" >}})  
-    _Scenes are containers that manage objects and allow object to interact with eachother. It also allows object to easilly make new data during runtime. A scene can be a menu or level, basically everything that the user makes in Tiled._  
+    - [X] Physics update loop
+    - [X] Update loop
+    - [X] Frame rate control
+-  [**Object manager**]({{< ref "page\axios-framework\object-manager.md" >}})  
+    _The `Object manager` is a container that manages the memory/allocation/lifetime of all the `Objects` and allows `Objects` to be querried. It also allows `Objects` to easilly initiate data during runtime.`_  
     - [X] One/two frame stack
-    - [X] Dynamic runtime stack
-    - [X] Object updating
+    - [X] Runtime object (de)allocation
     - [X] Object reference handling
-    - [ ] Event handling
+    - [ ] Object serialization
 -  **Objects**  
-    _Objects are the building blocks of the game. Objects are build of components_
+    _Objects are the building blocks of the game. Objects are build out of hooks to subsystems_  
     - [ ] Object factory
-    - [ ] Animation handling
-    - [ ] Collision and Physics
     - [ ] Object serialization
 -  **Subsystems**  
-    _Subsystems are systems that classes can make hooks to. They are updated in every scene. The reason why subsystems are not in the objects is because this way couping between subsystems and objects is not present_
-    - [ ] Animation
-    - [ ] Rigid body (collision response/physics)
+    _Subsystems are systems that objects can make hooks to. Subsystems make hooks to an update loop of the `Instane` class. This allows the programmer to easily make his own subsystem_  
+    - [ ] Subsystem foundation
+    - [ ] Animation subsystem
+    - [ ] Rigid body (collision response/physics) subsystem
 - [**Data manager**]({{< ref "page\axios-framework\data-manager.md" >}})  
     _Basic data containers for game data that has to be saved_
     - [X] Game keybinding items
     - [X] User config
 - **Assets manager**  
-    _Game textures, sounds, files that are static and are different depending on the scene._
+    _Keeps the game textures, sounds, files in memory to which objects can make reference too._
     - [ ] Sound
     - [ ] Music
-    - [ ] Images
+    - [ ] Textures
     - [ ] Fonts
-    - [ ] Asynchronous scene transition
 - **Tiled support**  
-    _[Tiled](https://www.mapeditor.org/) will be used as the main editor for scenes. With Tiled, all scenes initial state will be made._
-    - [ ] Load external map
-    - [ ] Export Object types
+    _[Tiled](https://www.mapeditor.org/) will be used as the editor._
+    - [ ] Load Tiled file
+    - [ ] Export object data type
 - [**Input handler**]({{< ref "page\axios-framework\input-handler.md" >}})
+    _An interface that keeps track of all input devices and their state._
     - [X] Keyboard and mouse
     - [ ] Controller
 - [**Utilities**]({{< ref "page\axios-framework\utilities.md" >}})
+    _Code that allows communication with other programs or supports the developer during development._
     - [X] JSON parser
     - [ ] SFML key code converter
     - [X] Logger
+    - [ ] String hashing
 
 Please ask questions about the project in the dedicated subject. 

@@ -1,7 +1,7 @@
 ---
-title: "Scene Manager"
+title: "Object Manager"
 date: 2018-06-22T14:36:52+02:00
-subtitle: "Simple, a manager for all our scenes"
+subtitle: "Someone has to keep those thousand objects in check"
 tags: 
     # - example
 bigimg: 
