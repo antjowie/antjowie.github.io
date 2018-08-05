@@ -207,52 +207,57 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The Axios framework makes use of <a href="https://www.sfml-dev.org/">SFML</a>. The Axios framework is used for 2D game development. It was actually meant to be a game engine, but I have no experience making a GUI yet. I believe that you should not do two major new subjects at the same time, so a framework it is.
+        <p>The Axios Framework makes use of <a href="https://www.sfml-dev.org/">SFML</a>. The Axios Framework is a 2D game framework that runs on files made by <a href="https://www.mapeditor.org/">Tiled</a>. The programmer only writes the objects. The objects are exported to a file that can be loaded in <a href="https://www.mapeditor.org/">Tiled</a>, a 2D tilemap editor. At first, I wanted to make a game engine, but I have no experience making any kind of GUI yet. I believe that you should not do two major new subjects at the same time, so a framework it is. Hopefully, this project can one day evolve into a game engine.
 </p>
 
-<p>The framework is supposed to be an all inclusive pack. During the development of my two first games <a href="https://github.com/antjowie/Runaway">Runaway</a> and <a href="https://github.com/antjowie/Ray-Shaper">Ray Shaper</a> I noticed a certain pattern. Time was crucial (Ray Shaper was my intake assignment for Breda University, <a href="https://antjowie.github.io/post/my-journey-towards-nhtv/">read more about that here</a>) so I copied and pasted much of the code from Runaway. Many of those files were modified to meet certain needs, but the animation files and the game loop stayed the same. With that knowledge and some extensive reading of the book <a href="http://gameenginebook.com/">Game Engine Architecture</a>, the Axios framework started to become my next project.</p>
+<h2 id="my-motivation-for-this-project">My motivation for this project</h2>
+
+<p>The framework is supposed to be an all inclusive pack. During the development of my two first games <a href="https://github.com/antjowie/Runaway">Runaway</a> and <a href="https://github.com/antjowie/Ray-Shaper">Ray Shaper</a>, I noticed a certain pattern. Time was crucial (Ray Shaper was my intake assignment for Breda University, <a href="https://antjowie.github.io/post/my-journey-towards-nhtv/">read more about that here</a>) so I copied and pasted much of the code from Runaway. Many of those files were modified to meet certain needs, but the animation files and the game loop stayed the same.<br />
+Most of the time when I&rsquo;m programming and come up with a new idea, I first prototype that idea, then make some throwaway code to test it and see if its something to implement. Because of my limited time, all the prototype and throwaway code came into the final product. Optimization was my last priority, which is why that simple game lagged in its final stage. Everything just had to work. But I had no base code to start with. Only another prototyped project.</p>
+
+<p>So with that knowledge and some extensive reading of the book <a href="http://gameenginebook.com/">Game Engine Architecture</a>, the Axios Framework started to become my next project.</p>
 
 <blockquote>
-<p>You can follow this project on Github at this <a href="https://github.com/antjowie/axios-framework">repository</a></p>
+<p>The source code for this project is hosted on Github at this <a href="https://github.com/antjowie/axios-framework">repository</a>.</p>
 </blockquote>
 
 <h2 id="what-does-it-do">What does it do</h2>
 
-<p>The framework serves a role in the following subjects. Marked subject have a solid idea. Unmarked subjects have yet to take any shape. <code>(you can click the bold title to see the progress)</code>:</p>
+<p>The framework serves a role in the following subjects. The subjects are their responsibilities. Marked subjects are being worked on. Unmarked subjects aren&rsquo;t. <code>(you can click the bold title to see the progress)</code>:</p>
 
 <ul class="task-list">
 <li><a href="https://antjowie.github.io/page/axios-framework/game-instance/"><strong>Instance</strong></a>
+<em>The <code>Instance</code> class is an instance of the framework. It contains the game loop. The <code>Instance</code> class manages the update loops. All the classes can make hooks to the update loops.</em><br />
 
 <ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Manage (de)initialization of modules</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Game loop</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Workaround to make window fullscreen during runtime</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Manage (de)initialization of subsystems</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Physics update loop</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Update loop</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Frame rate control</label></li>
 </ul></li>
-<li><a href="https://antjowie.github.io/page/axios-framework/scene-manager/"><strong>Scene manager</strong></a><br />
-<em>Scenes are containers that manage objects and allow object to interact with eachother. It also allows object to easilly make new data during runtime. A scene can be a menu or level, basically everything that the user makes in Tiled.</em><br />
+<li><a href="https://antjowie.github.io/page/axios-framework/object-manager/"><strong>Object manager</strong></a><br />
+<em>The <code>Object manager</code> is a container that manages the memory/allocation/lifetime of all the <code>Objects</code> and allows <code>Objects</code> to be querried. It also allows <code>Objects</code> to easilly initiate data during runtime.`</em><br />
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> One/two frame stack</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Dynamic runtime stack</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Object updating</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Runtime object (de)allocation</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Object reference handling</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Event handling</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
 </ul></li>
 <li><strong>Objects</strong><br />
-<em>Objects are the building blocks of the game. Objects are build of components</em>
+<em>Objects are the building blocks of the game. Objects are build out of hooks to subsystems</em><br />
 
 <ul class="task-list">
 <li><label><input type="checkbox" disabled class="task-list-item"> Object factory</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Animation handling</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Collision and Physics</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
 </ul></li>
 <li><strong>Subsystems</strong><br />
-<em>Subsystems are systems that classes can make hooks to. They are updated in every scene. The reason why subsystems are not in the objects is because this way couping between subsystems and objects is not present</em>
+<em>Subsystems are systems that objects can make hooks to. Subsystems make hooks to an update loop of the <code>Instane</code> class. This allows the programmer to easily make his own subsystem</em><br />
 
 <ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Animation</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Rigid body (collision response/physics)</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Subsystem foundation</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Animation subsystem</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Rigid body (collision response/physics) subsystem</label></li>
 </ul></li>
 <li><a href="https://antjowie.github.io/page/axios-framework/data-manager/"><strong>Data manager</strong></a><br />
 <em>Basic data containers for game data that has to be saved</em>
@@ -262,34 +267,36 @@
 <li><label><input type="checkbox" checked disabled class="task-list-item"> User config</label></li>
 </ul></li>
 <li><strong>Assets manager</strong><br />
-<em>Game textures, sounds, files that are static and are different depending on the scene.</em>
+<em>Keeps the game textures, sounds, files in memory to which objects can make reference too.</em>
 
 <ul class="task-list">
 <li><label><input type="checkbox" disabled class="task-list-item"> Sound</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Music</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Images</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Textures</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Fonts</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Asynchronous scene transition</label></li>
 </ul></li>
 <li><strong>Tiled support</strong><br />
-<em><a href="https://www.mapeditor.org/">Tiled</a> will be used as the main editor for scenes. With Tiled, all scenes initial state will be made.</em>
+<em><a href="https://www.mapeditor.org/">Tiled</a> will be used as the editor.</em>
 
 <ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Load external map</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Export Object types</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Import Tiled files</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Export object data type</label></li>
 </ul></li>
 <li><a href="https://antjowie.github.io/page/axios-framework/input-handler/"><strong>Input handler</strong></a>
+<em>An interface that keeps track of all input devices and their state.</em>
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Keyboard and mouse</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Controller</label></li>
 </ul></li>
 <li><a href="https://antjowie.github.io/page/axios-framework/utilities/"><strong>Utilities</strong></a>
+<em>Code that allows communication with other programs or supports the developer during development.</em>
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> JSON parser</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> SFML key code converter</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Logger</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> String hashing</label></li>
 </ul></li>
 </ul>
 

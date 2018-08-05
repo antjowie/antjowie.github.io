@@ -208,36 +208,42 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p><code>Instance</code> is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. <code>Instance</code> is responsible for managing the render window and guiding the program. It is the main loop of the game.
+        <p><code>Instance</code> is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. <code>Instance</code> is responsible for the timeline in the game. It is the main loop of the game.
 </p>
 
-<h2 id="documentation">Documentation</h2>
-
 <blockquote>
-<p>Code hosted on Github: <a href="https://github.com/antjowie/Axios-framework/blob/master/include/Axios/Instance.h">Header</a> and <a href="https://github.com/antjowie/Axios-framework/blob/master/src/Axios/Instance.cpp">Source</a></p>
+<p>Code hosted on Github: <a href="https://github.com/antjowie/Axios-framework/blob/master/include/Axios/Instance.h">Header</a> and <a href="https://github.com/antjowie/Axios-framework/blob/master/src/Axios/Instance.cpp">Source</a>.</p>
 </blockquote>
 
-<h4 id="instance">Instance</h4>
+<hr />
 
-<p><em>The <code>Instance</code> class manages the whole render window. It has been made a class to work around the fact that SFML does not support open windows to turn to fullscreen.</em></p>
+<h4 id="manage-de-initialization-of-subsystems">Manage (de)initialization of subsystems</h4>
 
-<h2 id="design-choices">Design choices</h2>
+<p>Subsystems are systems that object make hooks to. Physics response for example. The <code>Instance</code> class initializes all these subsystems. It really just makes sure to construct them before any objects are allowed to be made.</p>
 
-<h4 id="game-loop-and-the-importance-of-time">Game Loop and the importance of time</h4>
+<p>There is a simple vector that takes care of this. The programmer can overwrite a callback function to add his own subsystems to the (de)initialization loop if it is required.</p>
 
-<p>The <code>Game Loop</code> is responsible for updating everything, it is the code that is repeatedly run.</p>
+<h4 id="update-loops">Update loops</h4>
 
-<p>The <code>Game Loop</code> will make sure that the user experiences our game in the same speed as everyone else does. Most of the time, games will run at the fastest speed possible, but with a higher fps, the program runs faster. This means that things like movement will be different.</p>
+<p>The physics update loop is an update loop that updates on a constant interval. This allows a more consistent experience across all systems.</p>
 
-<p>This is fixed by using a time variable. For perfect results, we need the time the frame is taking and multiply all physics related code with it, but we can&rsquo;t predict the time it will take to render the frame, because the calculations will be finished by then. There are several ways to fix this.</p>
+<p>All update loops will be wrapped in a clock class. The clock class is a class that manages all the update loops. The clock is a global singleton class. The clock also serves functions to edit time. Functions like slowing the timeline down or stopping it. Subsystems or objects can get time values from the clock or can make hooks to the clock to be run every so often.<br />
+The clock class will have two timelines.
+- Real update
+- Update and
+- Physics update
+The real update loop is a timeline that can&rsquo;t be affected. It is useful for debugging or pausing the game simply by stopping the update loop. For example. When the user pauses the game, the update timeline uses a modifier of zero (which means nothing will move) and the pause menu uses the real update loop.<br />
+The update loop is just an update loop. Most effects will use this loop like the camera or subsystems.<br />
+The physics timeline is updated at a constant rate, only when the elapsed time is equal to some hertz (like 100) will the physics timeline update. This is useful for subsystems like physics.</p>
 
-<h4 id="fixing-timing">Fixing timing</h4>
+<h4 id="frame-rate-control">Frame rate control</h4>
 
-<p>We could use the time of the previous frame, it is an estimation of the time the next frame will take. If however, something very demanding would happen on that frame, the time would be incorrect, leading to lag. Because the frame took long but the time value is relatively low.</p>
+<p>The subsystem will have two ways of managing the frame rate. Frame updating based on running an average and frame rate governing.<br />
+<strong>Frame updating based on running an average</strong> works because when a user experiences a more demanding section of the level, chances are that the user still does on the next frame. So by taking the average between a few frames. The spike will be less noticeable, but the game will feel a bit more unresponsive because the update loop doesn&rsquo;t really match the rendering loop.</p>
 
-<p>Another approach is to take the last few frame&rsquo;s time and calculate their average. This would result into a fairly accurate guess and sudden lags would compensate and not make you warp on the next frame. But because this approach uses an average, a game with many demanding and undemanding frames close by would make the game feel sluggish.</p>
+<p><strong>Frame rate governing</strong> is a process where we guarantee a specific frame rate. If the target frame rate is 60 fps. (<sup>1</sup>&frasl;<sub>60</sub> = 16.7 ms) and the frame takes 10 ms, we wait until 16.7 ms has passed. If the frame takes 20 ms. We must skip a frame and run it on the next occurrence (33.3 ms) which means the game will jump to 30 fps for a second.</p>
 
-<p>In the end, it all depends on your game. I will take the latter approach because my game won&rsquo;t be that demanding and it is the safer choice.</p>
+<p>We will develop with an average frame rate and will use frame rate governing nearing the end of our game when the frame rate will be more stable.</p>
 
 <p>That should conclude the game instance class. If you have any questions or suggestions, leave them in the comments down below. Thank you!</p>
 

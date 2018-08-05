@@ -8,29 +8,37 @@ bigimg:
     # - {src: "path", desc: "description"}
 comments: true
 ---
-`Instance` is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. `Instance` is responsible for managing the render window and guiding the program. It is the main loop of the game.
+`Instance` is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. `Instance` is responsible for the timeline in the game. It is the main loop of the game.
 <!--more-->
 
-## Documentation
-> Code hosted on Github: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/Instance.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/Instance.cpp)
+> Code hosted on Github: [Header](https://github.com/antjowie/Axios-framework/blob/master/include/Axios/Instance.h) and [Source](https://github.com/antjowie/Axios-framework/blob/master/src/Axios/Instance.cpp).
 
-#### Instance
-_The `Instance` class manages the whole render window. It has been made a class to work around the fact that SFML does not support open windows to turn to fullscreen._  
+---
 
-## Design choices
-#### Game Loop and the importance of time
-The `Game Loop` is responsible for updating everything, it is the code that is repeatedly run.  
+#### Manage (de)initialization of subsystems
+Subsystems are systems that object make hooks to. Physics response for example. The `Instance` class initializes all these subsystems. It really just makes sure to construct them before any objects are allowed to be made.
 
-The `Game Loop` will make sure that the user experiences our game in the same speed as everyone else does. Most of the time, games will run at the fastest speed possible, but with a higher fps, the program runs faster. This means that things like movement will be different.
+There is a simple vector that takes care of this. The programmer can overwrite a callback function to add his own subsystems to the (de)initialization loop if it is required.
 
-This is fixed by using a time variable. For perfect results, we need the time the frame is taking and multiply all physics related code with it, but we can't predict the time it will take to render the frame, because the calculations will be finished by then. There are several ways to fix this.
+#### Update loops
+The physics update loop is an update loop that updates on a constant interval. This allows a more consistent experience across all systems.
 
-#### Fixing timing 
-We could use the time of the previous frame, it is an estimation of the time the next frame will take. If however, something very demanding would happen on that frame, the time would be incorrect, leading to lag. Because the frame took long but the time value is relatively low.  
+All update loops will be wrapped in a clock class. The clock class is a class that manages all the update loops. The clock is a global singleton class. The clock also serves functions to edit time. Functions like slowing the timeline down or stopping it. Subsystems or objects can get time values from the clock or can make hooks to the clock to be run every so often.  
+The clock class will have two timelines.
+- Real update
+- Update and
+- Physics update
+The real update loop is a timeline that can't be affected. It is useful for debugging or pausing the game simply by stopping the update loop. For example. When the user pauses the game, the update timeline uses a modifier of zero (which means nothing will move) and the pause menu uses the real update loop.  
+The update loop is just an update loop. Most effects will use this loop like the camera or subsystems.  
+The physics timeline is updated at a constant rate, only when the elapsed time is equal to some hertz (like 100) will the physics timeline update. This is useful for subsystems like physics.
 
-Another approach is to take the last few frame's time and calculate their average. This would result into a fairly accurate guess and sudden lags would compensate and not make you warp on the next frame. But because this approach uses an average, a game with many demanding and undemanding frames close by would make the game feel sluggish.
+#### Frame rate control
+The subsystem will have two ways of managing the frame rate. Frame updating based on running an average and frame rate governing.  
+**Frame updating based on running an average** works because when a user experiences a more demanding section of the level, chances are that the user still does on the next frame. So by taking the average between a few frames. The spike will be less noticeable, but the game will feel a bit more unresponsive because the update loop doesn't really match the rendering loop.
 
-In the end, it all depends on your game. I will take the latter approach because my game won't be that demanding and it is the safer choice.
+**Frame rate governing** is a process where we guarantee a specific frame rate. If the target frame rate is 60 fps. (1/60 = 16.7 ms) and the frame takes 10 ms, we wait until 16.7 ms has passed. If the frame takes 20 ms. We must skip a frame and run it on the next occurrence (33.3 ms) which means the game will jump to 30 fps for a second. 
+
+We will develop with an average frame rate and will use frame rate governing nearing the end of our game when the frame rate will be more stable.
 
 That should conclude the game instance class. If you have any questions or suggestions, leave them in the comments down below. Thank you!
 

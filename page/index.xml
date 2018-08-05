@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>Scene Manager</title>
-      <link>https://antjowie.github.io/page/axios-framework/scene-manager/</link>
+      <title>Object Manager</title>
+      <link>https://antjowie.github.io/page/axios-framework/object-manager/</link>
       <pubDate>Fri, 22 Jun 2018 14:36:52 +0200</pubDate>
       <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
-      <guid>https://antjowie.github.io/page/axios-framework/scene-manager/</guid>
+      <guid>https://antjowie.github.io/page/axios-framework/object-manager/</guid>
       <description>&lt;p&gt;A &lt;code&gt;Scene&lt;/code&gt; is a level or a section. A certain moment in the program where a certain group of objects are loaded. The main menu is a scene. The level is a scene. &lt;code&gt;Scenes&lt;/code&gt; are managers of objects.
 &lt;/p&gt;</description>
     </item>
@@ -38,7 +38,7 @@
       <pubDate>Tue, 19 Jun 2018 18:20:16 +0200</pubDate>
       <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
       <guid>https://antjowie.github.io/page/axios-framework/data-manager/</guid>
-      <description>&lt;p&gt;The &lt;code&gt;Data Manager&lt;/code&gt; is responsible for the data. This is not to be confused with the &lt;code&gt;Assets Manager&lt;/code&gt; which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. It actually is a map.
+      <description>&lt;p&gt;The &lt;code&gt;Data Manager&lt;/code&gt; is responsible for the data. This is not to be confused with the &lt;code&gt;Assets Manager&lt;/code&gt; which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. At a low level view the data manager is just a glorified map.
 &lt;/p&gt;</description>
     </item>
     
@@ -58,7 +58,7 @@
       <pubDate>Sun, 17 Jun 2018 21:02:00 +0200</pubDate>
       <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
       <guid>https://antjowie.github.io/page/axios-framework/game-instance/</guid>
-      <description>&lt;p&gt;&lt;code&gt;Instance&lt;/code&gt; is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. &lt;code&gt;Instance&lt;/code&gt; is responsible for managing the render window and guiding the program. It is the main loop of the game.
+      <description>&lt;p&gt;&lt;code&gt;Instance&lt;/code&gt; is the main class of the framework, you could call it an instance of the framework, but it really is an instance of a game. &lt;code&gt;Instance&lt;/code&gt; is responsible for the timeline in the game. It is the main loop of the game.
 &lt;/p&gt;</description>
     </item>
     

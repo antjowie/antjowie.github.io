@@ -8,9 +8,9 @@
   <title>Data Manager</title>
   <meta property="og:title" content="Data Manager" />
   <meta name="twitter:title" content="Data Manager" />
-  <meta name="description" content="I need some way to keep track of everything">
-  <meta property="og:description" content="I need some way to keep track of everything">
-  <meta name="twitter:description" content="I need some way to keep track of everything">
+  <meta name="description" content="I need some way to keep track of all those configurations">
+  <meta property="og:description" content="I need some way to keep track of all those configurations">
+  <meta name="twitter:description" content="I need some way to keep track of all those configurations">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
@@ -191,7 +191,7 @@
                 
                   
                     <hr class="small">
-                    <span class="page-subheading">I need some way to keep track of everything</span>
+                    <span class="page-subheading">I need some way to keep track of all those configurations</span>
                   
                 
                 
@@ -208,14 +208,14 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The <code>Data Manager</code> is responsible for the data. This is not to be confused with the <code>Assets Manager</code> which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. It actually is a map.
+        <p>The <code>Data Manager</code> is responsible for the data. This is not to be confused with the <code>Assets Manager</code> which is responsible for all the assets. The data are all the configurations. Keybindings, resolution, everything that has a string or integer attached to it. At a low level view the data manager is just a glorified map.
 </p>
 
-<h2 id="documentation">Documentation</h2>
+<hr />
 
-<h4 id="data-manager">Data Manager</h4>
+<h4 id="data-manager-vs-assets-manager">Data Manager vs Assets Manager</h4>
 
-<p><em>A global class that hides the Data class. Holds two static Data instances. One for keybindings, the other for game configurations.</em></p>
+<p>The reason why <code>Data Manager</code> and <code>Assets Manager</code> are separated from each other, is because the Data can be changed by the user. Assets are not supposed to be changed by the user. Assets do, however, keep changing, or at least the content in <code>Assets Manager</code>. This means that the <code>Assets Manager</code> class will support asynchronous loading of assets or some second buffer that is supposed to be swapped when changing <code>Scenes</code>. Data does not play a part in this. That is why I have split the two up into different classes.</p>
 
 <h4 id="data">Data</h4>
 
@@ -230,10 +230,6 @@ Check the whole map, used before starting the game to see if every config item e
 <li><strong>load/save</strong>
 Loads a JSON file or dumps to a JSON file. JSON files are parsed with the library <a href="https://nlohmann.github.io/json/">JSON for Modern C++</a>. (<a href="https://antjowie.github.io/page/axios-framework/utilities/#So-many-possibilities-(almost roping)">Read more about why I chose this library here</a>).</li>
 </ul>
-
-<h2 id="design-choices">Design choices</h2>
-
-<p>The reason why <code>Data Manager</code> and <code>Assets Manager</code> are separated from each other, is because the Data can be changed by the user. Assets are not supposed to be changed by the user. Assets do, however, keep changing, or at least the content in <code>Assets Manager</code>. This means that the <code>Assets Manager</code> class will support asynchronous loading of assets or some second buffer that is supposed to be swapped when changing <code>Scenes</code>. Data does not play a part in this. That is why I have split the two up into different classes.</p>
 
 <p>Suggestions or questions can be written down below as always.</p>
 
