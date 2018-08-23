@@ -19,6 +19,7 @@ A `Scene` is a level or a section. A certain moment in the program where a certa
 Jump to a certain section:
 
 - [Runtime data containers](#runtime-data-containers)
+- [Update loop](#update-loops)
 - [Object updating](#object-updating)
 - [Object reference handling](#object-reference-handling)
 - [Event handling](#event-handling)
@@ -32,6 +33,18 @@ The user can specify the number of bytes the runtime containers can dynamically 
 There are two data containers (one/two frame data container and dynamic data container). The difference is small. The one/two frame data container contains data that will live for two frames. Think about event data of internal calculations needed for the next frame. The data will be destructed automatically, so pointers become invalid very easily.  
 The dynamic data container contains data that will live for the whole lifetime of the `Scene`. They can be manually deallocated and are deallocated when the `Scene` ends. This container contains data that has to last longer than the next frame, like bullets from a gun or a flying arrow.  
 
+#### Update loops
+The physics update loop is an update loop that updates on a constant interval. This allows a more consistent experience across all systems.
+
+All update loops will be wrapped in a clock class. The clock class is a class that manages all the update loops. The clock is a global singleton class. The clock also serves functions to edit time. Functions like slowing the timeline down or stopping it. Subsystems or objects can get time values from the clock or can make hooks to the clock to be run every so often.  
+The clock class will have two timelines.
+- Real update
+- Update and
+- Physics update
+The real update loop is a timeline that can't be affected. It is useful for debugging or pausing the game simply by stopping the update loop. For example. When the user pauses the game, the update timeline uses a modifier of zero (which means nothing will move) and the pause menu uses the real update loop.  
+The update loop is just an update loop. Most effects will use this loop like the camera or subsystems.  
+The physics timeline is updated at a constant rate, only when the elapsed time is equal to some hertz (like 100) will the physics timeline update. This is useful for subsystems like physics.
+
 #### Object updating
 On paper it sounds easy, just call a virtual update function with the time and let an object do its thing. While this can work for simple games, things tend to get rough when objects depend on each other (or have references to each other) see the following examples.  
 
@@ -40,9 +53,8 @@ When updating objects. The order can be very important. For example. Imagine a p
 
 If we let an object update itself, it gets a lot of freedom. It will probably call all of its `Components` ([read more about objects and `Components` here] Yet to make the page). And so will the next object, and the next one. This causes the CPU to jump around doing the same calculations. It is far more efficient for a CPU to do an update of the same component at one time. This process is called `Batched Updates`.
 
-At last, virtual functions can be expansive. Some objects don't even need to update every frame. It also means that every class that has to be updated or is dependent on subsystems in some way be an object. It is way better to make callback function hooks to the subsystems. This way, CPU cycles won't be wasted iterating over classes that don't even need to be updated.
+At last, virtual functions can be expensive. Some objects don't even need to update every frame. It also means that every class that has to be updated or is dependent on subsystems in some way be an object. It is way better to make callback function hooks to the subsystems. This way, CPU cycles won't be wasted iterating over classes that don't even need to be updated.
 
-So how do we update? Pretty easy actually. The scene manager will have two additional hooks. The postUpdate and preUpdate hooks. This way, any class that wants to do something after and before the submodules updates will have access to do so. The update order will look a bit like this:
 {{< highlight cpp >}}
 // In scene.update(const float &elapsedTime)
 preUpdateManager(elapsedTime);
@@ -111,6 +123,5 @@ But wait a second. why would I use an event for explosions or picking up health 
 Of couse you **can**, but is that really such a smart idea? (as we always ask ourselves). Think about it. You would have to iterate over all objects just to check for one collision. That's quite a huge operation and it would go against `Batched Updates`. Every object would need some kind of interface for every type of event. An explosion has a whole different effect than a health pack. Not every object would react to a health pack. You could divide every object by what it can and can't react, but this would get clumbersome very quickly.
 
 Well then, why not make it another sub system? 
-
 
 [Return to project page.]({{< ref "projects\axios-framework.md" >}}#what-does-it-do)

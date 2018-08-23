@@ -22,32 +22,33 @@ So with that knowledge and some extensive reading of the book [Game Engine Archi
 
 > The source code for this project is hosted on Github at this [repository](https://github.com/antjowie/axios-framework).
 
+___
 ## What does it do
 The framework serves a role in the following subjects. The subjects are their responsibilities. Marked subjects are being worked on. Unmarked subjects aren't. `(you can click the bold title to see the progress)`:
 
--  [**Instance**]({{< ref "page\axios-framework\game-instance.md" >}})
-    _The `Instance` class is an instance of the framework. It contains the game loop. The `Instance` class manages the update loops. All the classes can make hooks to the update loops._  
+-  [**Instance**]({{< ref "page\axios-framework\game-instance.md" >}})  
+    __The `Instance` class is an instance of the framework. It updates all the systems. The `Instance` class manages the update loops._  
     - [X] Manage (de)initialization of subsystems
-    - [X] Physics update loop
-    - [X] Update loop
     - [X] Frame rate control
 -  [**Object manager**]({{< ref "page\axios-framework\object-manager.md" >}})  
-    _The `Object manager` is a container that manages the memory/allocation/lifetime of all the `Objects` and allows `Objects` to be querried. It also allows `Objects` to easilly initiate data during runtime.`_  
+    _The `Object manager` is a container that manages the memory/allocation/lifetime of all the `Objects` and allows `Objects` to be querried. It also allows `Objects` to easilly initiate data during runtime._  
     - [X] One/two frame stack
     - [X] Runtime object (de)allocation
     - [X] Object reference handling
+    - [X] Physics update loop
+    - [ ] Event system
     - [ ] Object serialization
 -  **Objects**  
-    _Objects are the building blocks of the game. Objects are build out of hooks to subsystems_  
+    _Objects are the building blocks of the game. Objects are build out of hooks to subsystems._  
     - [ ] Object factory
     - [ ] Object serialization
 -  **Subsystems**  
-    _Subsystems are systems that objects can make hooks to. Subsystems make hooks to an update loop of the `Instane` class. This allows the programmer to easily make his own subsystem_  
+    _Subsystems are systems that objects can make hooks to. Subsystems make hooks to an update loop of the `Instane` class. This allows the programmer to easily make his own subsystem._  
     - [ ] Subsystem foundation
     - [ ] Animation subsystem
     - [ ] Rigid body (collision response/physics) subsystem
 - [**Data manager**]({{< ref "page\axios-framework\data-manager.md" >}})  
-    _Basic data containers for game data that has to be saved_
+    _Basic data containers for game data that has to be saved._
     - [X] Game keybinding items
     - [X] User config
 - **Assets manager**  
@@ -60,15 +61,16 @@ The framework serves a role in the following subjects. The subjects are their re
     _[Tiled](https://www.mapeditor.org/) will be used as the editor._
     - [ ] Import Tiled files
     - [ ] Export object data type
-- [**Input handler**]({{< ref "page\axios-framework\input-handler.md" >}})
+- [**Input handler**]({{< ref "page\axios-framework\input-handler.md" >}})  
     _An interface that keeps track of all input devices and their state._
     - [X] Keyboard and mouse
     - [ ] Controller
-- [**Utilities**]({{< ref "page\axios-framework\utilities.md" >}})
+- [**Utilities**]({{< ref "page\axios-framework\utilities.md" >}})  
     _Code that allows communication with other programs or supports the developer during development._
     - [X] JSON parser
     - [ ] SFML key code converter
     - [X] Logger
     - [ ] String hashing
 
+___
 Please ask questions about the project in the dedicated subject. 

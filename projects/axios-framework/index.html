@@ -16,6 +16,8 @@
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@antjowie27" />
+  <meta name="twitter:creator" content="@antjowie27" />
   <meta property="og:url" content="https://antjowie.github.io/projects/axios-framework/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
@@ -221,38 +223,40 @@ Most of the time when I&rsquo;m programming and come up with a new idea, I first
 <p>The source code for this project is hosted on Github at this <a href="https://github.com/antjowie/axios-framework">repository</a>.</p>
 </blockquote>
 
+<hr />
+
 <h2 id="what-does-it-do">What does it do</h2>
 
 <p>The framework serves a role in the following subjects. The subjects are their responsibilities. Marked subjects are being worked on. Unmarked subjects aren&rsquo;t. <code>(you can click the bold title to see the progress)</code>:</p>
 
 <ul class="task-list">
-<li><a href="https://antjowie.github.io/page/axios-framework/game-instance/"><strong>Instance</strong></a>
-<em>The <code>Instance</code> class is an instance of the framework. It contains the game loop. The <code>Instance</code> class manages the update loops. All the classes can make hooks to the update loops.</em><br />
+<li><a href="https://antjowie.github.io/page/axios-framework/game-instance/"><strong>Instance</strong></a><br />
+_<em>The <code>Instance</code> class is an instance of the framework. It updates all the systems. The <code>Instance</code> class manages the update loops.</em><br />
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Manage (de)initialization of subsystems</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Physics update loop</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Update loop</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Frame rate control</label></li>
 </ul></li>
 <li><a href="https://antjowie.github.io/page/axios-framework/object-manager/"><strong>Object manager</strong></a><br />
-<em>The <code>Object manager</code> is a container that manages the memory/allocation/lifetime of all the <code>Objects</code> and allows <code>Objects</code> to be querried. It also allows <code>Objects</code> to easilly initiate data during runtime.`</em><br />
+<em>The <code>Object manager</code> is a container that manages the memory/allocation/lifetime of all the <code>Objects</code> and allows <code>Objects</code> to be querried. It also allows <code>Objects</code> to easilly initiate data during runtime.</em><br />
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> One/two frame stack</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Runtime object (de)allocation</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Object reference handling</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Physics update loop</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Event system</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
 </ul></li>
 <li><strong>Objects</strong><br />
-<em>Objects are the building blocks of the game. Objects are build out of hooks to subsystems</em><br />
+<em>Objects are the building blocks of the game. Objects are build out of hooks to subsystems.</em><br />
 
 <ul class="task-list">
 <li><label><input type="checkbox" disabled class="task-list-item"> Object factory</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
 </ul></li>
 <li><strong>Subsystems</strong><br />
-<em>Subsystems are systems that objects can make hooks to. Subsystems make hooks to an update loop of the <code>Instane</code> class. This allows the programmer to easily make his own subsystem</em><br />
+<em>Subsystems are systems that objects can make hooks to. Subsystems make hooks to an update loop of the <code>Instane</code> class. This allows the programmer to easily make his own subsystem.</em><br />
 
 <ul class="task-list">
 <li><label><input type="checkbox" disabled class="task-list-item"> Subsystem foundation</label></li>
@@ -260,7 +264,7 @@ Most of the time when I&rsquo;m programming and come up with a new idea, I first
 <li><label><input type="checkbox" disabled class="task-list-item"> Rigid body (collision response/physics) subsystem</label></li>
 </ul></li>
 <li><a href="https://antjowie.github.io/page/axios-framework/data-manager/"><strong>Data manager</strong></a><br />
-<em>Basic data containers for game data that has to be saved</em>
+<em>Basic data containers for game data that has to be saved.</em>
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Game keybinding items</label></li>
@@ -282,14 +286,14 @@ Most of the time when I&rsquo;m programming and come up with a new idea, I first
 <li><label><input type="checkbox" disabled class="task-list-item"> Import Tiled files</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Export object data type</label></li>
 </ul></li>
-<li><a href="https://antjowie.github.io/page/axios-framework/input-handler/"><strong>Input handler</strong></a>
+<li><a href="https://antjowie.github.io/page/axios-framework/input-handler/"><strong>Input handler</strong></a><br />
 <em>An interface that keeps track of all input devices and their state.</em>
 
 <ul class="task-list">
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Keyboard and mouse</label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> Controller</label></li>
 </ul></li>
-<li><a href="https://antjowie.github.io/page/axios-framework/utilities/"><strong>Utilities</strong></a>
+<li><a href="https://antjowie.github.io/page/axios-framework/utilities/"><strong>Utilities</strong></a><br />
 <em>Code that allows communication with other programs or supports the developer during development.</em>
 
 <ul class="task-list">
@@ -299,6 +303,8 @@ Most of the time when I&rsquo;m programming and come up with a new idea, I first
 <li><label><input type="checkbox" disabled class="task-list-item"> String hashing</label></li>
 </ul></li>
 </ul>
+
+<hr />
 
 <p>Please ask questions about the project in the dedicated subject.</p>
 
@@ -324,7 +330,7 @@ Most of the time when I&rsquo;m programming and come up with a new idea, I first
 
 
 <li>
-    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;text=Axios%20Framework&amp;via="
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;text=Axios%20Framework&amp;via=antjowie27"
        target="_blank" alt="" title="Share on Twitter">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -438,6 +444,14 @@ Most of the time when I&rsquo;m programming and come up with a new idea, I first
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/antjowie27" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>

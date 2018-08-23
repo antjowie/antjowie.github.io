@@ -20,18 +20,6 @@ Subsystems are systems that object make hooks to. Physics response for example. 
 
 There is a simple vector that takes care of this. The programmer can overwrite a callback function to add his own subsystems to the (de)initialization loop if it is required.
 
-#### Update loops
-The physics update loop is an update loop that updates on a constant interval. This allows a more consistent experience across all systems.
-
-All update loops will be wrapped in a clock class. The clock class is a class that manages all the update loops. The clock is a global singleton class. The clock also serves functions to edit time. Functions like slowing the timeline down or stopping it. Subsystems or objects can get time values from the clock or can make hooks to the clock to be run every so often.  
-The clock class will have two timelines.
-- Real update
-- Update and
-- Physics update
-The real update loop is a timeline that can't be affected. It is useful for debugging or pausing the game simply by stopping the update loop. For example. When the user pauses the game, the update timeline uses a modifier of zero (which means nothing will move) and the pause menu uses the real update loop.  
-The update loop is just an update loop. Most effects will use this loop like the camera or subsystems.  
-The physics timeline is updated at a constant rate, only when the elapsed time is equal to some hertz (like 100) will the physics timeline update. This is useful for subsystems like physics.
-
 #### Frame rate control
 The subsystem will have two ways of managing the frame rate. Frame updating based on running an average and frame rate governing.  
 **Frame updating based on running an average** works because when a user experiences a more demanding section of the level, chances are that the user still does on the next frame. So by taking the average between a few frames. The spike will be less noticeable, but the game will feel a bit more unresponsive because the update loop doesn't really match the rendering loop.

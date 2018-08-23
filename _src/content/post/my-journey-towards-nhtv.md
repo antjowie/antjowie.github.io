@@ -42,4 +42,4 @@ But one night my dad was playing with a few randoms. Also parents by the way. An
 My dad told me about the story, I started to read about it, we decided to go to an open day... And I knew that this was the school that I was searching for.
 ___
 ## You have discovered NHTV
-you have
+I tried to prepare some questions for the students at NHTV, but didn't really know what to ask because I didn't know much about programming (I was in the first year of high school). 

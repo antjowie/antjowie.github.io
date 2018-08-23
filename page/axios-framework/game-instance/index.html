@@ -16,6 +16,8 @@
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
   <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@antjowie27" />
+  <meta name="twitter:creator" content="@antjowie27" />
   <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/game-instance/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
@@ -223,19 +225,6 @@
 
 <p>There is a simple vector that takes care of this. The programmer can overwrite a callback function to add his own subsystems to the (de)initialization loop if it is required.</p>
 
-<h4 id="update-loops">Update loops</h4>
-
-<p>The physics update loop is an update loop that updates on a constant interval. This allows a more consistent experience across all systems.</p>
-
-<p>All update loops will be wrapped in a clock class. The clock class is a class that manages all the update loops. The clock is a global singleton class. The clock also serves functions to edit time. Functions like slowing the timeline down or stopping it. Subsystems or objects can get time values from the clock or can make hooks to the clock to be run every so often.<br />
-The clock class will have two timelines.
-- Real update
-- Update and
-- Physics update
-The real update loop is a timeline that can&rsquo;t be affected. It is useful for debugging or pausing the game simply by stopping the update loop. For example. When the user pauses the game, the update timeline uses a modifier of zero (which means nothing will move) and the pause menu uses the real update loop.<br />
-The update loop is just an update loop. Most effects will use this loop like the camera or subsystems.<br />
-The physics timeline is updated at a constant rate, only when the elapsed time is equal to some hertz (like 100) will the physics timeline update. This is useful for subsystems like physics.</p>
-
 <h4 id="frame-rate-control">Frame rate control</h4>
 
 <p>The subsystem will have two ways of managing the frame rate. Frame updating based on running an average and frame rate governing.<br />
@@ -259,7 +248,7 @@ The physics timeline is updated at a constant rate, only when the elapsed time i
 
 
 <li>
-    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;text=Axios%20Framework%20Instance&amp;via="
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fgame-instance%2f&amp;text=Axios%20Framework%20Instance&amp;via=antjowie27"
        target="_blank" alt="" title="Share on Twitter">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -390,6 +379,14 @@ The physics timeline is updated at a constant rate, only when the elapsed time i
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/antjowie27" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
