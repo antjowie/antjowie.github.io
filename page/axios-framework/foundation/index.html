@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Axios Framework</title>
-  <meta property="og:title" content="Axios Framework" />
-  <meta name="twitter:title" content="Axios Framework" />
-  <meta name="description" content="The framework that powers all of my 2D games">
-  <meta property="og:description" content="The framework that powers all of my 2D games">
-  <meta name="twitter:description" content="The framework that powers all of my 2D games">
+  <title>The Foundation</title>
+  <meta property="og:title" content="The Foundation" />
+  <meta name="twitter:title" content="The Foundation" />
+  <meta name="description" content="What should this project do">
+  <meta property="og:description" content="What should this project do">
+  <meta name="twitter:description" content="What should this project do">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
@@ -18,12 +18,12 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@antjowie27" />
   <meta name="twitter:creator" content="@antjowie27" />
-  <meta property="og:url" content="https://antjowie.github.io/projects/axios-framework/" />
+  <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/foundation/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
 
   <meta name="generator" content="Hugo 0.41" />
-  <link rel="canonical" href="https://antjowie.github.io/projects/axios-framework/" />
+  <link rel="canonical" href="https://antjowie.github.io/page/axios-framework/foundation/" />
   <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -188,11 +188,12 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="projects-heading">
-              <h1>Axios Framework</h1>
+            <div class="page-heading">
+              <h1>The Foundation</h1>
                 
                   
-                    <h2 class="projects-subheading">The framework that powers all of my 2D games</h2>
+                    <hr class="small">
+                    <span class="page-subheading">What should this project do</span>
                   
                 
                 
@@ -209,50 +210,91 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The Axios Framework makes use of <a href="https://www.sfml-dev.org/">SFML</a>. The Axios Framework is a 2D game framework that runs on files made by <a href="https://www.mapeditor.org/">Tiled</a>. The programmer only writes the objects. The objects are exported to a file that can be loaded in <a href="https://www.mapeditor.org/">Tiled</a>, a 2D tilemap editor. At first, I wanted to make a game engine, but I have no experience making any kind of GUI yet. I believe that you should not do two major new subjects at the same time, so a framework it is. Hopefully, this project can one day evolve into a game engine.
-</p>
-
-<h2 id="my-motivation-for-this-project">My motivation for this project</h2>
-
-<p>The framework is supposed to be an all inclusive pack. During the development of my two first games <a href="https://github.com/antjowie/Runaway">Runaway</a> and <a href="https://github.com/antjowie/Ray-Shaper">Ray Shaper</a>, I noticed a certain pattern. Time was crucial (Ray Shaper was my intake assignment for Breda University, <a href="https://antjowie.github.io/post/my-journey-towards-nhtv/">read more about that here</a>) so I copied and pasted much of the code from Runaway. Many of those files were modified to meet certain needs, but the animation files and the game loop stayed the same.<br />
-Most of the time when I&rsquo;m programming and come up with a new idea, I first prototype that idea, then make some throwaway code to test it and see if its something to implement. Because of my limited time, all the prototype and throwaway code came into the final product. Optimization was my last priority, which is why that simple game lagged in its final stage. Everything just had to work. But I had no base code to start with. Only another prototyped project.</p>
-
-<p>So with that knowledge and some extensive reading of the book <a href="http://gameenginebook.com/">Game Engine Architecture</a>, the Axios Framework started to become my next project.</p>
-
-<blockquote>
-<p>The source code for this project is hosted on Github at this <a href="https://github.com/antjowie/axios-framework">repository</a>.</p>
+        <blockquote>
+<p>This originally was the layout of the project, but during the development of this project, I noticed that it is better to document my progress on this project in a linear path instead of updating this list every time. Many ideas changed shaped during development. Not only because of oversights, but also because of new books I have read, new things I have learned. This page will not be updated anymore, but when the project is nearing a solid state will I start documenting the classes.</p>
 </blockquote>
 
-<hr />
+<p>The framework serves a role in the following subjects. The subjects are their responsibilities. Marked subjects are being worked on. Unmarked subjects aren&rsquo;t. <code>(you can click the bold title to see the progress)</code>:</p>
 
-<h2 id="the-progression">The progression</h2>
+<p></p>
 
-<blockquote>
-<p>Here is a little bit of explanation about <strong>why</strong> I am using a part based method.<br />
-My progress on this project is updated in an episode kinda matter. This means that old parts could contain ideas that are no longer in use. The reason why I did this instead of making one big index to every &gt; subject the framework is responsible for is because I kept changing lines from places and places. Whenever I would change something, I&rsquo;d rewrite the text for a certain subject, but because of that, I couldn&rsquo;t keep the ideas I had before I updated them or else the page would get very bloated.</p>
+<ul class="task-list">
+<li><a href="https://antjowie.github.io/page/axios-framework/game-instance/"><strong>Instance</strong></a><br />
+_<em>The <code>Instance</code> class is an instance of the framework. It updates all the systems. The <code>Instance</code> class manages the update loops.</em><br />
 
-<p>Long story short, the project is too abstract to write definite ideas. Until the project will become a bit more solid this is the way I am updating the progression of this project.</p>
-</blockquote>
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Manage (de)initialization of subsystems</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Frame rate control</label></li>
+</ul></li>
+<li><a href="https://antjowie.github.io/page/axios-framework/object-manager/"><strong>Object manager</strong></a><br />
+<em>The <code>Object manager</code> is a container that manages the memory/allocation/lifetime of all the <code>Objects</code> and allows <code>Objects</code> to be querried. It also allows <code>Objects</code> to easilly initiate data during runtime.</em><br />
 
-<p><a href="https://antjowie.github.io/page/axios-framework/introduction/">2 - Getting us all on one page</a><br />
-<a href="https://antjowie.github.io/page/axios-framework/foundation/">1 - The Foundation</a></p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> One/two frame stack</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Runtime object (de)allocation</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Object reference handling</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Physics update loop</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Event system</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
+</ul></li>
+<li><strong>Objects</strong><br />
+<em>Objects are the building blocks of the game. Objects are build out of hooks to subsystems.</em><br />
 
-<hr />
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Object factory</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Object serialization</label></li>
+</ul></li>
+<li><strong>Subsystems</strong><br />
+<em>Subsystems are systems that objects can make hooks to. Subsystems make hooks to an update loop of the <code>Instane</code> class. This allows the programmer to easily make his own subsystem.</em><br />
 
-<p>Please ask questions about the project in the dedicated subject.</p>
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Subsystem foundation</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Animation subsystem</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Rigid body (collision response/physics) subsystem</label></li>
+</ul></li>
+<li><a href="https://antjowie.github.io/page/axios-framework/data-manager/"><strong>Data manager</strong></a><br />
+<em>Basic data containers for game data that has to be saved.</em>
 
-        
-          <div class="blog-tags">
-            
-              <a href="https://antjowie.github.io//tags/game-development/">game-development</a>&nbsp;
-            
-              <a href="https://antjowie.github.io//tags/framework/">framework</a>&nbsp;
-            
-              <a href="https://antjowie.github.io//tags/cpp/">cpp</a>&nbsp;
-            
-              <a href="https://antjowie.github.io//tags/sfml/">sfml</a>&nbsp;
-            
-          </div>
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Game keybinding items</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> User config</label></li>
+</ul></li>
+<li><strong>Assets manager</strong><br />
+<em>Keeps the game textures, sounds, files in memory to which objects can make reference too.</em>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Sound</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Music</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Textures</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Fonts</label></li>
+</ul></li>
+<li><strong>Tiled support</strong><br />
+<em><a href="https://www.mapeditor.org/">Tiled</a> will be used as the editor.</em>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> Import Tiled files</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Export object data type</label></li>
+</ul></li>
+<li><a href="https://antjowie.github.io/page/axios-framework/input-handler/"><strong>Input handler</strong></a><br />
+<em>An interface that keeps track of all input devices and their state.</em>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Keyboard and mouse</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Controller</label></li>
+</ul></li>
+<li><a href="https://antjowie.github.io/page/axios-framework/utilities/"><strong>Utilities</strong></a><br />
+<em>Code that allows communication with other programs or supports the developer during development.</em>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> JSON parser</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> SFML key code converter</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Logger</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> String hashing</label></li>
+</ul></li>
+</ul>
+
+<p><a href="https://antjowie.github.io/projects/axios-framework/#the-progression">Return to the project page</a></p>
+
         
 
         
@@ -263,7 +305,7 @@ My progress on this project is updated in an episode kinda matter. This means th
 
 
 <li>
-    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;text=Axios%20Framework&amp;via=antjowie27"
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2ffoundation%2f&amp;text=The%20Foundation&amp;via=antjowie27"
        target="_blank" alt="" title="Share on Twitter">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -274,7 +316,7 @@ My progress on this project is updated in an episode kinda matter. This means th
 
 
 <li>
-    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f" target="_blank" title="Share on Google Plus">
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2ffoundation%2f" target="_blank" title="Share on Google Plus">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
@@ -284,7 +326,7 @@ My progress on this project is updated in an episode kinda matter. This means th
 
 
 <li>
-    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f" target="_blank" title="Share on Facebook">
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2ffoundation%2f" target="_blank" title="Share on Facebook">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -294,7 +336,7 @@ My progress on this project is updated in an episode kinda matter. This means th
 
 
 <li>
-    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank" title="Share on Reddit">
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2ffoundation%2f&amp;title=The%20Foundation" target="_blank" title="Share on Reddit">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
@@ -304,7 +346,7 @@ My progress on this project is updated in an episode kinda matter. This means th
 
 
 <li>
-    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank"
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2ffoundation%2f&amp;title=The%20Foundation" target="_blank"
        title="Share on LinkedIn">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -315,7 +357,7 @@ My progress on this project is updated in an episode kinda matter. This means th
 
 
 <li>
-    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;title=Axios%20Framework" target="_blank"
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2ffoundation%2f&amp;title=The%20Foundation" target="_blank"
        title="Share on StumbleUpon">
         <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -326,7 +368,7 @@ My progress on this project is updated in an episode kinda matter. This means th
 
 
 <li>
-    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fprojects%2faxios-framework%2f&amp;description=Axios%20Framework" target="_blank"
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2ffoundation%2f&amp;description=The%20Foundation" target="_blank"
        title="Share on Pinterest">
          <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -341,17 +383,34 @@ My progress on this project is updated in an episode kinda matter. This means th
       </article>
 
       
-        <ul class="pager blog-pager">
-          
-            <li class="previous">
-              <a href="https://antjowie.github.io/projects/ray-shaper/" data-toggle="tooltip" data-placement="top" title="Ray Shaper">&larr; Previous Post</a>
-            </li>
-          
-          
-        </ul>
+
+
       
-
-
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "angelos-portfolio" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
       
 
     </div>

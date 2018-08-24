@@ -5,9 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Game Development</title>
-  <meta property="og:title" content="Game Development" />
-  <meta name="twitter:title" content="Game Development" />
+  <title>The Introduction</title>
+  <meta property="og:title" content="The Introduction" />
+  <meta name="twitter:title" content="The Introduction" />
+  <meta name="description" content="Why would the introduction be a second part?">
+  <meta property="og:description" content="Why would the introduction be a second part?">
+  <meta name="twitter:description" content="Why would the introduction be a second part?">
   <meta name="author" content="Angelo Anthony Rettob"/>
   <link href='https://antjowie.github.io/img/icons/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://antjowie.github.io/img/icons/site-icon.png" />
@@ -15,13 +18,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@antjowie27" />
   <meta name="twitter:creator" content="@antjowie27" />
-  <meta property="og:url" content="https://antjowie.github.io/tags/game-development/" />
+  <meta property="og:url" content="https://antjowie.github.io/page/axios-framework/introduction/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Angelo&#39;s Portfolio" />
 
   <meta name="generator" content="Hugo 0.41" />
-  <link rel="canonical" href="https://antjowie.github.io/tags/game-development/" />
-  <link rel="alternate" href="https://antjowie.github.io/tags/game-development/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
+  <link rel="canonical" href="https://antjowie.github.io/page/axios-framework/introduction/" />
+  <link rel="alternate" href="https://antjowie.github.io/index.xml" type="application/rss+xml" title="Angelo&#39;s Portfolio">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -169,14 +172,31 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
-              <h1>#Game Development</h1>
-              <hr class="small">
+              <h1>The Introduction</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Why would the introduction be a second part?</span>
+                  
+                
+                
             </div>
           </div>
         </div>
@@ -184,157 +204,180 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>The reason why I am writing this page is that during development I decided to switch to a whole other way to update my progression on this project. This page will discuss the progress up until now and what is left to come.</p>
+
+<p></p>
+
+<blockquote>
+<p><a href="https://github.com/antjowie/Axios-framework/tree/3e7ec41c85ffc14fa438623ce14413222c2b9236">This is the current place of progression</a></p>
+</blockquote>
+
+<h2 id="what-happened">What happened?</h2>
+
+<p>Right now, the main foundation of the framework has been built. It has touched the following subjects:</p>
+
+<ul>
+<li><strong>The data manager</strong><br />
+It can save and load all the configurations in a map. <strong>I have no other ideas for this class</strong>.</li>
+<li><strong>The input handler</strong><br />
+It maps every key to a key state item, which the programmer can get the state of. It only supports keyboard and mouse.</li>
+<li><strong>loggers</strong><br />
+The logger has been implemented very early because I make many std::cout calls in my code during debugging. The logger right now is very weak though. It is actually a controlled call to the output. It can&rsquo;t forward its output to a file, it also is a namespace, this makes it harder to make different loggers. Many things to still consider with this class.</li>
+<li><strong>Objects</strong><br />
+Much of the work has been put in objects. It almost supports every system that an object needs (I think). Right now, it has the following classes:
+
+<ul>
+<li><strong>Object</strong><br />
+The main object displayed on the screen.</li>
+<li><strong>Object manager</strong><br />
+A manager because all objects are dynamic. The manager manages the lifetime, updating and querieng of objects.</li>
+<li><strong>Object reference</strong><br />
+A reference key. because objects are managed by the manager, our object could be deleted at any moment. So to make sure we are not trying to access invalid memory, references will be passed through the reference manager. I consider this class done.</li>
+<li><strong>Object reference manager</strong><br />
+The array in which all the references lay. This class has strong coupling with the object manager because the object manager only gives object references, no direct pointer to an object. I consider this class done.</li>
+<li><strong>Object factory</strong><br />
+The Axios Framework is a data-driven framework. The factory simply maps the class&rsquo;s constructor to strings. This way, we can decide which objects to spawn using a text file instead of writing it in code. The factory can only construct objects right now but not with parameters. I wanted to make sure we could pass an arbitrary amount of parameters in the constructor using a variadic template function. But it got kinda complicated. I&rsquo;ll probably pass in a map through the constructor because I&rsquo;m also planning to use JSON for the object data files.<br /></li>
+</ul></li>
+<li><strong>Scenes</strong><br />
+It can save and load all the configurations in a map. A scene is a container for all the objects. The reason why I use scenes is that the user makes scenes in an editor. Right now, the scene kinda works, but I&rsquo;m not sure if it&rsquo;s missing something or not, it may be changed in the future or optimized.</li>
+</ul>
+
+<p>Quite a lot, well, not really. But a game can be made from this. The only thing that we still need is a way to import a data file and we&rsquo;re good to go.</p>
+
+<h2 id="what-now">What now?</h2>
+
+<p>There are quite a few things that still have to be added and many things that have yet to be decided. For now, I&rsquo;ll be working on importing data files. That&rsquo;s also what the next part will be about.<br />
+That&rsquo;s it for this post. Anything about this post can be discussed down below</p>
+
+<p><a href="https://antjowie.github.io/projects/axios-framework/#the-progression">Return to the project page</a></p>
+
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="https://antjowie.github.io/projects/axios-framework/">
-                <h2 class="post-title">Axios Framework</h2>
 
-                
-                  <h3 class="post-subtitle">
-                    The framework that powers all of my 2D games
-                  </h3>
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 16, 2018
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 3 minutes (463 words)
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  <p>The Axios Framework makes use of <a href="https://www.sfml-dev.org/">SFML</a>. The Axios Framework is a 2D game framework that runs on files made by <a href="https://www.mapeditor.org/">Tiled</a>. The programmer only writes the objects. The objects are exported to a file that can be loaded in <a href="https://www.mapeditor.org/">Tiled</a>, a 2D tilemap editor. At first, I wanted to make a game engine, but I have no experience making any kind of GUI yet. I believe that you should not do two major new subjects at the same time, so a framework it is. Hopefully, this project can one day evolve into a game engine.
-</p>
-                  <a href="https://antjowie.github.io/projects/axios-framework/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://antjowie.github.io//tags/game-development/">game-development</a>&nbsp;
-                  
-                    <a href="https://antjowie.github.io//tags/framework/">framework</a>&nbsp;
-                  
-                    <a href="https://antjowie.github.io//tags/cpp/">cpp</a>&nbsp;
-                  
-                    <a href="https://antjowie.github.io//tags/sfml/">sfml</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://antjowie.github.io/projects/runaway/">
-                <h2 class="post-title">Runaway</h2>
-
-                
-                  <h3 class="post-subtitle">
-                    My first game, that was not suppposed to be a game
-                  </h3>
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 2, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 3 minutes (445 words)
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  <div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-	  
-  
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img" style="background-image: url('/img/runaway/Light-test-1.png');">
-      <img itemprop="thumbnail" src="/img/runaway/Light-test-1.png" alt="Light is a very important aspect in this game"/>
-    </div>
-      <figcaption>
-          <p>Working with light</p>
-      </figcaption>
-    <a href="/img/runaway/Light-test-1.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
-  
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img" style="background-image: url('/img/runaway/Ligth-example.png');">
-      <img itemprop="thumbnail" src="/img/runaway/Ligth-example.png" alt="You have to start somewhere"/>
-    </div>
-      <figcaption>
-          <p>A broad idea</p>
-      </figcaption>
-    <a href="/img/runaway/Ligth-example.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
-  
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img" style="background-image: url('/img/runaway/playerSpritesheet.png');">
-      <img itemprop="thumbnail" src="/img/runaway/playerSpritesheet.png" alt="How do we process this spritesheet?"/>
-    </div>
-      <figcaption>
-          <p>Make him move</p>
-      </figcaption>
-    <a href="/img/runaway/playerSpritesheet.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
-
-</div>
-                  <a href="https://antjowie.github.io/projects/runaway/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://antjowie.github.io//tags/cpp/">cpp</a>&nbsp;
-                  
-                    <a href="https://antjowie.github.io//tags/game-development/">game-development</a>&nbsp;
-                  
-                    <a href="https://antjowie.github.io//tags/sfml/">sfml</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-        </div>
         
-      </div>
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fintroduction%2f&amp;text=The%20Introduction&amp;via=antjowie27"
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fintroduction%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fintroduction%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fintroduction%2f&amp;title=The%20Introduction" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fintroduction%2f&amp;title=The%20Introduction" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fintroduction%2f&amp;title=The%20Introduction" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fantjowie.github.io%2fpage%2faxios-framework%2fintroduction%2f&amp;description=The%20Introduction" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "angelos-portfolio" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -369,7 +412,7 @@
           
           <li>
             
-            <a href="https://antjowie.github.io/tags/game-development/index.xml" title="RSS">
+            <a href="https://antjowie.github.io/index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>

@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://antjowie.github.io/page/axios-framework/introduction/</loc>
+    <lastmod>2018-08-23T15:20:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://antjowie.github.io/page/axios-framework/foundation/</loc>
+    <lastmod>2018-08-23T14:59:31+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://antjowie.github.io/page/axios-framework/object-manager/</loc>
     <lastmod>2018-06-22T14:36:52+02:00</lastmod>
   </url>
@@ -161,7 +171,7 @@
   
   <url>
     <loc>https://antjowie.github.io/page/</loc>
-    <lastmod>2018-06-22T14:36:52+02:00</lastmod>
+    <lastmod>2018-08-23T15:20:18+02:00</lastmod>
     <priority>0</priority>
   </url>
   

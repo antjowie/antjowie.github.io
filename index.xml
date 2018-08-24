@@ -13,6 +13,32 @@
     
     
     <item>
+      <title>The Introduction</title>
+      <link>https://antjowie.github.io/page/axios-framework/introduction/</link>
+      <pubDate>Thu, 23 Aug 2018 15:20:18 +0200</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/axios-framework/introduction/</guid>
+      <description>&lt;p&gt;The reason why I am writing this page is that during development I decided to switch to a whole other way to update my progression on this project. This page will discuss the progress up until now and what is left to come.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Foundation</title>
+      <link>https://antjowie.github.io/page/axios-framework/foundation/</link>
+      <pubDate>Thu, 23 Aug 2018 14:59:31 +0200</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/axios-framework/foundation/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;This originally was the layout of the project, but during the development of this project, I noticed that it is better to document my progress on this project in a linear path instead of updating this list every time. Many ideas changed shaped during development. Not only because of oversights, but also because of new books I have read, new things I have learned. This page will not be updated anymore, but when the project is nearing a solid state will I start documenting the classes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The framework serves a role in the following subjects. The subjects are their responsibilities. Marked subjects are being worked on. Unmarked subjects aren&amp;rsquo;t. &lt;code&gt;(you can click the bold title to see the progress)&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Object Manager</title>
       <link>https://antjowie.github.io/page/axios-framework/object-manager/</link>
       <pubDate>Fri, 22 Jun 2018 14:36:52 +0200</pubDate>
