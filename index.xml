@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>Loading Object Data</title>
+      <link>https://antjowie.github.io/page/axios-framework/03-loading-object-data/</link>
+      <pubDate>Sat, 25 Aug 2018 14:47:07 +0200</pubDate>
+      <author>angelo05rettob@gmail.com (Angelo Anthony Rettob)</author>
+      <guid>https://antjowie.github.io/page/axios-framework/03-loading-object-data/</guid>
+      <description>&lt;p&gt;Objects are the building blocks of the game. But a car has different properties than a player. So how do we manage all these different variables?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>The Introduction</title>
       <link>https://antjowie.github.io/page/axios-framework/introduction/</link>
       <pubDate>Thu, 23 Aug 2018 15:20:18 +0200</pubDate>

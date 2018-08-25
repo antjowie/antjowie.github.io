@@ -29,6 +29,7 @@ ___
 > 
 > Long story short, the project is too abstract to write definite ideas. Until the project will become a bit more solid this is the way I am updating the progression of this project.
 
+[3 - Loading the object specific data]({{< ref "page/axios-framework/03-loading-object-data.md" >}})  
 [2 - Getting us all on one page]({{< ref "page/axios-framework/introduction.md" >}})  
 [1 - The Foundation]({{< ref "page/axios-framework/foundation.md" >}})  
 
