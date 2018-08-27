@@ -3,6 +3,10 @@ title: Ray Shaper
 subtitle: My NHTV intake assessment programming assignment
 author: Angelo Anthony Rettob
 date: 2018-01-09T14:49:59+00:00
+tags: 
+    - cpp
+    - game-development
+    - sfml
 commets: false
 ---
 When I was 13 I first heard about NHTV. I was in second grade and already started looking for a school to enter. Back then I was quite scared of the future. I realized the importance of the decisions we have to make right now and was afraid that I would choose something that wouldn&#8217;t satisfy me. I don&#8217;t feel that way anymore. I make sure that every decision that I make right now regarding my future will be the correct one. If I always try my hardest there is no way I could regret my chooses. By doing that I should always end where I was meant to be.

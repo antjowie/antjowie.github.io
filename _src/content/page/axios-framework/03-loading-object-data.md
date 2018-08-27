@@ -12,6 +12,8 @@ Objects are the building blocks of the game. But a car has different properties 
 
 <!--more-->
 
+> [This is the current place of progression](https://github.com/antjowie/Axios-framework/tree/d4fadadcc3b5d1e5f83e212bf10e151734223de3)
+
 ## My ideas
 I have two ideas in mind. Make programmers overwrite two function, an `onLoad` and `onSave` function, in which the programmer writes the variables that are to be saved. The benefit of this system is that the programmer can easily add new variables to the object's body. But the programmer has to write two additional functions. One to load the variables, and one to save the variables.
 
@@ -55,16 +57,16 @@ private:
             String,
             Bool
         }type;
-        const void* const adress;
+        const void* const address;
     };
 
     std::map<const char*, SerializeItem> m_serializeMap;
 
 protected:
     void addToSerialization(const char* name,
-        const void* const adress, const SerializeItem::Type type)
+        const void* const address, const SerializeItem::Type type)
         {
-            m_serializeMap[name] = {type,adress};
+            m_serializeMap[name] = {type,address};
         }
 
     // Rest of code...
@@ -116,7 +118,7 @@ private:
             switch (variable.type)
             {
             case Type::Int:
-                static_cast<int*>(variable.adress) = std::stoi(value);
+                static_cast<int*>(variable.address) = std::stoi(value);
                 break;
                 // Same for the others...
                 // Note: Maybe I can make a template or something and use decltype

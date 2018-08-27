@@ -214,6 +214,10 @@
 
 <p></p>
 
+<blockquote>
+<p><a href="https://github.com/antjowie/Axios-framework/tree/d4fadadcc3b5d1e5f83e212bf10e151734223de3">This is the current place of progression</a></p>
+</blockquote>
+
 <h2 id="my-ideas">My ideas</h2>
 
 <p>I have two ideas in mind. Make programmers overwrite two function, an <code>onLoad</code> and <code>onSave</code> function, in which the programmer writes the variables that are to be saved. The benefit of this system is that the programmer can easily add new variables to the object&rsquo;s body. But the programmer has to write two additional functions. One to load the variables, and one to save the variables.</p>
@@ -263,16 +267,16 @@
             String,
             Bool
         }type;
-        <span style="font-weight:bold">const</span> <span style="color:#458;font-weight:bold">void</span><span style="font-weight:bold">*</span> <span style="font-weight:bold">const</span> adress;
+        <span style="font-weight:bold">const</span> <span style="color:#458;font-weight:bold">void</span><span style="font-weight:bold">*</span> <span style="font-weight:bold">const</span> address;
     };
 
     std<span style="font-weight:bold">::</span>map<span style="font-weight:bold">&lt;</span><span style="font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span><span style="font-weight:bold">*</span>, SerializeItem<span style="font-weight:bold">&gt;</span> m_serializeMap;
 
 <span style="font-weight:bold">protected</span><span style="font-weight:bold">:</span>
 <span style="display:block;width:100%;background-color:#e5e5e5">    <span style="color:#458;font-weight:bold">void</span> addToSerialization(<span style="font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span><span style="font-weight:bold">*</span> name,
-</span><span style="display:block;width:100%;background-color:#e5e5e5">        <span style="font-weight:bold">const</span> <span style="color:#458;font-weight:bold">void</span><span style="font-weight:bold">*</span> <span style="font-weight:bold">const</span> adress, <span style="font-weight:bold">const</span> SerializeItem<span style="font-weight:bold">::</span>Type type)
+</span><span style="display:block;width:100%;background-color:#e5e5e5">        <span style="font-weight:bold">const</span> <span style="color:#458;font-weight:bold">void</span><span style="font-weight:bold">*</span> <span style="font-weight:bold">const</span> address, <span style="font-weight:bold">const</span> SerializeItem<span style="font-weight:bold">::</span>Type type)
 </span><span style="display:block;width:100%;background-color:#e5e5e5">        {
-</span><span style="display:block;width:100%;background-color:#e5e5e5">            m_serializeMap[name] <span style="font-weight:bold">=</span> {type,adress};
+</span><span style="display:block;width:100%;background-color:#e5e5e5">            m_serializeMap[name] <span style="font-weight:bold">=</span> {type,address};
 </span><span style="display:block;width:100%;background-color:#e5e5e5">        }
 </span>
     <span style="color:#998;font-style:italic">// Rest of code...
@@ -324,7 +328,7 @@
 </span><span style="display:block;width:100%;background-color:#e5e5e5">            <span style="font-weight:bold">switch</span> (variable.type)
 </span><span style="display:block;width:100%;background-color:#e5e5e5">            {
 </span><span style="display:block;width:100%;background-color:#e5e5e5">            <span style="font-weight:bold">case</span> Type<span style="font-weight:bold">::</span>Int:
-</span><span style="display:block;width:100%;background-color:#e5e5e5">                <span style="font-weight:bold">static_cast</span><span style="font-weight:bold">&lt;</span><span style="color:#458;font-weight:bold">int</span><span style="font-weight:bold">*&gt;</span>(variable.adress) <span style="font-weight:bold">=</span> std<span style="font-weight:bold">::</span>stoi(value);
+</span><span style="display:block;width:100%;background-color:#e5e5e5">                <span style="font-weight:bold">static_cast</span><span style="font-weight:bold">&lt;</span><span style="color:#458;font-weight:bold">int</span><span style="font-weight:bold">*&gt;</span>(variable.address) <span style="font-weight:bold">=</span> std<span style="font-weight:bold">::</span>stoi(value);
 </span><span style="display:block;width:100%;background-color:#e5e5e5">                <span style="font-weight:bold">break</span>;
 </span><span style="display:block;width:100%;background-color:#e5e5e5">                <span style="color:#998;font-style:italic">// Same for the others...
 </span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#998;font-style:italic"></span>                <span style="color:#998;font-style:italic">// Note: Maybe I can make a template or something and use decltype

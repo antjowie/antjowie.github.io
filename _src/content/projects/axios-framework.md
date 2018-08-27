@@ -25,9 +25,9 @@ So with that knowledge and some extensive reading of the book [Game Engine Archi
 ___
 ## The progression
 > Here is a little bit of explanation about **why** I am using a part based method.   
-> My progress on this project is updated in an episode kinda matter. This means that old parts could contain ideas that are no longer in use. The reason why I did this instead of making one big index to every > subject the framework is responsible for is because I kept changing lines from places and places. Whenever I would change something, I'd rewrite the text for a certain subject, but because of that, I couldn't keep the ideas I had before I updated them or else the page would get very bloated.  
+> My progress on this project is updated in an episode kinda matter. This means that old parts could contain ideas that are no longer in use. The reason why I did this instead of making one big index to every subject the framework is responsible for is because I kept changing lines from places and places. Whenever I would change something, I'd rewrite the text for a certain subject, but because of that, I couldn't keep the ideas I had before I updated them or else the page would get very bloated.  
 > 
-> Long story short, the project is too abstract to write definite ideas. Until the project will become a bit more solid this is the way I am updating the progression of this project.
+> Long story short, the project is too abstract to write definite ideas. Until the project will become a bit more solid this is the way I am updating the progression of this project. **I'd reccommend you to atleast read the first [part]({{< ref "page/axios-framework/foundation.md" >}})**.
 
 [3 - Loading the object specific data]({{< ref "page/axios-framework/03-loading-object-data.md" >}})  
 [2 - Getting us all on one page]({{< ref "page/axios-framework/introduction.md" >}})  
